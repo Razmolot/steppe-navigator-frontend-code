@@ -1,0 +1,132 @@
+.career-guidance-page {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  min-height: 100vh;
+}
+
+.test-status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.test-status-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: #f5f5f5;
+  font-weight: 500;
+}
+
+.test-status-item.completed {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+}
+
+.test-status-item.pending {
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.status-dot.pending {
+  background: #f59e0b;
+}
+
+.spheres-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.spheres-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.spheres-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.selected-spheres h4,
+.available-spheres h4 {
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.selected-spheres-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.selected-sphere-card {
+  border: 2px solid #3b82f6;
+  border-radius: 12px;
+}
+
+.sphere-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sphere-name {
+  flex: 1;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.sphere-reasoning {
+  margin-top: 8px;
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.spheres-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Анимация загрузки AI */
+.ai-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  color: white;
+  font-weight: 500;
+}
+
+.ai-loading .anticon {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+

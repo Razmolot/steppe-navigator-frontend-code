@@ -1,0 +1,2 @@
+export { SoftSkillReport } from './SoftSkillReport';
+

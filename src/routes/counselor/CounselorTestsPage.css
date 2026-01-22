@@ -1,0 +1,105 @@
+/* Counselor Tests Page Styles */
+
+.counselor-tests-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #f0f2f5;
+}
+
+/* Page Header */
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 24px;
+  gap: 8px;
+  background: #ffffff;
+  margin-bottom: 32px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  height: 22px;
+  margin-bottom: 8px;
+}
+
+.breadcrumb-item {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.breadcrumb-item a {
+  color: rgba(0, 0, 0, 0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb-item a:hover {
+  color: #1890ff;
+}
+
+.breadcrumb-item.current {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* Page Title */
+.page-title-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 16px;
+  width: 100%;
+  height: 40px;
+}
+
+.page-title {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.85);
+  margin: 0;
+}
+
+/* Tests Grid */
+.tests-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  gap: 16px;
+  flex-wrap: wrap;
+  max-width: 1184px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .tests-grid {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .tests-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .page-header {
+    padding: 12px 16px;
+  }
+}
+

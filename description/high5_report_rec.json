@@ -1,0 +1,379 @@
+{
+  "THINKER": {
+    "super_strength": {
+      "en": [
+        "Provide deep research to support group projects: summarise complex information into clear explanations.",
+        "Outline project plans by breaking large tasks into manageable steps; your structured thinking ensures nothing important is overlooked.",
+        "Host thoughtful discussions where you encourage peers to explore ideas and ask questions; your reflective approach inspires deeper understanding."
+      ],
+      "ru": [
+        "Проводите глубокое исследование в поддержку групповых проектов: преобразуйте сложную информацию в ясные объяснения.",
+        "Разбивайте большие задачи на управляемые шаги и составляйте планы проектов; ваше структурированное мышление помогает не упустить важное.",
+        "Организуйте вдумчивые обсуждения, побуждая сверстников исследовать идеи и задавать вопросы; ваш рефлексивный подход помогает глубже понять тему."
+      ],
+      "kk": [
+        "Топтық жобаларды қолдау үшін терең зерттеу жүргізіңіз: күрделі ақпаратты нақты түсіндіруге айналдырыңыз.",
+        "Ірі тапсырмаларды басқарылатын қадамдарға бөліп, жоба жоспарларын жасаңыз; сіздің құрылымдық ойлауыңыз маңызды нәрселерді назардан тыс қалдырмайды.",
+        "Әріптестеріңізді идеяларды зерттеп, сұрақ қоюға ынталандыратын саналы талқылаулар ұйымдастырыңыз; сіздің ойландыратын тәсіліңіз терең түсінуге шабыт береді."
+      ]
+    },
+    "growth_zone": {
+      "en": [
+        "Limit your research time by setting deadlines, then proceed to action; this builds decisiveness and prevents overthinking.",
+        "Practice summarising key points in simple language to communicate insights quickly during group discussions.",
+        "Engage in activities that require immediate feedback, such as debates or hackathons, to train faster idea sharing."
+      ],
+      "ru": [
+        "Устанавливайте сроки для исследований и переходите к действиям — это развивает решительность и предотвращает излишнее обдумывание.",
+        "Тренируйтесь формулировать ключевые мысли простыми словами, чтобы быстро делиться выводами в групповых обсуждениях.",
+        "Участвуйте в мероприятиях, где требуется мгновенная обратная связь, например, в дебатах или хакатонах, чтобы развивать навык быстрого обмена идеями."
+      ],
+      "kk": [
+        "Зерттеу үшін уақыт шегін белгілеп, әрекетке көшіңіз — бұл шешімділік қалыптастырады және артық ойлаудың алдын алады.",
+        "Топтық талқылауда нәтижелермен тез бөлісу үшін басты ойларды қарапайым сөздермен жеткізуге жаттығыңыз.",
+        "Жедел кері байланысты қажет ететін іс-шараларға, мысалы, пікірталастарға немесе хакатондарға қатысыңыз — бұл идеяларды тезірек бөлісуді үйретеді."
+      ]
+    },
+    "delegation_zone": {
+      "en": [
+        "Collaborate with peers who excel at quick decision-making when urgent choices are needed, letting them drive the pace while you provide analysis.",
+        "Ask teammates with strong social awareness to lead tasks requiring emotional engagement, so you can focus on logical aspects.",
+        "Delegate routine tasks that involve frequent multitasking; invest your energy in strategic analysis and planning."
+      ],
+      "ru": [
+        "При необходимости срочных решений работайте с теми, кто быстро принимает решения, — пусть они задают темп, а вы предоставляйте анализ.",
+        "Поручайте задачи, требующие эмоционального участия, коллегам с развитой социальной чувствительностью, чтобы вы могли сосредоточиться на логике.",
+        "Делегируйте рутинные задачи, требующие постоянного переключения; направьте энергию на стратегический анализ и планирование."
+      ],
+      "kk": [
+        "Шұғыл шешімдер қажет болғанда жылдам шешім қабылдайтын адамдармен жұмыс істеңіз; олар қарқын берсін, ал сіз талдауыңызды ұсыныңыз.",
+        "Эмоциялық қатысуды қажет ететін тапсырмаларды әлеуметтік сезімталдығы жоғары адамдарға тапсырыңыз, ал өзіңіз логикалық бөліктерге көңіл бөліңіз.",
+        "Үнемі көп міндетті орындауды қажет ететін рутиналық тапсырмаларды тапсырыңыз; энергияңызды стратегиялық талдау мен жоспарлауға жұмсаңыз."
+      ]
+    }
+  },
+
+  "PROBLEM_SOLVER": {
+    "super_strength": {
+      "en": [
+        "Take the lead in diagnosing issues in group assignments; your ability to identify root causes and propose solutions keeps projects on track",
+        "Design checklists and troubleshooting guides for peers; this leverages your structured thinking and prevents repeated errors.",
+        "Encourage a culture of continuous improvement by sharing lessons learned after resolving challenges."
+      ],
+      "ru": [
+        "Берите на себя инициативу в диагностике проблем в групповых заданиях; ваша способность выявлять коренные причины и предлагать решения помогает удерживать проекты на правильном курсе",
+        "Создавайте контрольные списки и инструкции по устранению неполадок для команды — это использует ваше структурированное мышление и предотвращает повторение ошибок.",
+        "Рассказывайте о полученных уроках после решения проблем, формируя культуру постоянного улучшения."
+      ],
+      "kk": [
+        "Топтық тапсырмалардағы мәселелерді анықтауда бастамашы болыңыз; түпкі себептерді анықтап, шешімдер ұсыну қабілетіңіз жобаларды дұрыс жолда ұстайды",
+        "Команда үшін тексеру тізімдері мен ақауларды жою жөніндегі нұсқаулар жасаңыз — бұл сіздің құрылымды ойлауыңызды пайдаланып, қателердің қайталануын болдырмайды.",
+        "Қиындықтарды шешкеннен кейін алынған сабақтармен бөлісіп, үздіксіз жетілдіру мәдениетін қалыптастырыңыз."
+      ]
+    },
+    "growth_zone": {
+      "en": [
+        "Pause before fixing; ask clarifying questions to understand others' perspectives; this fosters collaboration and ensures that solutions address underlying needs.",
+        "Explain your reasoning clearly and step-by-step when presenting solutions, helping classmates learn from your process.",
+        "Develop patience for tasks that don't immediately show problems by setting aside time for maintenance and prevention."
+      ],
+      "ru": [
+        "Перед тем как исправлять, сделайте паузу и задайте уточняющие вопросы, чтобы понять точки зрения других; это укрепляет сотрудничество и помогает находить решения, соответствующие реальным потребностям.",
+        "Представляя решения, четко и пошагово объясняйте логику — это позволяет одноклассникам учиться на вашем примере.",
+        "Развивайте терпение к задачам, в которых проблемы не видны сразу, выделяя время на профилактику и обслуживание."
+      ],
+      "kk": [
+        "Бірден түзетуге кіріспес бұрын кідіріп, басқалардың көзқарастарын түсіну үшін нақтылаушы сұрақтар қойыңыз — бұл ынтымақтастықты нығайтады және шешімдер негізгі қажеттіліктерге сәйкес болуын қамтамасыз етеді.",
+        "Шешімдерді ұсынғанда логикаңызды анық және кезең-кезеңімен түсіндіріңіз — бұл сыныптастарға сіздің тәсіліңізден үйренуге көмектеседі.",
+        "Мәселелер бірден байқалмайтын тапсырмаларға шыдамдылық танытыңыз; алдын алу мен күтімге уақыт бөліңіз."
+      ]
+    },
+    "delegation_zone": {
+      "en": [
+        "When tasks demand emotional sensitivity rather than analysis, work with classmates skilled in communication and empathy.",
+        "Delegate repetitive or administrative tasks so you can focus on problem-solving and innovation.",
+        "Use templates and automation tools to handle routine processes, freeing time for complex challenges."
+      ],
+      "ru": [
+        "Если задача требует эмоциональной чуткости, а не анализа, работайте с одноклассниками, сильными в коммуникации и эмпатии.",
+        "Делегируйте повторяющиеся или административные задачи, чтобы сосредоточиться на решении проблем и инновациях.",
+        "Используйте шаблоны и инструменты автоматизации для рутинных процессов, чтобы высвободить время для сложных задач."
+      ],
+      "kk": [
+        "Тапсырма логикалық талдаудан гөрі эмоциялық сезімталдықты қажет етсе, қарым-қатынасы мен эмпатиясы мықты сыныптастармен жұмыс істеңіз.",
+        "Қайталанатын немесе әкімшілік тапсырмаларды тапсырып, мәселе шешу мен жаңашылдыққа назар аударыңыз.",
+        "Рутиналық процестерді басқару үшін шаблондар мен автоматтандыру құралдарын қолданыңыз — бұл күрделі мәселелерге уақыт бөлуге мүмкіндік береді."
+      ]
+    }
+  },
+
+  "STRATEGIST": {
+    "super_strength": {
+      "en": [
+        "Contribute to long-term planning of projects by outlining milestones and anticipating potential obstacles",
+        "Present big-picture perspectives to help peers see how their work fits into overall goals, fostering motivation and alignment.",
+        "Create alternative pathways in case of unexpected changes, demonstrating foresight and adaptability."
+      ],
+      "ru": [
+        "Участвуйте в долгосрочном планировании проектов, определяя ключевые этапы и предвидя возможные препятствия",
+        "Делитесь общей картиной, чтобы товарищи понимали, как их вклад вписывается в общие цели, — это повышает мотивацию и согласованность.",
+        "Разрабатывайте альтернативные сценарии на случай неожиданных изменений, демонстрируя дальновидность и гибкость."
+      ],
+      "kk": [
+        "Жобалардың ұзақ мерзімді жоспарын жасауға қатысыңыз: негізгі кезеңдерді белгілеп, ықтимал кедергілерді алдын ала болжап отырыңыз",
+        "Әріптестерге олардың жұмысының жалпы мақсаттарға қалай сәйкес келетінін көрсету үшін кеңінен қараңыз — бұл ынталандыру мен үйлесімділікті арттырады.",
+        "Күтпеген өзгерістер болған жағдайда балама жолдар жасаңыз — бұл көрегендік пен икемділікті көрсетеді."
+      ]
+    },
+    "growth_zone": {
+      "en": [
+        "Balance thorough planning with flexibility by regularly reviewing and adjusting plans based on new information.",
+        "Practise rapid prototyping or small-scale experiments to test ideas instead of relying solely on theoretical plans.",
+        "Share early drafts of strategies with peers to gather feedback and prevent overplanning."
+      ],
+      "ru": [
+        "Совмещайте детальное планирование с гибкостью, регулярно пересматривая и корректируя планы по мере появления новой информации.",
+        "Пробуйте быстрые прототипы или небольшие эксперименты для проверки идей, а не полагайтесь только на теорию.",
+        "Делитесь черновыми вариантами стратегий с другими, чтобы получать обратную связь и избегать чрезмерного планирования."
+      ],
+      "kk": [
+        "Жаңа ақпаратқа сәйкес жоспарларды үнемі қарап, түзету арқылы мұқият жоспарлауды икемділікпен үйлестіріңіз.",
+        "Идеяларды теорияға ғана сүйенбей, шағын эксперименттер немесе жедел прототиптер арқылы сынап көріңіз.",
+        "Стратегиялардың алғашқы нұсқаларын сыныптастармен бөлісіп, пікір алып, шамадан тыс жоспарлаудан сақтаныңыз."
+      ]
+    },
+    "delegation_zone": {
+      "en": [
+        "Let classmates who thrive on improvisation handle tasks requiring spontaneous adaptation while you focus on long-term direction.",
+        "Delegate emotionally charged or high-stakes decisions to peers with strong interpersonal skills, so you can concentrate on structural analysis.",
+        "Support team members who manage day-to-day execution, providing guidance but avoiding micromanagement."
+      ],
+      "ru": [
+        "Позвольте одноклассникам, умеющим импровизировать, заниматься задачами, требующими спонтанной адаптации, а сами сосредоточьтесь на долгосрочном направлении.",
+        "Передавайте эмоционально сложные или рискованные решения товарищам с сильными межличностными навыками, чтобы вы могли сосредоточиться на структурном анализе.",
+        "Поддерживайте тех, кто занимается повседневным исполнением, предоставляя общее руководство, но избегая микроменеджмента."
+      ],
+      "kk": [
+        "Импровизацияға бейім сыныптастарға күтпеген жағдайға бейімделуді қажет ететін тапсырмаларды тапсырыңыз, ал өзіңіз ұзақ мерзімді бағытқа назар аударыңыз.",
+        "Эмоциялық күрделі немесе тәуекелі жоғары шешімдерді қарым-қатынасы күшті әріптестерге қалдырып, құрылымдық талдауға назар аударыңыз.",
+        "Күнделікті орындаумен айналысатын командаластарды қолдап, жалпы бағыт беріңіз, бірақ ұсақ бақылаудан аулақ болыңыз."
+      ]
+    }
+  },
+
+  "PHILOMATH": {
+    "super_strength": {
+      "en": [
+        "Use your curiosity to explore advanced topics and bring fresh perspectives to projects",
+        "Share resources, articles, and tools with classmates, acting as the group’s knowledge curator.",
+        "Take responsibility for learning new techniques or technologies quickly and teaching them to others."
+      ],
+      "ru": [
+        "Используйте любознательность, чтобы изучать сложные темы и привносить свежие идеи в проекты",
+        "Делитесь ресурсами, статьями и инструментами с одноклассниками, становясь хранителем знаний команды.",
+        "Быстро осваивайте новые методы и технологии и делитесь этим знанием с другими."
+      ],
+      "kk": [
+        "Қызығушылығыңызды пайдаланып, күрделі тақырыптарды зерттеп, жобаларға жаңа көзқарастар енгізіңіз",
+        "Сыныптастарыңызбен ресурстармен, мақалалармен және құралдармен бөлісіп, топтың білім сақтаушысы болыңыз.",
+        "Жаңа әдістер мен технологияларды тез меңгеріп, бұл білімді басқаларға үйретіңіз."
+      ]
+    },
+    "growth_zone": {
+      "en": [
+        "Commit to completing assignments even when the initial excitement fades; create a schedule to maintain momentum.",
+        "Focus on one area of study at a time to develop deeper expertise before moving on to another interest.",
+        "Use planning tools such as timelines or study trackers to turn enthusiasm into consistent progress."
+      ],
+      "ru": [
+        "Заканчивайте задачи, даже когда первоначальный интерес уходит; составьте график, чтобы поддерживать темп.",
+        "Сосредотачивайтесь на одной области за раз, чтобы выработать глубокую экспертизу, прежде чем переходить к новой теме.",
+        "Используйте планировщики, таймлайны или трекеры, чтобы превращать энтузиазм в стабильный прогресс."
+      ],
+      "kk": [
+        "Алғашқы қызығушылық басылғанда да тапсырмаларды аяқтап отырыңыз; қарқын сақтау үшін жоспар құрыңыз.",
+        "Терең сараптама қалыптастыру үшін бір салаға бір уақытта көңіл бөліңіз, содан кейін ғана басқа қызығушылыққа ауысыңыз.",
+        "Уақыт кестелері немесе оқу бақылаушылары сияқты жоспарлау құралдарын қолданып, ынта-жігерді тұрақты прогреске айналдырыңыз."
+      ]
+    },
+    "delegation_zone": {
+      "en": [
+        "Delegate repetitive or detail-heavy tasks to peers who enjoy routine, allowing you to concentrate on learning-intensive activities.",
+        "Partner with classmates who excel in implementation to apply knowledge effectively after research.",
+        "Use templates and standard procedures for tasks that do not require creativity, reducing the effort needed."
+      ],
+      "ru": [
+        "Рутинные или требующие внимания к деталям задачи передавайте тем, кому они нравятся, чтобы сосредоточиться на обучении.",
+        "Работайте с одноклассниками, сильными в реализации, чтобы эффективно применять знания после исследований.",
+        "Используйте шаблоны и стандартизированные процедуры в задачах, где не требуется креативность, чтобы снизить затраты сил."
+      ],
+      "kk": [
+        "Рутиналық немесе детальды қажет ететін тапсырмаларды оны ұнататын адамдарға беріп, білім талап ететін істерге көңіл бөліңіз.",
+        "Зерттеуден кейін білімді тиімді қолдану үшін іске асыруға шебер сыныптастармен жұптасып жұмыс істеңіз.",
+        "Шығармашылық қажет етпейтін тапсырмаларда шаблондар мен стандартты процедураларды қолданыңыз — бұл күшті үнемдейді."
+      ]
+    }
+  },
+
+  "COACH": {
+    "super_strength": {
+      "en": [
+        "Act as a mentor by encouraging peers, offering constructive feedback, and celebrating their progress",
+        "Organize study sessions or peer-review groups where you guide discussions and support others' growth.",
+        "Foster a motivating environment by recognising individual strengths and helping classmates set realistic goals."
+      ],
+      "ru": [
+        "Выступайте наставником: поддерживайте одноклассников, давайте конструктивную обратную связь и отмечайте их достижения",
+        "Организуйте учебные сессии или группы взаимопомощи, где вы направляете обсуждения и способствуете росту других.",
+        "Создавайте мотивирующую атмосферу, отмечая сильные стороны каждого и помогая ставить реалистичные цели."
+      ],
+      "kk": [
+        "Тәлімгер болыңыз: сыныптастарыңызды қолдап, құрылымды кері байланыс беріп, олардың жетістіктерін атап өтіңіз",
+        "Сіз талқылауларды бағыттап, басқалардың дамуын қолдайтын оқу сессиялары немесе өзара шолу топтарын ұйымдастырыңыз.",
+        "Әр адамның күшті жақтарын атап, шынайы мақсаттар қоюға көмектесу арқылы ынталандыратын орта қалыптастырыңыз."
+      ]
+    },
+    "growth_zone": {
+      "en": [
+        "Set personal boundaries to avoid taking on too much emotional responsibility and maintain your own well-being.",
+        "Practise delivering concise advice tailored to specific needs, particularly when time is limited.",
+        "Develop the habit of asking powerful questions that prompt others to think independently rather than providing solutions immediately."
+      ],
+      "ru": [
+        "Устанавливайте личные границы, чтобы не брать на себя чрезмерную эмоциональную нагрузку и сохранять собственное благополучие.",
+        "Отрабатывайте умение давать краткие и адресные советы, особенно когда время ограничено.",
+        "Развивайте привычку задавать сильные вопросы, которые заставляют других думать самостоятельно, вместо того чтобы сразу предлагать решения."
+      ],
+      "kk": [
+        "Өзіңізді қорғау үшін жеке шекараларды белгілеп, шамадан тыс эмоционалдық жауапкершілікті алмаңыз.",
+        "Уақыт аз болғанда қысқа әрі нақты кеңес беру дағдыларын дамытыңыз.",
+        "Шешімдерді бірден ұсынудың орнына, басқаларды өз бетінше ойлануға итермелейтін маңызды сұрақтар қою әдетін қалыптастырыңыз."
+      ]
+    },
+    "delegation_zone": {
+      "en": [
+        "Assign technical or detail-oriented tasks to peers with relevant skills while you focus on facilitation and support.",
+        "Encourage a shared approach to emotional support within the group to prevent burnout.",
+        "Use structured conversation frameworks when discussions become complex to ensure clarity and efficiency."
+      ],
+      "ru": [
+        "Технические или детальные задачи поручайте тем, у кого есть соответствующие навыки, а сами концентрируйтесь на координации и поддержке.",
+        "Призывайте делить ответственность за эмоциональную поддержку в группе, чтобы избежать выгорания.",
+        "Используйте структурированные схемы общения, когда обсуждения становятся сложными, чтобы обеспечить ясность и эффективность."
+      ],
+      "kk": [
+        "Техникалық немесе детальдық тапсырмаларды осы дағдыларға ие адамдарға тапсырып, өзіңіз үйлестіру мен қолдауға назар аударыңыз.",
+        "Шаршаудың алдын алу үшін топ ішінде эмоционалдық қолдауды бірлесе көрсетуге шақырыңыз.",
+        "Әңгімелер күрделі болғанда түсініктілік пен тиімділікті қамтамасыз ету үшін құрылымды сөйлесу үлгілерін қолданыңыз."
+      ]
+    }
+  },
+
+  "EMPATHIZER": {
+    "super_strength": {
+      "en": [
+        "Use your ability to sense emotions to identify and address tensions early, helping maintain harmony",
+        "Provide a calming presence during stressful situations, reassuring peers and encouraging constructive dialogue.",
+        "Volunteer to mediate when misunderstandings arise, ensuring everyone feels heard and respected."
+      ],
+      "ru": [
+        "Используйте способность чувствовать эмоции, чтобы заранее замечать и устранять напряжение, поддерживая гармонию",
+        "В стрессовых ситуациях сохраняйте спокойствие, чтобы успокоить одноклассников и стимулировать конструктивный диалог.",
+        "Беритесь посредничать при возникновении недопонимания, чтобы каждый чувствовал себя услышанным и уважаемым."
+      ],
+      "kk": [
+        "Эмоцияларды сезіну қабілетіңізді қолданып, шиеленісті ерте байқап, оны жою арқылы үйлесімділікті сақтаңыз",
+        "Стресс жағдайында сабырлы болыңыз, әріптестеріңізге сенімділік беріп, конструктивті әңгімеге ынталандырыңыз.",
+        "Түсінбеушілік пайда болғанда делдалдық етуге ұсыныс жасаңыз, әр адамның тыңдалып, құрметтелуін қамтамасыз етіңіз."
+      ]
+    },
+    "growth_zone": {
+      "en": [
+        "Practise distinguishing between your feelings and others’ to protect your own emotional energy.",
+        "Learn to assert your needs by saying “no” when necessary, recognising that boundaries enhance empathy.",
+        "Build confidence in giving direct, honest feedback, even when difficult conversations arise."
+      ],
+      "ru": [
+        "Учитесь отделять собственные эмоции от чужих, чтобы беречь свою эмоциональную энергию.",
+        "Учитесь отстаивать свои потребности, говоря «нет», когда это необходимо, — границы делают эмпатию сильнее.",
+        "Развивайте уверенность давать прямую и честную обратную связь, даже когда разговоры трудные."
+      ],
+      "kk": [
+        "Өз эмоцияларыңыз бен басқалардың эмоцияларын ажыратып үйреніңіз — бұл сіздің эмоционалды энергияңызды сақтайды.",
+        "Қажет болғанда «жоқ» деп айту арқылы өз қажеттіліктеріңізді қорғауға үйреніңіз — шекараларды сақтау эмпатияны күшейтеді.",
+        "Қиын әңгімелер кезінде де тура және шынайы кері байланыс беруге сенімділікті дамытуға тырысыңыз."
+      ]
+    },
+    "delegation_zone": {
+      "en": [
+        "Let classmates with strong assertiveness handle conflict resolution when firmness is required, while you provide support.",
+        "Use written communication (emails, messages) when face-to-face discussions become overwhelming.",
+        "Collaborate with decisive peers for tasks requiring quick decisions, sharing responsibility."
+      ],
+      "ru": [
+        "Когда нужна жесткость, позвольте конфликт решать одноклассникам с сильной напористостью, а сами оставайтесь поддержкой.",
+        "Когда личные обсуждения слишком эмоциональны, переходите на письменное общение — письма или сообщения.",
+        "В задачах, требующих быстрых решений, сотрудничайте с решительными одноклассниками, разделяя ответственность."
+      ],
+      "kk": [
+        "Қатаңдық қажет кезде қақтығысты шешуді тәуелсіздігі жоғары сыныптастарға беріп, өзіңіз қолдау көрсетіңіз.",
+        "Бетпе-бет талқылаулар шамадан тыс эмоциялық болса, электрондық хаттар мен хабарламаларды пайдаланып, жазбаша түрде сөйлесіңіз.",
+        "Жылдам шешімдер қажет болатын тапсырмаларда шешімді сыныптастармен бірлесіп жұмыс істеп, жауапкершілікті бөлісіңіз."
+      ]
+    }
+  },
+
+  "STORYTELLER": {
+    "super_strength": {
+      "en": [
+        "Use narrative techniques to make complex concepts accessible and engaging for your peers",
+        "Design presentations, visuals, or stories that align project goals with relatable themes, keeping teams focused.",
+        "Adapt your storytelling to the audience, ensuring that key messages resonate and inspire action."
+      ],
+      "ru": [
+        "Используйте повествовательные техники, чтобы сложные понятия были понятны и увлекательны для одноклассников",
+        "Создавайте презентации, визуализации или истории, связывающие цели проекта с близкими темами, чтобы команда оставалась сосредоточенной.",
+        "Адаптируйте рассказы под аудиторию, чтобы ключевые сообщения резонировали и побуждали к действию."
+      ],
+      "kk": [
+        "Күрделі ұғымдарды сыныптастарға түсінікті әрі қызықты ету үшін баяндау тәсілдерін қолданыңыз",
+        "Жобаның мақсаттарын таныс тақырыптармен байланыстыратын презентациялар, визуалды материалдар немесе әңгімелер әзірлеп, топтың назарын сақтаңыз.",
+        "Әңгімелеріңізді аудиторияға бейімдеп, негізгі хабарламалардың шабыттандырып, әрекетке итермелеуіне көз жеткізіңіз."
+      ]
+    },
+    "growth_zone": {
+      "en": [
+        "Practise structuring your narratives to stay concise, highlighting main points without unnecessary details.",
+        "Strengthen logical reasoning skills to complement your creativity during tasks that require analytical thinking.",
+        "Explore different communication formats—such as charts or bullet points—when a story is not the most efficient method."
+      ],
+      "ru": [
+        "Учитесь структурировать истории так, чтобы они были короткими и содержали только основные моменты.",
+        "Развивайте логическое мышление, чтобы дополнить креативность в задачах, где нужна аналитика.",
+        "Используйте разные форматы общения — диаграммы, списки — когда рассказ не самый эффективный способ."
+      ],
+      "kk": [
+        "Әңгімелеріңізді құрылымдауды үйреніп, негізгі ойларды қысқа әрі артықсыз жеткізіңіз.",
+        "Аналитикалық ойлау талап етілетін тапсырмаларда шығармашылығыңызды толықтыру үшін логикалық ойлау дағдыларын дамытуға күш салыңыз.",
+        "Әңгіме ең тиімді әдіс болмаса, диаграмма немесе тармақталған тізім сияқты түрлі коммуникация форматтарын қолданыңыз."
+      ]
+    },
+    "delegation_zone": {
+      "en": [
+        "Delegate data analysis or detail-oriented tasks to peers who enjoy working with numbers and specifics.",
+        "Use templates and frameworks for reports or documents that require a straightforward approach.",
+        "Partner with analytical classmates to balance imaginative ideas with practical structure."
+      ],
+      "ru": [
+        "Передавайте анализ данных и детализированные задачи тем, кто любит работать с цифрами и деталями.",
+        "Используйте шаблоны и рамки для отчетов или документов, где нужен прямой подход.",
+        "Работайте в паре с аналитически настроенными одноклассниками, чтобы сбалансировать творческие идеи с практической структурой."
+      ],
+      "kk": [
+        "Деректерді талдау немесе нақты бөлшектерге мән беретін тапсырмаларды санды жақсы көретін әріптестерге беріңіз.",
+        "Тікелей тәсілді қажет ететін есептер немесе құжаттар үшін шаблондар мен құрылымдарды қолданыңыз.",
+        "Шығармашылық идеяларды практикалық құрылыммен теңестіру үшін аналитикалық сыныптастармен жұмыс істеңіз."
+      ]
+    }
+  }
+}

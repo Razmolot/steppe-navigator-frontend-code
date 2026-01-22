@@ -1,0 +1,126 @@
+.soft-skill-report {
+  width: 100%;
+}
+
+.soft-skill-profile-card {
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.soft-skill-profile-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.soft-skill-profile-subtitle {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.soft-skill-radar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.soft-skill-metrics-card {
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.soft-skill-metrics-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.soft-skill-sections {
+  margin-top: 24px;
+}
+
+.soft-skill-sections .ant-collapse {
+  background: transparent;
+  border: none;
+}
+
+.soft-skill-sections .ant-collapse-item {
+  margin-bottom: 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.soft-skill-sections .ant-collapse-header {
+  padding: 12px 16px !important;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #fafafa;
+}
+
+.soft-skill-sections .ant-collapse-content-box {
+  padding: 16px;
+}
+
+.soft-skill-type-description {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+  margin: 8px 0 0 0;
+}
+
+.soft-skill-try-now-card {
+  margin: 24px 0;
+  padding: 20px;
+  background: #f6f9fc;
+  border-radius: 8px;
+}
+
+.soft-skill-try-now-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.soft-skill-try-now-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.soft-skill-try-now-item {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+  border-left: 4px solid #1890ff;
+}
+
+.soft-skill-try-now-label {
+  font-weight: 600;
+  color: #1890ff;
+  margin-bottom: 4px;
+}
+
+.soft-skill-try-now-task {
+  font-size: 14px;
+  color: #444;
+  margin: 0;
+}
+
+/* Table styling */
+.soft-skill-metrics-card .ant-table {
+  font-size: 14px;
+}
+
+.soft-skill-metrics-card .ant-table-thead > tr > th {
+  background-color: #fafafa;
+  font-weight: 600;
+}
+

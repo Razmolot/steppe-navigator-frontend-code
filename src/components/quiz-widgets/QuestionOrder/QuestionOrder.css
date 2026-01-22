@@ -1,0 +1,10 @@
+.question-order {
+  padding: 30px 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  background-color: #FAFAFA;
+}
+

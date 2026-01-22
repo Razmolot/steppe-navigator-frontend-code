@@ -1,0 +1,41 @@
+.question-checkboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 80px;
+  row-gap: 25px;
+}
+
+.question-checkboxes__option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+  cursor: pointer;
+}
+
+.question-checkboxes__option input {
+  --size: 16px;
+
+  flex: 0 0 var(--size);
+  width: var(--size);
+  height: var(--size);
+
+  accent-color: #1890FF;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.question-checkboxes__option-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+@media (max-width: 768px) {
+  .question-checkboxes {
+    grid-template-columns: 1fr;
+  }
+}
+

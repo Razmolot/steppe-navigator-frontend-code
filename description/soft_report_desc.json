@@ -1,0 +1,68 @@
+# в отчет собирается описание + strengths
+{
+  "communication": {
+    "en": "Communication reflects how a student expresses ideas, shares information and builds understanding with others. It includes clarity of speech, the ability to formulate thoughts, active listening and the willingness to participate in dialogue.",
+    "ru": "Коммуникация отражает то, как ученик выражает идеи, делится информацией и выстраивает взаимопонимание с другими. В неё входят ясность речи, умение формулировать мысли, активное слушание и готовность участвовать в диалоге.",
+    "kk": "Коммуникация оқушының идеяларын жеткізуі, ақпаратпен бөлісуі және басқалармен өзара түсіністік орнатуы арқылы көрінеді. Ол сөйлеудің анықтығын, ойды дұрыс жеткізу қабілетін, белсенді тыңдауды және диалогқа қатысуға дайын болуды қамтиды.",
+    "strengths": {
+      "en": "Strengths include the ability to explain ideas clearly, help others understand complex topics, facilitate discussions and create a positive, open communication environment.",
+      "ru": "Сильные стороны включают умение ясно объяснять идеи, помогать другим разбираться в сложных темах, вести обсуждения и создавать открытую, доброжелательную атмосферу общения.",
+      "kk": "Күшті тұстарға ойды анық жеткізу, күрделі тақырыптарды түсіндіруге көмектесу, талқылауды жүргізу және ашық, жағымды коммуникация ортасын қалыптастыру жатады."
+    }
+  },
+
+  "teamwork": {
+    "en": "Teamwork describes how a student collaborates with others: sharing responsibilities, supporting teammates, respecting different views and contributing to common goals. It reflects the ability to work effectively in group environments.",
+    "ru": "Командная работа описывает, как ученик взаимодействует с другими: распределяет задачи, поддерживает участников команды, уважает разные точки зрения и вносит вклад в общее дело. Она показывает способность эффективно работать в группе.",
+    "kk": "Командалық жұмыс оқушының басқалармен бірлесіп әрекет етуін сипаттайды: міндеттерді бөлу, команда мүшелерін қолдау, түрлі көзқарастарды құрметтеу және ортақ мақсаттарға үлес қосу.",
+    "strengths": {
+      "en": "Strengths include cooperation, conflict reduction, helping peers, creating trust within a group and enhancing the group's productivity and cohesion.",
+      "ru": "Сильные стороны включают умение сотрудничать, снижать конфликты, помогать сверстникам, формировать доверие в группе и повышать её эффективность и сплочённость.",
+      "kk": "Күшті тұстарға бірлескен әрекет, жанжалдарды азайту, сыныптастарға көмектесу, топ ішінде сенім қалыптастыру және оның тиімділігі мен бірлігін арттыру жатады."
+    }
+  },
+
+  "systems_thinking": {
+    "en": "Systems thinking describes a student's ability to see the bigger picture, understand how different elements influence one another and identify patterns or underlying structures. It helps the student analyze situations more deeply and predict consequences.",
+    "ru": "Системное мышление отражает способность ученика видеть общую картину, понимать взаимосвязи между элементами, выявлять закономерности и скрытые структуры. Оно помогает глубже анализировать ситуации и предсказывать последствия.",
+    "kk": "Жүйелік ойлау оқушының жалпы картинаны көруі, элементтердің бір-біріне әсерін түсінуі және заңдылықтар мен жасырын құрылымдарды анықтауы арқылы көрінеді. Ол жағдайларды терең талдауға және салдарын болжауға көмектеседі.",
+    "strengths": {
+      "en": "Strengths include strategic thinking, the ability to connect ideas, understanding long-term effects and offering well-reasoned solutions.",
+      "ru": "Сильные стороны включают стратегическое мышление, умение связывать идеи, видеть долгосрочные последствия и предлагать продуманные решения.",
+      "kk": "Күшті тұстарға стратегиялық ойлау, идеяларды байланыстыру, ұзақ мерзімді салдарды түсіну және негізделген шешімдер ұсыну жатады."
+    }
+  },
+
+  "creativity": {
+    "en": "Creativity reflects how a student generates new ideas, approaches problems in original ways and uses imagination to explore alternatives. It includes experimentation, flexibility and the ability to look at tasks from different perspectives.",
+    "ru": "Креативность отражает способность ученика генерировать новые идеи, искать оригинальные подходы и использовать воображение для изучения альтернатив. Она включает экспериментирование, гибкость и умение смотреть на задачи под разными углами.",
+    "kk": "Креативтілік оқушының жаңа идеялар ұсынуы, мәселелерге ерекше жолмен қарауы және қиял арқылы баламаларды зерттеуі арқылы байқалады. Ол эксперимент жасау, икемділік және тапсырмаларға әртүрлі қырынан қарау қабілетін қамтиды.",
+    "strengths": {
+      "en": "Strengths include idea generation, innovative thinking, adaptability, ability to create unique solutions and bringing fresh perspectives to group work.",
+      "ru": "Сильные стороны включают генерацию идей, инновационное мышление, адаптивность, создание нестандартных решений и привнесение свежего взгляда в групповую работу.",
+      "kk": "Күшті тұстарға идеялар генерациясы, инновациялық ойлау, бейімделгіштік, ерекше шешімдер жасау және топтық жұмысқа жаңа көзқарас енгізу жатады."
+    }
+  },
+
+  "emotional_intelligence": {
+    "en": "Emotional intelligence reflects a student's awareness of emotions — both their own and others' — and their ability to manage feelings, show empathy, build relationships and respond constructively in social situations.",
+    "ru": "Эмоциональный интеллект отражает осознанность ученика в отношении эмоций — своих и окружающих — и способность управлять чувствами, проявлять эмпатию, выстраивать отношения и конструктивно реагировать в социальных ситуациях.",
+    "kk": "Эмоционалды интеллект оқушының өзінің және басқалардың эмоцияларын түсінуі, сезімдерді басқаруы, эмпатия танытуы, қарым-қатынас орнатуы және әлеуметтік жағдайларда дұрыс әрекет ету қабілеті арқылы көрінеді.",
+    "strengths": {
+      "en": "Strengths include empathy, sensitivity to others’ needs, conflict resolution, self-regulation and creating a supportive environment in groups.",
+      "ru": "Сильные стороны включают эмпатию, чувствительность к потребностям других, умение разрешать конфликты, саморегуляцию и создание поддерживающей атмосферы в группе.",
+      "kk": "Күшті тұстарға эмпатия, басқалардың қажеттіліктерін сезіну, жанжалдарды шешу, өзін-өзі реттеу және топта қолдау көрсететін орта қалыптастыру жатады."
+    }
+  },
+
+  "uncertainty": {
+    "en": "Working under uncertainty shows how a student behaves in situations where information is incomplete, outcomes are unclear or conditions change rapidly. It reflects adaptability, decision-making under pressure and willingness to try new approaches.",
+    "ru": "Работа в условиях неопределённости показывает, как ученик действует, когда информации недостаточно, результат не очевиден или условия быстро меняются. Она отражает адаптивность, умение принимать решения под давлением и готовность пробовать новые подходы.",
+    "kk": "Белгісіздік жағдайында жұмыс істеу — ақпарат жеткіліксіз, нәтиже түсініксіз немесе жағдай тез өзгеретін сәттерде оқушының қалай әрекет ететінін көрсетеді. Ол бейімделгіштікті, қысым кезінде шешім қабылдауды және жаңа тәсілдерді сынап көруге дайындықты білдіреді.",
+    "strengths": {
+      "en": "Strengths include flexibility, risk tolerance, resourcefulness, ability to stay calm during change and readiness to explore unfamiliar tasks.",
+      "ru": "Сильные стороны включают гибкость, толерантность к риску, находчивость, умение сохранять спокойствие при переменах и готовность пробовать новое.",
+      "kk": "Күшті тұстарға икемділік, тәуекелге төзімділік, тапқырлық, өзгерістер кезінде сабыр сақтау және жаңа тапсырмаларды зерттеуге дайын болу жатады."
+    }
+  }
+}

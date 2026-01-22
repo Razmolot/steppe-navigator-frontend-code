@@ -1,0 +1,178 @@
+.riasec-report {
+  width: 100%;
+}
+
+.riasec-profile-card {
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.riasec-profile-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.riasec-profile-subtitle {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.riasec-disclaimer {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.5;
+  font-style: italic;
+  margin: 0;
+}
+
+.riasec-radar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.riasec-type-card {
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.riasec-type-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.riasec-type-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.riasec-type-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.riasec-type-description {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+  margin: 8px 0 0 0;
+}
+
+.riasec-pilot-section {
+  margin: 20px 0;
+  padding: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  color: white;
+}
+
+.riasec-pilot-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.riasec-pilot-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.riasec-pilot-tagline {
+  font-size: 15px;
+  font-style: italic;
+  opacity: 0.95;
+}
+
+.riasec-try-section {
+  margin: 24px 0;
+  padding: 20px;
+  background: #f6f9fc;
+  border-radius: 8px;
+}
+
+.riasec-try-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.riasec-try-item {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+  border-left: 4px solid #1890ff;
+}
+
+.riasec-try-item-label {
+  font-weight: 600;
+  color: #1890ff;
+  margin-bottom: 4px;
+}
+
+.riasec-try-item-text {
+  font-size: 14px;
+  color: #444;
+  margin: 0;
+}
+
+.riasec-metrics-card {
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.riasec-metrics-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.riasec-metrics-card .ant-table {
+  font-size: 14px;
+}
+
+.riasec-metrics-card .ant-table-thead > tr > th {
+  background-color: #fafafa;
+  font-weight: 600;
+}
+
+.riasec-sections {
+  margin-top: 24px;
+}
+
+.riasec-sections .ant-collapse {
+  background: transparent;
+  border: none;
+}
+
+.riasec-sections .ant-collapse-item {
+  margin-bottom: 8px;
+  border: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9 !important;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.riasec-sections .ant-collapse-header {
+  padding: 12px 16px !important;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #fafafa;
+}
+
+.riasec-sections .ant-collapse-content-box {
+  padding: 16px;
+}
+

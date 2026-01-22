@@ -1,0 +1,145 @@
+/* Контейнер с содержимым теста */
+.high5-content {
+  min-height: 600px;
+  padding: 30px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+.high5-content .ant-card-body {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.high5-title {
+  width: 600px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 44px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.85);
+  margin: 0 0 20px 0;
+}
+
+.high5-instruction {
+  width: 601px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  gap: 12px;
+  background: #E6F7FF;
+  border-radius: 0;
+  margin-bottom: 20px;
+}
+
+.high5-instruction svg {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+}
+
+.high5-instruction span {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.15px;
+  color: #797979;
+}
+
+.high5-question-block {
+  margin-bottom: 40px;
+}
+
+.high5-subtitle {
+  width: 600px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.15px;
+  color: #000000;
+  margin: 0 0 23px 0;
+}
+
+.high5-question-scale {
+  width: 600px;
+  margin-bottom: 0;
+}
+
+.high5-actions {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.high5-navigation {
+  width: 92px;
+  height: 32px;
+  display: flex;
+  gap: 28px;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+}
+
+.high5-nav-button {
+  width: 32px;
+  height: 32px;
+  padding: 10px;
+  background: #FFFFFF;
+  border: 1px solid #D9D9D9;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: not-allowed;
+}
+
+.high5-nav-button svg {
+  width: 12px;
+  height: 12px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.high5-nav-button:disabled {
+  opacity: 1;
+}
+
+@media (max-width: 1440px) {
+  .high5-content {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .high5-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .high5-title,
+  .high5-subtitle,
+  .high5-instruction,
+  .high5-question-scale {
+    width: 100%;
+  }
+  
+  .high5-title {
+    font-size: 20px;
+  }
+}
+

@@ -1,0 +1,303 @@
+/* Test Card Component Styles */
+
+.test-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  width: 284px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 2px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.test-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.test-card-locked {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.test-card-locked .test-card-cover {
+  filter: grayscale(50%);
+}
+
+/* Cover Image */
+.test-card-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  width: 284px;
+  height: 159.75px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.test-card-aspect-ratio-keeper {
+  width: 284px;
+  height: 0;
+}
+
+/* Body */
+.test-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  gap: 8px;
+  width: 284px;
+  flex: 1;
+  order: 1;
+  align-self: stretch;
+}
+
+/* Title */
+.test-card-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  width: 236px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.test-card-title {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration-line: underline;
+  color: #0088ff;
+  margin: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.test-card-title:hover {
+  opacity: 0.8;
+}
+
+/* Description */
+.test-card-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  width: 236px;
+  min-height: 88px; /* 4 lines × 22px line-height = 88px для выравнивания карточек */
+  flex: 1;
+  order: 1;
+  align-self: stretch;
+}
+
+.test-card-description p {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.85);
+  margin: 0;
+}
+
+/* Stats Section */
+.test-card-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  width: 236px;
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+  margin-top: auto; /* Прижимает stats к низу карточки */
+}
+
+/* Stat Header */
+.test-card-stat-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  width: 236px;
+  height: 32px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.test-card-stat-label {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.test-card-info-icon {
+  width: 16px;
+  height: 16px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* Percentage */
+.test-card-percentage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 11px 0;
+  width: 236px;
+  height: 62px;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.test-card-percentage-value {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 40px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* Progress Bar */
+.test-card-progress-bar {
+  position: relative;
+  width: 236px;
+  height: 7px;
+  background: #eeeeee;
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+  overflow: hidden;
+}
+
+.test-card-progress-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 7px;
+  background: linear-gradient(90deg, #27c840 0%, #75d785 100%);
+  transition: width 0.3s ease;
+}
+
+/* Divider */
+.test-card-divider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 0;
+  width: 236px;
+  height: 18px;
+  flex: none;
+  order: 3;
+  align-self: stretch;
+  flex-grow: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Completion Text */
+.test-card-completion-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 4px;
+  width: 236px;
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+}
+
+.test-card-completion-text span {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .test-card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .test-card-cover,
+  .test-card-aspect-ratio-keeper,
+  .test-card-body {
+    width: 100%;
+  }
+
+  .test-card-cover {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .test-card-title-wrapper,
+  .test-card-description,
+  .test-card-stats,
+  .test-card-stat-header,
+  .test-card-percentage,
+  .test-card-progress-bar,
+  .test-card-divider,
+  .test-card-completion-text {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .test-card {
+    max-width: 100%;
+  }
+
+  .test-card-body {
+    padding: 16px;
+  }
+
+  .test-card-title {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .test-card-description p {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .test-card-percentage-value {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+

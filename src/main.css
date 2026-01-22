@@ -1,0 +1,274 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular,600);
+@import "tailwindcss";
+
+.ant-menu-item path {
+    fill: #000 !important;
+}
+
+.ant-menu-item-selected path,
+.ant-menu-submenu-open path {
+    fill: #1890ff !important;
+}
+
+:root {
+    --background: #F0F2F5;
+
+    --primary: #096DD9;
+
+    --indicator: #52C41A;
+
+    --black-85: #000000D9;
+    --black-25: #00000040;
+
+    --white: #ffffff;
+}
+
+
+html,
+body {
+    background-color: var(--background);
+}
+
+
+/* Antd override */
+/*.ant-select-selector,
+.ant-btn {
+    border-radius: 2px !important;
+}*/
+
+/* Header Styles */
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #001529 !important;
+    padding: 0 24px !important;
+    height: 64px;
+}
+
+.mobile-menu-button {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.header-logo {
+    padding: 4px;
+}
+
+.logo-svg {
+    height: 40px !important;
+    width: auto !important;
+}
+
+/* Desktop Menu Styles */
+.desktop-menu {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.language-selector {
+    display: flex;
+    gap: 8px;
+}
+
+.lang-button {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: opacity 0.3s;
+}
+
+.lang-button:hover {
+    opacity: 0.75;
+}
+
+.lang-button.active {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: white !important;
+    text-decoration: none;
+}
+
+.profile-link:hover {
+    opacity: 0.75;
+}
+
+.profile-link img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.user-name {
+    color: white;
+}
+
+.logout-button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    color: white !important;
+    cursor: pointer;
+    padding: 8px 12px;
+}
+
+.logout-button:hover {
+    opacity: 0.75;
+}
+
+.logout-text {
+    color: white;
+}
+
+/* Mobile Drawer Styles */
+.mobile-drawer-header {
+    padding: 8px 0;
+}
+
+.mobile-drawer-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.mobile-language-selector {
+    display: flex;
+    gap: 8px;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 16px;
+}
+
+.mobile-lang-button {
+    flex: 1;
+    padding: 8px 12px;
+    background: #f5f5f5;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.mobile-lang-button.active {
+    background: #1890ff;
+    color: white;
+    border-color: #1890ff;
+}
+
+.mobile-drawer-footer {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.mobile-profile-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.85);
+    border-radius: 2px;
+}
+
+.mobile-profile-link:hover {
+    background: #f5f5f5;
+}
+
+.mobile-profile-link img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.mobile-logout-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.85);
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+.mobile-logout-button:hover {
+    background: #f5f5f5;
+}
+
+/* Desktop Sider */
+.desktop-sider {
+    display: block;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .desktop-menu {
+        display: none;
+    }
+
+    .desktop-sider {
+        display: none !important;
+    }
+
+    .header-wrapper {
+        padding: 0 16px !important;
+    }
+
+    .logo-svg {
+        height: 30px !important;
+    }
+
+    /* Убираем паддинг на мобильных */
+    .ant-layout-content {
+        padding: 16px !important;
+    }
+
+    /* Адаптивность для страниц тестов */
+    .page-header {
+        padding: 16px 0 !important;
+    }
+
+    .page-title {
+        font-size: 20px !important;
+    }
+
+    .breadcrumb {
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-wrapper {
+        padding: 0 12px !important;
+    }
+
+    .ant-layout-content {
+        padding: 12px !important;
+    }
+}

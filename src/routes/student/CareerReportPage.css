@@ -1,0 +1,181 @@
+.student-career-report-page {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #f8fafc 100%);
+  min-height: 100vh;
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.ai-resume-block {
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  border-left: 4px solid #0ea5e9;
+  padding: 20px 24px;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #0c4a6e;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.chart-container {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.high5-section {
+  background: linear-gradient(135deg, #fae8ff 0%, #f5d0fe 100%);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.high5-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.high5-tag {
+  font-size: 15px;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+.spheres-professions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.education-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.education-toggle span {
+  color: #9ca3af;
+  transition: color 0.2s;
+}
+
+.education-toggle span.active {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.sphere-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sphere-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.sphere-reasoning-block {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  border-left: 4px solid #22c55e;
+  padding: 16px 20px;
+  border-radius: 12px;
+  color: #166534;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.professions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profession-card {
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.profession-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profession-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.profession-header h4 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+}
+
+.profession-description {
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.profession-education {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 0.9rem;
+}
+
+.edu-item {
+  margin-bottom: 12px;
+}
+
+.edu-item:last-child {
+  margin-bottom: 0;
+}
+
+.edu-item strong {
+  color: #1e293b;
+}
+
+.edu-item ul {
+  margin: 6px 0 0 24px;
+  padding: 0;
+}
+
+.edu-item li {
+  margin-bottom: 4px;
+}
+
+.edu-item a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.edu-item a:hover {
+  text-decoration: underline;
+}
+

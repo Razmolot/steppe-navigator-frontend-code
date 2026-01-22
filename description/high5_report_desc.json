@@ -1,0 +1,132 @@
+{
+  "THINKER": {
+    "title": {
+      "en": "Thinker",
+      "ru": "Мыслитель",
+      "kk": "Ойшыл"
+    },
+    
+    "strength_for_study_and_work": {
+      "en": "You learn best when you can think deeply, analyze complex topics, and search for meaning. In your future work this helps you truly understand problems, see connections between ideas, and propose well-thought-out solutions.",
+      "ru": "Вы хорошо учитесь там, где нужно вдумчиво разбирать сложные темы, анализировать и искать смысл. В будущей работе это помогает глубоко понимать задачи, видеть связи между идеями и предлагать продуманные решения.",
+      "kk": "Сіз терең ойлануды, күрделі тақырыптарды талдауды және мағынаны іздеуді қажет ететін жерлерде жақсы оқисыз. Болашақ жұмыста бұл тапсырмаларды терең түсінуге, идеялар арасындағы байланысты көруге және жақсы ойластырылған шешімдер ұсынуға көмектеседі."
+    }
+  },
+  "PROBLEM_SOLVER": {
+    "title": {
+      "en": "Problem Solver",
+      "ru": "Решатель проблем",
+      "kk": "Мәселелерді шешуші"
+    },
+    
+    "strength_for_study_and_work": {
+      "en": "In school you shine where you need to untangle mistakes, bugs, and tricky tasks. At work this becomes the ability to quickly find the root causes of problems, suggest solutions, and improve systems, processes, and services.",
+      "ru": "В учёбе вы хорошо проявляете себя там, где нужно разбираться в ошибках, «глюках» и сложных задачах. В профессии это превращается в умение быстро находить причины проблем, предлагать решения и улучшать системы, процессы и сервисы.",
+      "kk": "Оқуда сіз қателерді, «ақауларды» және күрделі тапсырмаларды талдауды қажет ететін жерлерде жақсы ашыласыз. Мамандықта бұл мәселелердің себебін тез табуға, шешімдер ұсынуға және жүйелер мен процестерді жақсартуға көмектесетін күшке айналады."
+    }
+  },
+  "STRATEGIST": {
+    "title": {
+      "en": "Strategist",
+      "ru": "Стратег",
+      "kk": "Стратег"
+    },
+    
+    "strength_for_study_and_work": {
+      "en": "In your studies you plan ahead: you can set goals, organise your time, and think about how to reach the result. Later this helps in roles where you must make decisions, build strategies, and lead projects from point A to point B.",
+      "ru": "В учёбе вы умеете планировать: распределять время, ставить цели и продумывать, как к ним прийти. В будущем это помогает в профессиях, где нужно принимать решения, выстраивать стратегию и вести проекты из точки А в точку Б.",
+      "kk": "Оқуда сіз уақытты жоспарлап, мақсат қойып, сол мақсатқа қалай жету керектігін ойластыра аласыз. Болашақта бұл шешім қабылдауды, стратегия құруды және жобаларды А нүктесінен В нүктесіне дейін жеткізуді қажет ететін мамандықтарда көмектеседі."
+    }
+  },
+  "PHILOMATH": {
+    "title": {
+      "en": "Philomath",
+      "ru": "Любитель учиться",
+      "kk": "Үйренуді жақсы көретін"
+    },
+    
+    "strength_for_study_and_work": {
+      "en": "Studying is easier for you because you are drawn to new topics and quickly dive into subjects that interest you. At work this becomes a big advantage in fast-changing fields where you need to constantly update your knowledge and learn new tools.",
+      "ru": "В учёбе вам легче, потому что вы тянетесь к новому и обычно быстро вникаете в темы, которые вас цепляют. В работе это становится большим плюсом в быстро меняющихся сферах, где важно постоянно обновлять знания и осваивать новые технологии.",
+      "kk": "Сіз үшін оқу жеңілірек, себебі жаңа нәрселерге қызығасыз және қызық тақырыптарға тез бойлайсыз. Жұмыста бұл тез өзгеретін салаларда — білімді үнемі жаңартып, жаңа технологияларды меңгеру маңызды жерде — үлкен артықшылыққа айналады."
+    }
+  },
+  "COACH": {
+    "title": {
+      "en": "Coach",
+      "ru": "Коуч / наставник",
+      "kk": "Коуч / тәлімгер"
+    },
+    
+    "strength_for_study_and_work": {
+      "en": "In school you often support classmates, can explain a topic, ask good questions, or help with a plan. Later this becomes the ability to develop people and teams — a key resource for teachers, leaders, trainers, and HR professionals.",
+      "ru": "В учёбе вы часто поддерживаете одноклассников, можете объяснить тему, задать правильный вопрос, помочь с планом. В будущем это превращается в умение развивать людей и команды — важный ресурс для преподавателей, руководителей, тренеров и HR-специалистов.",
+      "kk": "Оқуда сіз жиі сыныптастарыңызды қолдап, тақырыпты түсіндіріп, дұрыс сұрақ қоя аласыз немесе жоспар құруға көмектесесіз. Болашақта бұл адамдар мен командаларды дамыта алатын қабілетке айналады — мұғалімдер, басшылар, жаттықтырушылар және HR мамандары үшін маңызды ресурс."
+    }
+  },
+  "EMPATHIZER": {
+    "title": {
+      "en": "Empathizer",
+      "ru": "Эмпат",
+      "kk": "Эмпат"
+    },
+    
+    "strength_for_study_and_work": {
+      "en": "At school you notice people’s moods and try to make communication warmer and safer. In your career this helps you build trust, support others, and work in areas where human care is crucial — like medicine, education, service, and helping professions.",
+      "ru": "В школе вы замечаете настроение людей и стараетесь сделать общение более тёплым и безопасным. В будущей работе это помогает строить доверие, поддерживать других, работать там, где важно человеческое отношение — в медицине, образовании, сервисе, помогающих профессиях.",
+      "kk": "Мектепте сіз адамдардың көңіл-күйін байқап, қарым-қатынасты жылы әрі қауіпсіз етуге тырысасыз. Болашақта бұл сенімді қарым-қатынас құруға, басқаларды қолдауға және адамға деген жанашырлық маңызды болатын салаларда — медицинада, білімде, сервисте және көмектесетін мамандықтарда — жұмыс істеуге көмектеседі."
+    }
+  },
+  "STORYTELLER": {
+    "title": {
+      "en": "Storyteller",
+      "ru": "Сторителлер",
+      "kk": "Оқиға айтушы"
+    },
+    
+    "strength_for_study_and_work": {
+      "en": "In school it’s easier for you to remember material when you can explain it with examples, stories, and images. At work this becomes a powerful tool for presentations, promoting ideas, teaching others, and any activity where you must clearly convey meaning to people.",
+      "ru": "В учёбе вам проще запомнить материал, когда вы можете объяснить его через примеры, истории и образы. В работе это становится сильным инструментом для презентаций, продвижения идей, обучения других и любой деятельности, где важно донести смысл до людей.",
+      "kk": "Оқуда материалды мысалдар, оқиғалар мен бейнелер арқылы түсіндірген кезде оны есте сақтау сізге жеңілірек. Жұмыста бұл идеяларды ұсыну, презентациялар жасау, басқаларды оқыту және мағынаны адамдарға түсіндіру маңызды болатын кез келген қызмет үшін қуатты құралға айналады."
+    }
+  },
+  "CATALYST": {
+    "title": {
+      "en": "Catalyst",
+      "ru": "Катализатор",
+      "kk": "Катализатор"
+    },
+    
+    "strength_for_study_and_work": {
+      "en": "At school you are often the one who suggests starting a project, gathering a team, or trying something new. In your career this is valued in places that need people to start change: projects, startups, social initiatives, management, and developing new directions.",
+      "ru": "В школе вы часто становитесь тем, кто предлагает начать проект, собраться командой, попробовать новое. В профессии это ценится там, где нужны люди, запускающие изменения: в проектах, стартапах, социальных инициативах, управлении и развитии новых направлений.",
+      "kk": "Мектепте сіз жиі жаңа жобаны бастауға, команданы жинауға немесе бірдеңе жаңасын сынап көруге ұсыныс жасайтын адам боласыз. Жұмыста бұл өзгерістерді бастайтын адамдар қажет болатын жерлерде — жобаларда, стартаптарда, әлеуметтік бастамаларда, басқаруда және жаңа бағыттарды дамытуда — жоғары бағаланады."
+    }
+  },
+  "BELIEVER": {
+    "title": {
+      "en": "Believer",
+      "ru": "Человек убеждений",
+      "kk": "Құндылықтарына берілген адам"
+    },
+    
+    "strength_for_study_and_work": {
+      "en": "In school and projects you engage more when you see real meaning and benefit in the task. In your future career this helps you choose not just any job, but a field where your values match what the organisation or team is doing.",
+      "ru": "В учёбе и проектах вы включаетесь сильнее, когда видите в задании смысл и пользу. В будущей профессии это помогает выбирать не случайную работу, а ту сферу, где ваши ценности совпадают с тем, чем занимается организация или команда.",
+      "kk": "Оқу мен жобаларда сіз тапсырманың мағынасын және пайдасын көрген кезде көбірек ынталанасыз. Болашақ мамандықта бұл сізге кез келген жұмысты емес, құндылықтарыңыз ұйым немесе команда атқаратын іспен сәйкес келетін саланы таңдауға көмектеседі."
+    }
+  },
+  "SELF_BELIEVER": {
+    "title": {
+      "en": "Self-believer",
+      "ru": "Верящий в себя",
+      "kk": "Өзіне сенетін"
+    },
+    
+    "strength_for_study_and_work": {
+      "en": "In your studies you are more willing to take on difficult tasks because you believe you can handle them step by step. In your career this helps you take responsibility, try new things, start your own projects, and cope with mistakes and criticism.",
+      "ru": "В учёбе вы легче берётесь за сложные задачи, потому что верите, что сможете справиться шаг за шагом. В профессии это помогает брать ответственность, пробовать новое, начинать свои проекты и выдерживать неизбежные ошибки и критику.",
+      "kk": "Оқуда сіз күрделі тапсырмаларды орындауға оңайырақ кірісесіз, себебі біртіндеп болса да оны орындай алатыныңызға сенесіз. Жұмыста бұл жауапкершілік алуға, жаңа нәрселерді сынап көруге, өз жобаларыңызды бастауға және қателіктер мен сынға төтеп беруге көмектеседі."
+    }
+  }
+}

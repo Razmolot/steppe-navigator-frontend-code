@@ -1,0 +1,244 @@
+.riasec-result-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 64px;
+}
+
+.result-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.result-icon {
+  font-size: 72px;
+  color: #52c41a;
+  margin-bottom: 16px;
+}
+
+.result-title {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  color: rgba(0, 0, 0, 0.85);
+  margin: 0;
+}
+
+.holland-code-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.holland-code {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 72px;
+  color: #1890FF;
+  margin: 0 0 8px 0;
+  letter-spacing: 8px;
+}
+
+.holland-label {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.45);
+  margin: 0;
+}
+
+.metrics-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  justify-content: center;
+}
+
+.metric-card {
+  flex: 1;
+  max-width: 300px;
+  padding: 24px;
+  background: #FAFAFA;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.metric-icon {
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.45);
+  margin-bottom: 12px;
+}
+
+.metric-label {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.45);
+  margin-bottom: 8px;
+}
+
+.metric-value {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.consistency-warning {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  margin-bottom: 32px;
+  background: #FFF7E6;
+  border: 1px solid #FFD591;
+  border-radius: 2px;
+}
+
+.consistency-warning span {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.consistency-warning strong {
+  font-weight: 600;
+}
+
+.chart-section {
+  margin-bottom: 40px;
+  padding: 40px 32px;
+  background: #FFFFFF;
+  border: 1px solid #F0F0F0;
+  border-radius: 2px;
+}
+
+.chart-container {
+  display: flex;
+  gap: 24px;
+  height: 400px;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.chart-bars {
+  display: flex;
+  gap: 24px;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  padding-bottom: 32px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.bar-wrapper {
+  flex: 1;
+  max-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.bar {
+  width: 100%;
+  min-height: 50px;
+  border-radius: 0;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 12px;
+  transition: all 0.3s ease;
+}
+
+.bar-primary {
+  background: #1890FF;
+}
+
+.bar-secondary {
+  background: #91A3B0;
+}
+
+.bar-value {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.bar-label {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.85);
+  margin-top: 12px;
+}
+
+.result-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.return-button {
+  padding: 12px 32px;
+  height: auto;
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .riasec-result-card {
+    padding: 24px 16px;
+  }
+
+  .holland-code {
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: 4px;
+  }
+
+  .metrics-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .metric-card {
+    max-width: 100%;
+  }
+
+  .chart-container {
+    height: 300px;
+  }
+
+  .chart-bars {
+    gap: 12px;
+  }
+
+  .bar-wrapper {
+    max-width: 60px;
+  }
+
+  .bar-label {
+    font-size: 14px;
+  }
+}
+

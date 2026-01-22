@@ -1,0 +1,62 @@
+{
+  "R": {
+    "en": "Realistic types prefer hands-on activities and practical tasks that involve tools, equipment, technology, nature, or physical action. They enjoy working independently or in small teams, solving concrete problems, and creating tangible results. Such students often excel in technical, mechanical, craft, engineering, or outdoor environments where action and precision matter more than abstract theory.",
+    "ru": "Тип Realistic предпочитает практическую деятельность, работу с инструментами, техникой, механизмами, природой или задачами, требующими физического участия. Людям этого типа нравится самостоятельно или в небольших командах решать конкретные задачи и получать ощутимый результат. Они часто успешно проявляют себя в технических, инженерных, ремесленных или связанных с природой сферах, где важны действия, точность и практический смысл.",
+    "kk": "Realistic типі құралдармен, техникамен, механизмдермен, табиғатпен немесе нақты әрекет қажет ететін практикалық тапсырмалармен жұмыс істеуді ұнатады. Олар жеке немесе шағын топта нақты мәселелерді шешіп, қолмен көрінетін нәтиже алуды бағалайды. Мұндай оқушылар техникалық, инженерлік, қолөнерлік немесе табиғатқа қатысты салаларда жақсы дамиды, себебі бұл ортада әрекет пен дәлдік маңызды.",
+    "strengths": {
+      "en": "Strengths: practical, dependable, focused on action and results. Strong spatial awareness, mechanical reasoning, perseverance, accuracy, and ability to work with tools or equipment.",
+      "ru": "Сильные стороны: практичность, надёжность, ориентация на действие и результат. Сильное пространственное мышление, механическая логика, настойчивость, точность и умение работать с инструментами и техникой.",
+      "kk": "Күшті жақтары: Практикалық ойлау, сенімділік, әрекет пен нәтижеге бағытталу. Кеңістіктік ойлау, механикалық логика, табандылық, дәлдік және құралдармен немесе техникамен жұмыс істеу қабілеті."
+    }
+  },
+  "I": {
+    "en": "Investigative types are deeply curious, analytical and motivated by understanding how things work. They enjoy research, experimentation, problem-solving, data analysis, and theoretical concepts. These students thrive in environments where they can explore ideas independently, ask questions, investigate patterns, and build new knowledge. They often gravitate toward science, technology, research, mathematics, or complex intellectual challenges.",
+    "ru": "Тип Investigative отличается выраженной любознательностью, стремлением анализировать и понимать, как устроены процессы и явления. Им нравятся исследования, эксперименты, решение сложных задач, работа с данными и теоретическими моделями. Они успешно развиваются в средах, где могут самостоятельно изучать идеи, задавать вопросы, искать закономерности и создавать новое знание. Часто выбирают направления, связанные с наукой, технологиями, исследованием, математикой или аналитическими задачами.",
+    "kk": "Investigative типі терең қызығушылықты, талдауды және заттардың қалай жұмыс істейтінін түсінуге деген ұмтылысты сипаттайды. Олар зерттеу жүргізуді, эксперимент жасауды, күрделі мәселелерді шешуді және мәліметтерді талдауды ұнатады. Мұндай оқушылар идеяларды өз бетінше зерттей алатын, сұрақ қоя алатын, заңдылықтарды іздейтін ортада жақсы дамиды. Көбіне ғылым, технология, зерттеу, математика және аналитикалық бағыттарға қызығушылық танытады.",
+    "strengths": {
+      "en": "Strengths: curiosity, analytical thinking, ability to solve complex problems, logical reasoning, independence, deep concentration, and strong research skills.",
+      "ru": "Сильные стороны: любознательность, аналитическое мышление, способность решать сложные задачи, логика, самостоятельность, глубокая концентрация и сильные исследовательские навыки.",
+      "kk": "Күшті жақтары: қызығушылық, аналитикалық ойлау, күрделі мәселелерді шешу қабілеті, логикалық ойлау, дербестік, жоғары концентрация және зерттеу дағдылары."
+    }
+  },
+  "A": {
+    "en": "Artistic types value creativity, self-expression and originality. They enjoy working with ideas, images, stories, emotions and concepts rather than rigid rules or strict structures. Such students are drawn to visual arts, music, literature, design, performance, creative media and any environment where imagination and experimentation are encouraged. They thrive when they can express themselves freely and shape meaning in unique ways.",
+    "ru": "Тип Artistic ценит творчество, самовыражение и оригинальность. Им нравится работать с образами, идеями, чувствами, историями и концепциями, а не следовать жёстким правилам или структурам. Такие ученики тяготеют к изобразительному искусству, музыке, литературе, дизайну, выступлениям, творческим медиа и средам, где приветствуется воображение и эксперимент. Они раскрываются, когда имеют возможность свободно выражать себя и создавать что-то уникальное.",
+    "kk": "Artistic типі шығармашылықты, өзін-өзі білдіруді және даралықты бағалайды. Олар қатаң ережелерден гөрі идеялармен, бейнелермен, эмоциялармен, әңгімелермен және концепциялармен жұмыс істегенді ұнатады. Мұндай оқушылар бейнелеу өнеріне, музыкаға, әдебиетке, дизайнға, орындаушылыққа, шығармашылық медиаға және қиял мен экспериментке мүмкіндік беретін ортаға тартылады. Олар еркіндік пен өзіндік мән жасауға жағдай болғанда ерекше дамиды.",
+    "strengths": {
+      "en": "Strengths: creativity, originality, emotional insight, imagination, open-mindedness, ability to communicate ideas visually or through stories, and skill in generating new concepts.",
+      "ru": "Сильные стороны: креативность, оригинальность, эмоциональная чувствительность, развитое воображение, открытость новому, умение выражать идеи через образы или истории, способность генерировать новые концепции.",
+      "kk": "Күшті жақтары: шығармашылық, даралық, эмоционалды сезімталдық, қиял, жаңашылдыққа ашықтық, идеяларды бейнелер немесе әңгімелер арқылы жеткізу қабілеті, жаңа концепциялар жасау шеберлігі."
+    }
+  },
+  "S": {
+    "en": "Social types are motivated by helping, teaching, supporting and interacting with others. They enjoy communication, guidance, collaboration, emotional connection and meaningful relationships. These students thrive in roles where they can contribute to the well-being, growth or understanding of people around them. They often choose education, counseling, social work, psychology, healthcare or community-focused activities.",
+    "ru": "Тип Social ориентирован на помощь, обучение, поддержку и взаимодействие с людьми. Таким ученикам нравится общение, сотрудничество, наставничество, эмоциональный контакт и построение доверительных отношений. Они успешно проявляют себя в ролях, где могут способствовать благополучию, развитию или пониманию других людей. Часто выбирают направления, связанные с образованием, психологией, социальной работой, здравоохранением или общественными инициативами.",
+    "kk": "Social типі адамдарға көмектесуге, оқытуға, қолдау көрсетуге және қарым-қатынас орнатуға бағытталған. Олар қарым-қатынасты, бірлескен жұмысты, басшылық жасауды, эмоционалдық байланысты және сенімді қатынастарды бағалайды. Мұндай оқушылар айналасындағы адамдардың дамуына немесе әл-ауқатына үлес қоса алатын ортада жақсы дамиды. Көбіне білім беру, психология, әлеуметтік жұмыс, денсаулық сақтау және қауымдастыққа бағытталған салаларды таңдайды.",
+    "strengths": {
+      "en": "Strengths: empathy, communication skills, teamwork, conflict resolution, patience, emotional intelligence, and the ability to support and motivate others.",
+      "ru": "Сильные стороны: эмпатия, коммуникативность, умение работать в команде, разрешать конфликты, терпение, эмоциональный интеллект и способность поддерживать и мотивировать других.",
+      "kk": "Күшті жақтары: эмпатия, қарым-қатынас дағдылары, командада жұмыс істеу, қақтығыстарды шешу, сабырлылық, эмоционалды интеллект және басқаларды қолдау мен шабыттандыру қабілеті."
+    }
+  },
+  "E": {
+    "en": "Enterprising types enjoy leading, persuading, organizing and taking initiative. They are motivated by influence, decision-making, achieving results and creating opportunities. Such students thrive in dynamic environments where they can take responsibility, communicate confidently and move ideas into action. They are often drawn to business, management, entrepreneurship, marketing, public leadership and project coordination.",
+    "ru": "Тип Enterprising любит руководить, убеждать, организовывать и проявлять инициативу. Его мотивируют ответственность, влияние, принятие решений, достижение результата и создание возможностей. Такие ученики успешно работают в динамичной среде, где могут брать на себя лидерство, уверенно общаться и воплощать идеи в действие. Часто выбирают бизнес, менеджмент, предпринимательство, маркетинг, общественное лидерство и проектную деятельность.",
+    "kk": "Enterprising типі басшылық етуге, ұйымдастыруға, бастама көтеруге және басқа адамдарды ынталандыруға бейім. Олар шешім қабылдауды, нәтижеге жетуді және жаңа мүмкіндіктер жасауды бағалайды. Мұндай оқушылар жауапкершілік ала алатын, сенімді сөйлей алатын және идеяларды әрекетке айналдыра алатын ортада жақсы дамиды. Көбіне бизнес, менеджмент, кәсіпкерлік, маркетинг және қоғамдық көшбасшылық бағыттарына қызығады.",
+    "strengths": {
+      "en": "Strengths: leadership, initiative, persuasion, strategic thinking, confidence, decision-making, and the ability to motivate and coordinate others.",
+      "ru": "Сильные стороны: лидерство, инициативность, навыки убеждения, стратегическое мышление, уверенность, умение принимать решения и мотивировать других.",
+      "kk": "Күшті жақтары: көшбасшылық, бастамашылық, сендіру қабілеті, стратегиялық ойлау, сенімділік, шешім қабылдау және басқаларды үйлестіру мен шабыттандыру дағдылары."
+    }
+  },
+  "C": {
+    "en": "Conventional types value structure, accuracy, organization and clear procedures. They enjoy tasks that involve planning, documenting, categorizing, managing information, working with numbers or following well-defined processes. These students thrive in roles that require reliability, attention to detail and consistency. They often gravitate toward administration, finance, data management, office operations or systematic project work.",
+    "ru": "Тип Conventional ценит структуру, точность, порядок и ясные правила. Ему подходят задачи, связанные с планированием, документированием, классификацией, обработкой информации, работой с числами и следованием установленным процедурам. Такие ученики успешно проявляют себя в ролях, требующих внимательности, надёжности и последовательности. Часто выбирают администрирование, финансы, работу с данными, офисные процессы или системную проектную деятельность.",
+    "kk": "Conventional типі құрылымды, дәлдікті, ұқыптылықты және анық рәсімдерді бағалайды. Олар жоспарлау, құжаттау, ақпаратты реттеу, сандық мәліметтермен жұмыс істеу және белгіленген процестерді орындау сияқты тапсырмаларды жақсы көреді. Мұндай оқушылар нақтылық пен тұрақтылықты қажет ететін ортада жақсы дамиды. Көбіне әкімшілік, қаржы, мәліметтерді басқару, кеңсе жұмысы немесе жүйелі жобалық бағыттарды таңдайды.",
+    "strengths": {
+      "en": "Strengths: organization, attention to detail, consistency, dependability, precision, planning skills and the ability to follow structured processes.",
+      "ru": "Сильные стороны: организованность, внимательность к деталям, последовательность, надёжность, точность, умение планировать и следовать структуре.",
+      "kk": "Күшті жақтары: ұқыптылық, детальдарға назар аудару, тұрақтылық, сенімділік, дәлдік, жоспарлау қабілеті және құрылымды процестерді орындау шеберлігі."
+    }
+  }
+}

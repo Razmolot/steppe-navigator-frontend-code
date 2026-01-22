@@ -1,0 +1,67 @@
+.test-navigation-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 32px;
+  padding: 0 24px;
+  margin-bottom: 32px;
+}
+
+.test-nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #ffffff;
+  border: 1px solid #0088FF;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  flex: 1;
+  max-width: 280px;
+}
+
+.test-nav-button:hover:not(:disabled) {
+  background: #E6F4FF;
+  border-color: #0066CC;
+  color: #000000;
+}
+
+.test-nav-button:active:not(:disabled) {
+  background: #CCE7FF;
+}
+
+.test-nav-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.test-nav-button span {
+  flex: 1;
+  text-align: center;
+}
+
+.test-nav-button .anticon {
+  font-size: 16px;
+  color: #0088FF;
+}
+
+@media (max-width: 768px) {
+  .test-navigation-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .test-nav-button {
+    width: 100%;
+    min-width: unset;
+  }
+}
+

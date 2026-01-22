@@ -1,0 +1,2 @@
+export { RiasecReport } from './RiasecReport';
+

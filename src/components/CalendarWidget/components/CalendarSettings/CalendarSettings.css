@@ -1,0 +1,14 @@
+.calendar-settings {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .calendar-settings {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
