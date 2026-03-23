@@ -59,6 +59,19 @@ export const ru = {
     assignTests: 'Классы и доступ',
     schoolReports: 'Отчёты',
     careerReport: 'Мой профориентационный отчёт',
+    library: 'Библиотека',
+  },
+
+  // Библиотека
+  library: {
+    title: 'Библиотека',
+    common: 'Общее',
+    grade8: '8 класс',
+    grade9: '9 класс',
+    grade10: '10 класс',
+    grade11: '11 класс',
+    empty: 'Пока нет материалов',
+    download: 'Скачать',
   },
 
   // Авторизация
@@ -471,8 +484,8 @@ export const ru = {
       },
     },
     assignTests: {
-      title: 'Открыть доступ к тестам',
-      breadcrumb: 'Открыть доступ к тестам',
+      title: 'Доступ к тестам',
+      breadcrumb: 'Доступ к тестам',
       cardTitle: 'Назначить тесты',
       selectTest: 'Выберите тест',
       selectTestPlaceholder: 'Выберите тесты',
@@ -485,6 +498,9 @@ export const ru = {
       descriptionPlaceholder: 'Введите описание',
       expiryDate: 'Дата истечения',
       submitButton: 'Открыть доступ к тестам',
+      revokeButton: 'Закрыть доступ',
+      revokeSuccessMessage: 'Доступ к тестам закрыт',
+      revokeError: 'Ошибка при закрытии доступа',
       successMessage: 'Тесты успешно назначены',
       errorLoading: 'Ошибка при загрузке классов',
       errorAssigning: 'Ошибка при назначении тестов',
@@ -496,7 +512,7 @@ export const ru = {
       hasAccess: 'Доступ есть',
       noAccess: 'Доступа нет',
       results: 'Результаты',
-      openAccess: 'Открыть доступ к тестам',
+      openAccess: 'Доступ к тестам',
       errorLoading: 'Ошибка при загрузке данных',
     },
     classroomsPage: {
@@ -544,9 +560,9 @@ export const ru = {
         notStarted: 'Не начат',
       },
       resetPassword: 'Сбросить пароль',
-      resetPasswordConfirm: 'Отправить письмо для сброса пароля ученику',
-      resetPasswordSuccess: 'Письмо для сброса пароля отправлено',
-      resetPasswordError: 'Ошибка при отправке письма',
+      resetPasswordConfirm: 'Сбросить пароль ученику на qwerty1234',
+      resetPasswordSuccess: 'Пароль сброшен на qwerty1234',
+      resetPasswordError: 'Ошибка при сбросе пароля',
     },
     studentResults: {
       title: 'Результаты ученика',
@@ -612,7 +628,7 @@ export const ru = {
     notAnswered: 'Не отвечено',
     additional: 'Дополнительно',
     editAnswer: 'Скорректировать',
-    counselorComment: 'Комментарий ориентатора',
+    counselorComment: 'Комментарий профориентатора',
     enterComment: 'Введите свой комментарий...',
     saveComment: 'Сохранить комментарий',
     editAnswerTitle: 'Корректировка ответа',
@@ -705,6 +721,7 @@ export const ru = {
   // Студенческая страница профориентационного отчёта
   studentCareerReportPage: {
     careerReport: 'Мой профориентационный отчёт',
+    library: 'Библиотека',
     date: 'Дата',
     toTests: 'К тестам',
     downloadPdf: 'Скачать PDF',

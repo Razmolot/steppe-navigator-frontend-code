@@ -61,6 +61,19 @@ export const kk: TranslationType = {
     assignTests: 'Сыныптар мен қолжетімділік',
     schoolReports: 'Есептер',
     careerReport: 'Менің кәсіби бағдар есебім',
+    library: 'Кітапхана',
+  },
+
+  // Кітапхана
+  library: {
+    title: 'Кітапхана',
+    common: 'Жалпы',
+    grade8: '8 сынып',
+    grade9: '9 сынып',
+    grade10: '10 сынып',
+    grade11: '11 сынып',
+    empty: 'Материалдар әзірше жоқ',
+    download: 'Жүктеп алу',
   },
 
   // Авторизация
@@ -204,7 +217,7 @@ export const kk: TranslationType = {
     strengths: 'Күшті жақтар',
     description: 'Сипаттама',
     recommendations: 'Ұсыныстар',
-    counselorComment: 'Бағдаршының пікірі',
+    counselorComment: 'Бағдаршының түсініктемесі',
     addComment: 'Пікір қосу...',
     saveComment: 'Пікірді сақтау',
     commentSaved: 'Пікір сақталды',
@@ -356,6 +369,7 @@ export const kk: TranslationType = {
   // Тесттерді тағайындау
   assignTests: {
     title: 'Тесттерді тағайындау',
+    
     selectClassroom: 'Сыныпты таңдаңыз',
     selectTest: 'Тестті таңдаңыз',
     dueDate: 'Мерзімі',
@@ -487,6 +501,9 @@ export const kk: TranslationType = {
       descriptionPlaceholder: 'Сипаттаманы енгізіңіз',
       expiryDate: 'Аяқталу күні',
       submitButton: 'Тесттерге қол жеткізу',
+      revokeButton: 'Қол жеткізуді жабу',
+      revokeSuccessMessage: 'Тесттерге қол жеткізу жабылды',
+      revokeError: 'Қол жеткізуді жабу кезінде қате',
       successMessage: 'Тесттер сәтті тағайындалды',
       errorLoading: 'Сыныптарды жүктеу кезінде қате',
       errorAssigning: 'Тесттерді тағайындау кезінде қате',
@@ -546,9 +563,9 @@ export const kk: TranslationType = {
         notStarted: 'Басталмаған',
       },
       resetPassword: 'Құпия сөзді қалпына келтіру',
-      resetPasswordConfirm: 'Оқушыға құпия сөзді қалпына келтіру хатын жіберу',
-      resetPasswordSuccess: 'Құпия сөзді қалпына келтіру хаты жіберілді',
-      resetPasswordError: 'Хат жіберу кезінде қате',
+      resetPasswordConfirm: 'Оқушының құпия сөзін qwerty1234 етіп қалпына келтіру',
+      resetPasswordSuccess: 'Құпия сөз qwerty1234 етіп қалпына келтірілді',
+      resetPasswordError: 'Құпия сөзді қалпына келтіру кезінде қате',
     },
     studentResults: {
       title: 'Оқушы нәтижелері',
@@ -614,7 +631,7 @@ export const kk: TranslationType = {
     notAnswered: 'Жауап берілмеген',
     additional: 'Қосымша',
     editAnswer: 'Түзету',
-    counselorComment: 'Бағдаршы пікірі',
+    counselorComment: 'Бағдаршының түсініктемесі',
     enterComment: 'Пікіріңізді енгізіңіз...',
     saveComment: 'Пікірді сақтау',
     editAnswerTitle: 'Жауапты түзету',
@@ -707,6 +724,7 @@ export const kk: TranslationType = {
   // Студенттің кәсіби бағдар есебі беті
   studentCareerReportPage: {
     careerReport: 'Менің кәсіби бағдар есебім',
+    library: 'Кітапхана',
     date: 'Күні',
     toTests: 'Тесттерге',
     downloadPdf: 'PDF жүктеу',

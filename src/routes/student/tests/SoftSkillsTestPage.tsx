@@ -308,7 +308,7 @@ export const SoftSkillsTestPage = () => {
             {currentCase.block_picture && (
               <div className="soft-skills-block-image">
                 <img 
-                  src={`/test-images/${currentCase.block_picture}`} 
+                  src={`${import.meta.env.BASE_URL}test-images/${currentCase.block_picture}`} 
                   alt={getLocalizedText(currentCase.block_title)}
                 />
               </div>

@@ -61,7 +61,7 @@ export const CounselorEventsPage = () => {
     const fetchMetaData = async () => {
         try {
             const [classroomsRes, studentsRes] = await Promise.all([
-                axiosClient.get("/counselor/my-classrooms"),
+                axiosClient.get("/counselor/my-classrooms" , { params: { limit: 100 } }),
                 axiosClient.get("/counselor/my-students", { params: { limit: 1000 } }),
             ]);
             setClassrooms(classroomsRes.data.items);

@@ -24,7 +24,8 @@ export const AssignTestsPage = () => {
 
     const fetchClassrooms = async () => {
         try {
-            const { data } = await axiosClient.get("/counselor/my-classrooms");
+            const { data } = await axiosClient.get("/counselor/my-classrooms", { params: { limit: 100 },
+            });
             setClassrooms(data.items || []);
         } catch (error: any) {
             const errorMessage = error.response?.data?.message || t.counselor.assignTests.errorLoading;
@@ -32,15 +33,17 @@ export const AssignTestsPage = () => {
         }
     };
 
+    const buildPayload = (values: any) => ({
+        test_types: values.test_types,
+        classrooms: allClassroomsChecked ? [] : values.classrooms,
+        assign_too_all_classrooms: allClassroomsChecked,
+        expires_at: values.expires_at,
+        meta: { description: values.description || "" },
+    });
+    
     const handleAssignTests = async (values: any) => {
-        const payload = {
-            test_types: values.test_types,
-            classrooms: allClassroomsChecked ? [] : values.classrooms,
-            assign_too_all_classrooms: allClassroomsChecked,
-            expires_at: values.expires_at,
-            meta: { description: values.description || "" },
-        };
-
+        const payload = buildPayload(values);
+    
         try {
             setLoading(true);
             await axiosClient.post("/counselor/assign/bulk", payload);
@@ -51,12 +54,40 @@ export const AssignTestsPage = () => {
             const errMsg =
                 error?.response?.data?.error ||
                 t.counselor.assignTests.errorAssigning;
-
+    
             message.error(errMsg);
         } finally {
             setLoading(false);
         }
     };
+    
+    const handleRevokeTests = async () => {
+        try {
+            const values = await form.validateFields();
+            const payload = buildPayload(values);
+    
+            setLoading(true);
+            await axiosClient.post("/counselor/assign/revoke", {
+                test_types: payload.test_types,
+                classrooms: payload.classrooms,
+                assign_too_all_classrooms: payload.assign_too_all_classrooms,
+            });
+    
+            message.success(t.counselor.assignTests.revokeSuccessMessage);
+            form.resetFields();
+            setAllClassroomsChecked(false);
+        } catch (error: any) {
+            const errMsg =
+                error?.response?.data?.error ||
+                t.counselor.assignTests.revokeError;
+    
+            message.error(errMsg);
+        } finally {
+            setLoading(false);
+        }
+    };
+    
+
 
     return (
         <div className="p-6">
@@ -124,12 +155,19 @@ export const AssignTestsPage = () => {
                     <Form.Item label={t.counselor.assignTests.expiryDate} name="expires_at">
                         <DatePicker className="w-full" />
                     </Form.Item>
-
                     <Form.Item>
+                      <div style={{ display: "flex", gap: 12 }}>
                         <Button type="primary" htmlType="submit" loading={loading}>
-                            {t.counselor.assignTests.submitButton}
+                          {t.counselor.assignTests.submitButton}
                         </Button>
+                    
+                        <Button danger onClick={handleRevokeTests} loading={loading}>
+                          {t.counselor.assignTests.revokeButton}
+                        </Button>
+                      </div>
                     </Form.Item>
+                    
+
                 </Form>
             </Card>
         </div>

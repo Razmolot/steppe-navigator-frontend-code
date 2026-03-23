@@ -308,7 +308,7 @@ export const RiasecTestPage = () => {
             {currentCase.block_picture && (
               <div className="riasec-block-image">
                 <img 
-                  src={`/test-images/${currentCase.block_picture}`} 
+                  src={`${import.meta.env.BASE_URL}test-images/${currentCase.block_picture}`} 
                   alt={getLocalizedText(currentCase.block_title)}
                 />
               </div>
