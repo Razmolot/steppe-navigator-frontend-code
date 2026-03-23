@@ -69,12 +69,19 @@ export const TestCard = ({
     // not_started или любой другой неизвестный статус
     return t.tests.notStarted;
   };
+  
+    // ВОТ СЮДА (после закрытия getStatusText и перед return JSX)
+  const resolvedImage = image?.startsWith('/')
+    ? `${import.meta.env.BASE_URL}${image.slice(1)}`
+    : image;
+
+  
   return (
     <div className={`test-card ${isLocked ? 'test-card-locked' : ''}`}>
       <div 
         className="test-card-cover" 
         style={{ 
-          backgroundImage: `url(${image})`,
+          backgroundImage: `url(${resolvedImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}

@@ -61,6 +61,19 @@ export const en: TranslationType = {
     assignTests: 'Classrooms and Access',
     schoolReports: 'Reports',
     careerReport: 'My Career Report',
+    library: 'Library',
+  },
+
+  // Library
+  library: {
+    title: 'Library',
+    common: 'General',
+    grade8: 'Grade 8',
+    grade9: 'Grade 9',
+    grade10: 'Grade 10',
+    grade11: 'Grade 11',
+    empty: 'No materials yet',
+    download: 'Download',
   },
 
   // Authentication
@@ -473,8 +486,11 @@ export const en: TranslationType = {
       },
     },
     assignTests: {
-      title: 'Grant Test Access',
-      breadcrumb: 'Grant Test Access',
+      title: 'Test Access',
+      breadcrumb: 'Test Access',
+      revokeButton: 'Revoke Access',
+      revokeSuccessMessage: 'Test access revoked',
+      revokeError: 'Error revoking access',
       cardTitle: 'Assign Tests',
       selectTest: 'Select test',
       selectTestPlaceholder: 'Select tests',
@@ -498,7 +514,7 @@ export const en: TranslationType = {
       hasAccess: 'Has Access',
       noAccess: 'No Access',
       results: 'Results',
-      openAccess: 'Grant Test Access',
+      openAccess: 'Test Access',
       errorLoading: 'Error loading data',
     },
     classroomsPage: {
@@ -707,6 +723,7 @@ export const en: TranslationType = {
   // Student Career Report Page
   studentCareerReportPage: {
     careerReport: 'My Career Guidance Report',
+    library: 'Library',
     date: 'Date',
     toTests: 'To Tests',
     downloadPdf: 'Download PDF',

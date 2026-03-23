@@ -110,7 +110,9 @@ export const ClassroomAssignmentsPage = () => {
             <Card
                 extra={
                     <Space>
-                        <Button type="primary" href={'/tests/assign/assign-tests'} icon={<UsergroupAddOutlined />}>{t.counselor.classroomAssignments.openAccess}</Button>
+                        <Link to="/tests/assign/assign-tests">
+                        <Button type="primary" icon={<UsergroupAddOutlined />}>{t.counselor.classroomAssignments.openAccess}</Button>
+                        </Link>
                     </Space>
                 }
             >

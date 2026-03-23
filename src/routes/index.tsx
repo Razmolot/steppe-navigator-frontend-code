@@ -45,6 +45,7 @@ import {CareerGuidancePage} from "./counselor/CareerGuidancePage.tsx";
 import {CareerReportPage} from "./counselor/CareerReportPage.tsx";
 import {StudentCareerReportPage} from "./student/CareerReportPage.tsx";
 import {SchoolReportPage} from "./counselor/SchoolReportPage.tsx";
+import {LibraryPage} from "./LibraryPage.tsx";
 
 const rootRoute = new RootRoute({
     component: () => (
@@ -249,6 +250,12 @@ const schoolReportRoute = new Route({
     component: SchoolReportPage,
 });
 
+const libraryRoute = new Route({
+    getParentRoute: () => protectedRoute,
+    path: "/library",
+    component: LibraryPage,
+});
+
 const routeTree = rootRoute.addChildren([
     loginRoute,
     forgotPasswordRoute,
@@ -280,11 +287,12 @@ const routeTree = rootRoute.addChildren([
         counselorCareerGuidanceRoute,
         counselorCareerReportRoute,
         studentCareerReportRoute,
-        schoolReportRoute
+        schoolReportRoute,
+        libraryRoute
     ]),
 ]);
 
-const router = new Router({ routeTree });
+const router = new Router({ routeTree, basepath: "/app" });
 
 // Маппинг локалей для Ant Design
 const antdLocales = {

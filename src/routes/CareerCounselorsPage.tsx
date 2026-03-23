@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {Table, Button, Modal, Form, Input, Select, Card, Popconfirm, App} from "antd";
+import {Table, Button, Modal, Form, Input, Select, Card, Popconfirm, App, Upload, Space} from "antd";
 import axiosClient from "../api/axiosClient";
 import Breadcrumb from "../components/Breadcrumb.tsx";
 import { useTranslation } from "../hooks/useTranslation";
@@ -71,6 +71,25 @@ export const CareerCounselorsPage = () => {
             message.error(errorMessage);
         }
     };
+    
+    const handleBulkUploadCounselors = async (file: File) => {
+        try {
+            const formData = new FormData();
+            formData.append("file", file);
+
+            const { data } = await axiosClient.post("/admin/bulk-counselors", formData, {
+              headers: { "Content-Type": "multipart/form-data" },
+            });
+
+            message.success(data?.message || "Профориентаторы успешно созданы");
+            fetchCounselors(searchForm.getFieldsValue());
+          } catch (error: any) {
+            const errorMessage =
+              error.response?.data?.message || "Ошибка массовой загрузки";
+            message.error(errorMessage);
+          }
+        };
+
 
     const handleEditCounselor = async (values: any) => {
         try {
@@ -106,6 +125,22 @@ export const CareerCounselorsPage = () => {
             message.error(errorMessage);
         }
     };
+    
+    const handleResetCounselorPassword = async (id: number) => {
+        try {
+            await axiosClient.put(`/admin/update-counselor/${id}`, {
+                password: "qwerty1234",
+            });
+            message.success("Пароль сброшен на qwerty1234");
+            fetchCounselors(searchForm.getFieldsValue());
+        } catch (error: any) {
+            const errorMessage =
+                error.response?.data?.message || "Ошибка при сбросе пароля";
+            message.error(errorMessage);
+        }
+    };
+
+    
 
     useEffect(() => {
         const values = searchForm.getFieldsValue();
@@ -146,6 +181,20 @@ export const CareerCounselorsPage = () => {
                             {t.common.delete}
                         </Button>
                     </Popconfirm>
+                    
+                    <Popconfirm
+                        title="Сбросить пароль профориентатора на qwerty1234?"
+                        onConfirm={() => handleResetCounselorPassword(record.id)}
+                        okText={t.common.yes}
+                        cancelText={t.common.no}
+                    >
+                        <Button type="link">
+                            Сбросить пароль
+                        </Button>
+                    </Popconfirm>
+
+
+                    
                     <Button type="link" onClick={() => handleToggleStatus(record.id)}>
                         {record.is_active ? t.counselors.deactivate : t.counselors.activate}
                     </Button>
@@ -193,10 +242,24 @@ export const CareerCounselorsPage = () => {
             <Card
                 title={t.counselors.title}
                 extra={
+                  <Space>
+                    <Upload
+                      accept=".csv,.txt"
+                      showUploadList={false}
+                      beforeUpload={(file) => {
+                        handleBulkUploadCounselors(file as unknown as File);
+                        return false;
+                      }}
+                    >
+                      <Button>Массовая загрузка (CSV)</Button>
+                    </Upload>
+
                     <Button type="primary" onClick={() => setIsModalVisible(true)}>
-                        {t.counselors.addCounselor}
+                      {t.counselors.addCounselor}
                     </Button>
+                  </Space>
                 }
+
             >
                 <Table
                     dataSource={counselors}
