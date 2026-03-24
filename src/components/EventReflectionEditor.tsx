@@ -115,7 +115,7 @@ export const EventReflectionEditor = ({ eventId }: Props) => {
                         <Button
                             type="primary"
                             loading={saving}
-                            disabled={charError}
+                            disabled={saving || charError}
                             onClick={handleSave}
                         >
                             {t.events.reflection.save}
