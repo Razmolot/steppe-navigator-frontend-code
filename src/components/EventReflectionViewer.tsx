@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Spin, Typography } from "antd";
+import { Spin, Typography, App } from "antd";
 import axiosClient from "../api/axiosClient";
 import { useTranslation } from "../hooks/useTranslation";
 import dayjs from "dayjs";
@@ -20,6 +20,7 @@ interface Props {
 
 export const EventReflectionViewer = ({ studentId, eventId, studentName }: Props) => {
     const { t } = useTranslation();
+    const { message } = App.useApp();
     const [loading, setLoading] = useState(true);
     const [reflection, setReflection] = useState<ReflectionData | null>(null);
     const [hidden, setHidden] = useState(false);
@@ -36,8 +37,11 @@ export const EventReflectionViewer = ({ studentId, eventId, studentName }: Props
                 const status = (err as { response?: { status?: number } }).response?.status;
                 if (status === 403) {
                     setHidden(true);
+                } else if (status === 404) {
+                    setReflection(null);
+                } else {
+                    message.error(t.events.reflection.errorLoading);
                 }
-                setReflection(null);
             } finally {
                 setLoading(false);
             }

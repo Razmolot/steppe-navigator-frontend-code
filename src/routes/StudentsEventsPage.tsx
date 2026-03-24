@@ -1,12 +1,9 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {
-    Table,
-    Button,
     Modal,
     Card,
-    Space,
     Descriptions,
-    Tag, App,
+    Tag,
 } from "antd";
 import axiosClient from "../api/axiosClient";
 import dayjs from "dayjs";
@@ -15,11 +12,12 @@ import {CalendarWidget} from "../components/CalendarWidget";
 import Breadcrumb from "../components/Breadcrumb.tsx";
 import { useTranslation } from "../hooks/useTranslation";
 import { EventReflectionEditor } from "../components/EventReflectionEditor";
+import type { CalendarEvent } from "../components/entities/event.interface";
 
 export const StudentsEventsPage = () => {
     const { t } = useTranslation();
     const [isModalVisible, setIsModalVisible] = useState(false);
-    const [selectedEvent, setSelectedEvent] = useState<any>(null);
+    const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(null);
 
     const updateEvents = useCalendarWidgetStore(updateEventsSelector);
 
@@ -88,7 +86,7 @@ export const StudentsEventsPage = () => {
                                 label={t.events.time}>{`${selectedEvent.time_from} - ${selectedEvent.time_to}`}</Descriptions.Item>
                             <Descriptions.Item label={t.events.place}>{selectedEvent.place}</Descriptions.Item>
                             <Descriptions.Item label={t.events.classrooms}>
-                                {selectedEvent.classrooms.map((cls: any) => (
+                                {selectedEvent.classrooms.map((cls) => (
                                     <Tag key={cls.id}>{cls.name}</Tag>
                                 ))}
                             </Descriptions.Item>

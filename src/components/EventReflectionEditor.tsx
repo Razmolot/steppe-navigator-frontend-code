@@ -27,7 +27,7 @@ export const EventReflectionEditor = ({ eventId }: Props) => {
                 const res = await axiosClient.get(`/student/events/${eventId}/reflection`);
                 setText(res.data.reflection?.text ?? "");
                 if (res.data.reflection?.updated_at) {
-                    setSavedAt(dayjs(res.data.reflection.updated_at).format("HH:mm"));
+                    setSavedAt(dayjs(res.data.reflection.updated_at).format("DD.MM.YYYY HH:mm"));
                 }
             } catch (err) {
                 const status = (err as { response?: { status?: number } }).response?.status;
@@ -57,7 +57,7 @@ export const EventReflectionEditor = ({ eventId }: Props) => {
                 text: text.trim() === "" ? null : text,
             });
             if (res.data.reflection?.updated_at) {
-                setSavedAt(dayjs(res.data.reflection.updated_at).format("HH:mm"));
+                setSavedAt(dayjs(res.data.reflection.updated_at).format("DD.MM.YYYY HH:mm"));
             } else {
                 setSavedAt(null);
             }
