@@ -444,6 +444,19 @@ export const en: TranslationType = {
       meetingParents: 'Parent Meeting',
       other: 'Other',
     },
+    // Reflection
+    reflection: {
+      title: 'My Reflection',
+      placeholder: 'Write your thoughts about the event…',
+      save: 'Save',
+      saved: 'Reflection saved',
+      updatedAt: 'Updated at',
+      tooLong: 'Maximum 10,000 characters',
+      errorLoading: 'Error loading reflection',
+      errorSaving: 'Error saving reflection',
+      studentReflection: 'Student Reflections',
+      notLeft: 'The student has not left a reflection yet',
+    },
   },
 
   // Dashboard
