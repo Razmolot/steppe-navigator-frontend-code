@@ -236,22 +236,31 @@ export const CounselorEventsPage = () => {
                                 ))}
                             </Descriptions.Item>
                         </Descriptions>
-                        {selectedEvent.students?.length > 0 && (
-                            <div className="mt-4">
-                                <Divider>
-                                    <Typography.Text strong>{t.events.reflection.studentReflection}</Typography.Text>
-                                </Divider>
-                                {selectedEvent.students.map((s: any) => (
-                                    <div key={s.id} className="mb-3">
-                                        <EventReflectionViewer
-                                            studentId={s.id}
-                                            eventId={selectedEvent.id}
-                                            studentName={s.name}
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                        )}
+                        {(() => {
+                            const assignedStudents =
+                                selectedEvent.assigned_students?.length
+                                    ? selectedEvent.assigned_students
+                                    : (selectedEvent.students ?? []);
+
+                            if (assignedStudents.length === 0) return null;
+
+                            return (
+                                <div className="mt-4">
+                                    <Divider>
+                                        <Typography.Text strong>{t.events.reflection.studentReflection}</Typography.Text>
+                                    </Divider>
+                                    {assignedStudents.map((s: any) => (
+                                        <div key={s.id} className="mb-3">
+                                            <EventReflectionViewer
+                                                studentId={s.id}
+                                                eventId={selectedEvent.id}
+                                                studentName={s.name}
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                            );
+                        })()}
                     </>
                 )}
             </Modal>
