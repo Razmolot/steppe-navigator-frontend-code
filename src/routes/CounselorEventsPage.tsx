@@ -11,8 +11,6 @@ import {
     Tag,
     Descriptions,
     Popconfirm, App,
-    Divider,
-    Typography,
 } from "antd";
 import axiosClient from "../api/axiosClient";
 import dayjs from "dayjs";
@@ -23,7 +21,6 @@ import {
     useCalendarWidgetStore,
 } from "../components/CalendarWidget/store.ts";
 import { useTranslation } from "../hooks/useTranslation";
-import { EventReflectionViewer } from "../components/EventReflectionViewer";
 
 export const CounselorEventsPage = () => {
     const { t } = useTranslation();
@@ -211,48 +208,30 @@ export const CounselorEventsPage = () => {
                 ]}
             >
                 {selectedEvent && (
-                    <>
-                        <Descriptions column={1} bordered>
-                            <Descriptions.Item label={t.events.name}>{selectedEvent.title}</Descriptions.Item>
-                            <Descriptions.Item label={t.events.description}>{selectedEvent.text}</Descriptions.Item>
-                            <Descriptions.Item label={t.events.type}>
-                                {selectedEvent.type?.map((tag: string) => (
-                                    <Tag key={tag}>{getEventTypeLabel(tag)}</Tag>
-                                ))}
-                            </Descriptions.Item>
-                            <Descriptions.Item label={t.events.date}>
-                                {dayjs(selectedEvent.date).format("DD.MM.YYYY")}
-                            </Descriptions.Item>
-                            <Descriptions.Item label={t.events.time}>{`${selectedEvent.time_from} - ${selectedEvent.time_to}`}</Descriptions.Item>
-                            <Descriptions.Item label={t.events.place}>{selectedEvent.place}</Descriptions.Item>
-                            <Descriptions.Item label={t.events.classrooms}>
-                                {selectedEvent.classrooms?.map((cls: any) => (
-                                    <Tag key={cls.id}>{cls.name}</Tag>
-                                ))}
-                            </Descriptions.Item>
-                            <Descriptions.Item label={t.events.students}>
-                                {selectedEvent.students?.map((s: any) => (
-                                    <Tag key={s.id}>{s.name}</Tag>
-                                ))}
-                            </Descriptions.Item>
-                        </Descriptions>
-                        {selectedEvent.students?.length > 0 && (
-                            <div className="mt-4">
-                                <Divider>
-                                    <Typography.Text strong>{t.events.reflection.studentReflection}</Typography.Text>
-                                </Divider>
-                                {selectedEvent.students.map((s: any) => (
-                                    <div key={s.id} className="mb-3">
-                                        <EventReflectionViewer
-                                            studentId={s.id}
-                                            eventId={selectedEvent.id}
-                                            studentName={s.name}
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-                    </>
+                    <Descriptions column={1} bordered>
+                        <Descriptions.Item label={t.events.name}>{selectedEvent.title}</Descriptions.Item>
+                        <Descriptions.Item label={t.events.description}>{selectedEvent.text}</Descriptions.Item>
+                        <Descriptions.Item label={t.events.type}>
+                            {selectedEvent.type?.map((tag: string) => (
+                                <Tag key={tag}>{getEventTypeLabel(tag)}</Tag>
+                            ))}
+                        </Descriptions.Item>
+                        <Descriptions.Item label={t.events.date}>
+                            {dayjs(selectedEvent.date).format("DD.MM.YYYY")}
+                        </Descriptions.Item>
+                        <Descriptions.Item label={t.events.time}>{`${selectedEvent.time_from} - ${selectedEvent.time_to}`}</Descriptions.Item>
+                        <Descriptions.Item label={t.events.place}>{selectedEvent.place}</Descriptions.Item>
+                        <Descriptions.Item label={t.events.classrooms}>
+                            {selectedEvent.classrooms?.map((cls: any) => (
+                                <Tag key={cls.id}>{cls.name}</Tag>
+                            ))}
+                        </Descriptions.Item>
+                        <Descriptions.Item label={t.events.students}>
+                            {selectedEvent.students?.map((s: any) => (
+                                <Tag key={s.id}>{s.name}</Tag>
+                            ))}
+                        </Descriptions.Item>
+                    </Descriptions>
                 )}
             </Modal>
 

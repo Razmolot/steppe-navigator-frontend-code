@@ -1,9 +1,12 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {
+    Table,
+    Button,
     Modal,
     Card,
+    Space,
     Descriptions,
-    Tag,
+    Tag, App,
 } from "antd";
 import axiosClient from "../api/axiosClient";
 import dayjs from "dayjs";
@@ -11,13 +14,11 @@ import {updateEventsSelector, useCalendarWidgetStore} from "../components/Calend
 import {CalendarWidget} from "../components/CalendarWidget";
 import Breadcrumb from "../components/Breadcrumb.tsx";
 import { useTranslation } from "../hooks/useTranslation";
-import { EventReflectionEditor } from "../components/EventReflectionEditor";
-import type { CalendarEvent } from "../components/entities/event.interface";
 
 export const StudentsEventsPage = () => {
     const { t } = useTranslation();
     const [isModalVisible, setIsModalVisible] = useState(false);
-    const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(null);
+    const [selectedEvent, setSelectedEvent] = useState<any>(null);
 
     const updateEvents = useCalendarWidgetStore(updateEventsSelector);
 
@@ -71,31 +72,28 @@ export const StudentsEventsPage = () => {
                 maskClosable
             >
                 {selectedEvent && (
-                    <>
-                        <Descriptions column={1} bordered>
-                            <Descriptions.Item label={t.events.name}>{selectedEvent.title}</Descriptions.Item>
-                            <Descriptions.Item label={t.events.description}>{selectedEvent.text}</Descriptions.Item>
-                            <Descriptions.Item label={t.events.type}>
-                                {selectedEvent.type.map((tag: string) => (
-                                    <Tag key={tag}>{getEventTypeLabel(tag)}</Tag>
-                                ))}
-                            </Descriptions.Item>
-                            <Descriptions.Item
-                                label={t.events.date}>{dayjs(selectedEvent.date).format("DD.MM.YYYY")}</Descriptions.Item>
-                            <Descriptions.Item
-                                label={t.events.time}>{`${selectedEvent.time_from} - ${selectedEvent.time_to}`}</Descriptions.Item>
-                            <Descriptions.Item label={t.events.place}>{selectedEvent.place}</Descriptions.Item>
-                            <Descriptions.Item label={t.events.classrooms}>
-                                {selectedEvent.classrooms.map((cls) => (
-                                    <Tag key={cls.id}>{cls.name}</Tag>
-                                ))}
-                            </Descriptions.Item>
-                            <Descriptions.Item label={t.events.assignedBy}>
-                                {selectedEvent.creator.name} ({selectedEvent.creator.email})
-                            </Descriptions.Item>
-                        </Descriptions>
-                        <EventReflectionEditor eventId={selectedEvent.id} />
-                    </>
+                    <Descriptions column={1} bordered>
+                        <Descriptions.Item label={t.events.name}>{selectedEvent.title}</Descriptions.Item>
+                        <Descriptions.Item label={t.events.description}>{selectedEvent.text}</Descriptions.Item>
+                        <Descriptions.Item label={t.events.type}>
+                            {selectedEvent.type.map((tag: string) => (
+                                <Tag key={tag}>{getEventTypeLabel(tag)}</Tag>
+                            ))}
+                        </Descriptions.Item>
+                        <Descriptions.Item
+                            label={t.events.date}>{dayjs(selectedEvent.date).format("DD.MM.YYYY")}</Descriptions.Item>
+                        <Descriptions.Item
+                            label={t.events.time}>{`${selectedEvent.time_from} - ${selectedEvent.time_to}`}</Descriptions.Item>
+                        <Descriptions.Item label={t.events.place}>{selectedEvent.place}</Descriptions.Item>
+                        <Descriptions.Item label={t.events.classrooms}>
+                            {selectedEvent.classrooms.map((cls: any) => (
+                                <Tag key={cls.id}>{cls.name}</Tag>
+                            ))}
+                        </Descriptions.Item>
+                        <Descriptions.Item label={t.events.assignedBy}>
+                            {selectedEvent.creator.name} ({selectedEvent.creator.email})
+                        </Descriptions.Item>
+                    </Descriptions>
                 )}
             </Modal>
         </div>
