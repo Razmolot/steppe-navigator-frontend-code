@@ -12,6 +12,7 @@ import { useLanguageStore } from "../store/useLanguageStore";
 import dayjs from "dayjs";
 import "dayjs/locale/ru";
 import "dayjs/locale/kk";
+import { useEffect } from "react";
 import { Login } from "./Login";
 import { Dashboard } from "./Dashboard";
 import { Layout } from "../components/Layout";
@@ -303,6 +304,10 @@ const antdLocales = {
 
 const AppContent = () => {
   const { locale } = useLanguageStore();
+  useEffect(() => {
+    document.documentElement.lang = locale; // 'ru' | 'kk' | 'en'
+  }, [locale]);
+
   
   // Устанавливаем локаль для dayjs (используется в DatePicker)
   dayjs.locale(locale === 'kk' ? 'kk' : locale);
