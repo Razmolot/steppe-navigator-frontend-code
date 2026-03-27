@@ -219,3 +219,29 @@
   font-size: 16px;
 }
 
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* On mobile, large card padding makes the radar chart shrink too much (width becomes the limiting dimension) */
+  .soft-skills-result-card {
+    padding: 24px 16px;
+  }
+
+  .metrics-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .metric-card {
+    max-width: 100%;
+  }
+
+  .radar-container {
+    padding: 12px 0;
+  }
+
+  .result-title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
