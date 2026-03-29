@@ -194,7 +194,7 @@ export const en: TranslationType = {
     mostAppealing: 'Most appealing',
     leastAppealing: 'Least appealing',
     selectMostAndLeast: 'Select the most and least appealing options',
-    instruction: 'Arrange the cards by priority: what to do first, second, and third.',
+    instruction: 'Arrange the cards by priority: what would you be most interested in doing first, second, and third?',
   },
 
   // Questionnaire
