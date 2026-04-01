@@ -1,13 +1,63 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Card, Spin, App, Button, Table, Tag, Popconfirm, Space } from "antd";
+import type { TableColumnsType } from "antd";
 import { useNavigate, useParams, Link } from "@tanstack/react-router";
 import axiosClient from "../../api/axiosClient";
 import Breadcrumb from "../../components/Breadcrumb";
-import { ArrowLeftOutlined, CheckCircleOutlined, ClockCircleOutlined, CloseCircleOutlined, EyeOutlined, KeyOutlined } from "@ant-design/icons";
+import {
+  ArrowLeftOutlined,
+  CheckCircleOutlined,
+  ClockCircleOutlined,
+  CloseCircleOutlined,
+  EyeOutlined,
+  KeyOutlined,
+} from "@ant-design/icons";
 import { useTranslation } from "../../hooks/useTranslation";
 
+type TestStatus = "not_started" | "in_progress" | "started" | "completed";
+
+type TestQuality = "ok" | "warning" | "fail";
+
+type StudentTestInfo = {
+  status: TestStatus;
+  quality?: TestQuality;
+  // extra fields may exist, but we only need these here
+};
+
+type StudentTests = {
+  riasec: StudentTestInfo;
+  soft_skills: StudentTestInfo;
+  high5: StudentTestInfo;
+  questionnaire: StudentTestInfo;
+};
+
+type ClassroomStudentRow = {
+  student_id: number;
+  student_name: string;
+  completed_count: number;
+  tests: StudentTests;
+};
+
+type ClassroomResultsResponse = {
+  classroom: {
+    name: string;
+    school: {
+      name: string;
+    };
+  };
+  students: ClassroomStudentRow[];
+};
+
+type AxiosErrorLike = {
+  response?: {
+    data?: {
+      message?: string;
+    };
+  };
+};
+
 export const ClassroomResultsPage = () => {
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<ClassroomResultsResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const { message } = App.useApp();
   const navigate = useNavigate();
@@ -16,24 +66,26 @@ export const ClassroomResultsPage = () => {
   const params = useParams({ strict: false });
   const classroomId = params.classroomId;
 
-  useEffect(() => {
-    if (classroomId) {
-      fetchResults();
-    }
-  }, [classroomId]);
+  const fetchResults = useCallback(async () => {
+    if (!classroomId) return;
 
-  const fetchResults = async () => {
     try {
       setLoading(true);
-      const { data: response } = await axiosClient.get(`/counselor/classrooms/${classroomId}/results`);
+      const { data: response } = await axiosClient.get<ClassroomResultsResponse>(
+        `/counselor/classrooms/${classroomId}/results`
+      );
       setData(response);
-    } catch (error: any) {
+    } catch {
       message.error(t.counselor.classroomResults.errorLoading);
       navigate({ to: "/tests/assign/classrooms" });
     } finally {
       setLoading(false);
     }
-  };
+  }, [classroomId, message, navigate, t.counselor.classroomResults.errorLoading]);
+
+  useEffect(() => {
+    fetchResults();
+  }, [fetchResults]);
 
   const getStatusTag = (status: string, quality?: string) => {
     switch (status) {
@@ -55,25 +107,29 @@ export const ClassroomResultsPage = () => {
   };
 
   // Проверяет, есть ли хотя бы один тест в процессе
-  const hasTestInProgress = (student: any) => {
+  const hasTestInProgress = (student: ClassroomStudentRow) => {
     const tests = student.tests;
-    return Object.values(tests).some((test: any) => 
-      test.status === 'in_progress' || test.status === 'started'
+    return Object.values(tests).some(
+      (test) => test.status === "in_progress" || test.status === "started"
     );
   };
 
   // Проверяет, все ли тесты завершены (по статусу, а не по счётчику)
-  const allTestsCompleted = (student: any) => {
+  const allTestsCompleted = (student: ClassroomStudentRow) => {
     const tests = student.tests;
-    return Object.values(tests).every((test: any) => test.status === 'completed');
+    return Object.values(tests).every((test) => test.status === "completed");
   };
 
   const handleResetPassword = async (studentId: number) => {
     try {
-      const { data: response } = await axiosClient.post(`/counselor/students/${studentId}/reset-password`);
+      const { data: response } = await axiosClient.post<{ message?: string }>(
+        `/counselor/students/${studentId}/reset-password`
+      );
       message.success(response.message || t.counselor.classroomResults.resetPasswordSuccess);
-    } catch (error: any) {
-      const errorMessage = error.response?.data?.message || t.counselor.classroomResults.resetPasswordError;
+    } catch (e: unknown) {
+      const error = e as AxiosErrorLike;
+      const errorMessage =
+        error.response?.data?.message || t.counselor.classroomResults.resetPasswordError;
       message.error(errorMessage);
     }
   };
@@ -91,50 +147,52 @@ export const ClassroomResultsPage = () => {
     return null;
   }
 
-  const columns = [
+  const columns: TableColumnsType<ClassroomStudentRow> = [
     {
       title: "№",
       key: "index",
       width: 60,
-      render: (_: any, __: any, index: number) => index + 1,
+      render: (_record, _row, index) => index + 1,
     },
     {
       title: t.counselor.classroomResults.student,
       dataIndex: "student_name",
       key: "student_name",
-      sorter: (a: any, b: any) => a.student_name.localeCompare(b.student_name),
+      sorter: (a, b) => a.student_name.localeCompare(b.student_name),
     },
     {
       title: "RIASEC",
       key: "riasec",
       align: "center" as const,
-      render: (record: any) => getStatusTag(record.tests.riasec.status, record.tests.riasec.quality),
+      render: (record) => getStatusTag(record.tests.riasec.status, record.tests.riasec.quality),
     },
     {
       title: "Soft Skills",
       key: "soft_skills",
       align: "center" as const,
-      render: (record: any) => getStatusTag(record.tests.soft_skills.status, record.tests.soft_skills.quality),
+      render: (record) =>
+        getStatusTag(record.tests.soft_skills.status, record.tests.soft_skills.quality),
     },
     {
       title: "High5",
       key: "high5",
       align: "center" as const,
-      render: (record: any) => getStatusTag(record.tests.high5.status, record.tests.high5.quality),
+      render: (record) => getStatusTag(record.tests.high5.status, record.tests.high5.quality),
     },
     {
       title: t.common.questionnaire,
       key: "questionnaire",
       align: "center" as const,
-      render: (record: any) => getStatusTag(record.tests.questionnaire.status, record.tests.questionnaire.quality),
+      render: (record) =>
+        getStatusTag(record.tests.questionnaire.status, record.tests.questionnaire.quality),
     },
     {
       title: t.counselor.classroomResults.completed,
       key: "completed_count",
       align: "center" as const,
       width: 120,
-      sorter: (a: any, b: any) => b.completed_count - a.completed_count,
-      render: (record: any) => (
+      sorter: (a, b) => b.completed_count - a.completed_count,
+      render: (record) => (
         <span className="font-bold text-lg">
           {record.completed_count}/4
         </span>
@@ -145,7 +203,7 @@ export const ClassroomResultsPage = () => {
       key: "actions",
       width: 220,
       align: "center" as const,
-      render: (record: any) => (
+      render: (record) => (
         <Space size="small">
           <Link to={`/counselor/students/${record.student_id}/results`}>
             <Button type="primary" size="small" icon={<EyeOutlined />}>
@@ -168,14 +226,10 @@ export const ClassroomResultsPage = () => {
   ];
 
   // Завершили все = ВСЕ 4 теста имеют статус 'completed'
-  const completedStudents = data.students.filter(
-    (s: any) => allTestsCompleted(s)
-  ).length;
+  const completedStudents = data.students.filter((s) => allTestsCompleted(s)).length;
 
   // В процессе = есть тест со статусом 'in_progress' или 'started'
-  const inProgressStudents = data.students.filter(
-    (s: any) => hasTestInProgress(s)
-  ).length;
+  const inProgressStudents = data.students.filter((s) => hasTestInProgress(s)).length;
 
   // Не начали = все остальные
   const notStartedStudents = data.students.length - completedStudents - inProgressStudents;
