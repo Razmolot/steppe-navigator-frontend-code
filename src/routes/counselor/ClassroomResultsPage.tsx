@@ -35,10 +35,17 @@ export const ClassroomResultsPage = () => {
     }
   };
 
-  const getStatusTag = (status: string) => {
+  const getStatusTag = (status: string, quality?: string) => {
     switch (status) {
       case "completed":
-        return <Tag color="success" icon={<CheckCircleOutlined />}>{t.counselor.classroomResults.status.completed}</Tag>;
+        return (
+          <Tag
+            color={quality === 'warning' || quality === 'fail' ? 'error' : 'success'}
+            icon={<CheckCircleOutlined />}
+          >
+            {t.counselor.classroomResults.status.completed}
+          </Tag>
+        );
       case "in_progress":
       case "started":
         return <Tag color="processing" icon={<ClockCircleOutlined />}>{t.counselor.classroomResults.status.inProgress}</Tag>;
@@ -101,25 +108,25 @@ export const ClassroomResultsPage = () => {
       title: "RIASEC",
       key: "riasec",
       align: "center" as const,
-      render: (record: any) => getStatusTag(record.tests.riasec.status),
+      render: (record: any) => getStatusTag(record.tests.riasec.status, record.tests.riasec.quality),
     },
     {
       title: "Soft Skills",
       key: "soft_skills",
       align: "center" as const,
-      render: (record: any) => getStatusTag(record.tests.soft_skills.status),
+      render: (record: any) => getStatusTag(record.tests.soft_skills.status, record.tests.soft_skills.quality),
     },
     {
       title: "High5",
       key: "high5",
       align: "center" as const,
-      render: (record: any) => getStatusTag(record.tests.high5.status),
+      render: (record: any) => getStatusTag(record.tests.high5.status, record.tests.high5.quality),
     },
     {
       title: t.common.questionnaire,
       key: "questionnaire",
       align: "center" as const,
-      render: (record: any) => getStatusTag(record.tests.questionnaire.status),
+      render: (record: any) => getStatusTag(record.tests.questionnaire.status, record.tests.questionnaire.quality),
     },
     {
       title: t.counselor.classroomResults.completed,
