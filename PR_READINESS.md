@@ -1,8 +1,9 @@
 # PR Readiness Check
 
-Date: 2026-04-01 (UTC)
+Date: 2026-04-04 (UTC)
 Branch: `work`
-HEAD commit: `27127d0`
+HEAD commit: `f0731f7`
+Spec reference: `docs/spec/BULK_AI_REPORTS_TZ.md` (путь из запроса `/docs/specъ` интерпретирован как `/docs/spec`).
 
 ## Automated checks
 
@@ -11,18 +12,17 @@ Command: `npm run lint`
 
 Result: **FAILED**
 
-- Total issues: **259**
-- Errors: **222**
-- Warnings: **37**
-- Affected files: **97**
+- Total issues: **237**
+- Errors: **201**
+- Warnings: **36**
 
-Top files by issue count:
+Top affected files from current run:
 
-1. `src/routes/counselor/ClassroomResultsPage.tsx` — 22 errors, 1 warning
-2. `src/routes/CareerCounselorsPage.tsx` — 17 errors, 1 warning
-3. `src/routes/SchoolPage.tsx` — 15 errors, 2 warnings
-4. `src/routes/StudentsPage.tsx` — 16 errors, 1 warning
-5. `src/routes/ClassroomAssignmentsPage.tsx` — 12 errors, 1 warning
+1. `src/routes/CareerCounselorsPage.tsx`
+2. `src/routes/StudentsPage.tsx`
+3. `src/routes/SchoolPage.tsx`
+4. `src/routes/ClassroomsPage.tsx`
+5. `src/routes/counselor/CareerGuidancePage.tsx`
 
 Dominant issue types:
 
@@ -38,16 +38,22 @@ Result: **PASSED**
 - TypeScript build + Vite production build completed successfully.
 - Vite reported oversized chunks (>500 kB), which is a warning, not a hard failure.
 
+## Spec spot-check (docs/spec/BULK_AI_REPORTS_TZ.md)
+
+Checked the latest commit (`f0731f7`) against the provided spec area:
+
+- ✅ Spec files are present in `docs/spec/` and include the bulk AI requirements.
+- ✅ Bulk progress page has localized bulk statuses in `ru`, `kk`, `en` translation dictionaries.
+- ⚠️ The branch is still **not PR-ready** if lint is a required CI gate.
+
 ## Verdict
 
-Current commit **is not ready for PR** if lint is a required gate, because lint fails with 222 errors.
+Current commit is **not ready for PR** if `npm run lint` is mandatory, because lint fails with 201 errors.
 
 ## Suggested next steps
 
-1. Resolve lint errors in highest-issue route files first.
-2. Replace `any` types with concrete interfaces/types.
-3. Remove unused variables/imports.
-4. Fix hook dependency warnings (`react-hooks/exhaustive-deps`) or document safe exceptions.
-5. Re-run:
+1. Fix lint errors first in files with the highest issue density.
+2. For this feature scope, start with `src/routes/counselor/CareerBulkJobPage.tsx` (`any` typings) and then shared high-churn pages.
+3. Re-run:
    - `npm run lint`
    - `npm run build`
