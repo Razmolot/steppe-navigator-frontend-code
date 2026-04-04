@@ -630,6 +630,8 @@ export const en: TranslationType = {
     aiCommentDesc: 'Describe the student\'s characteristics, strengths and weaknesses, interests. This will help AI give a more accurate recommendation.',
     aiCommentPlaceholder: 'For example: The student shows interest in exact sciences, works well in a team, likes to solve complex problems...',
     getRecommendation: 'Get Recommendation',
+    editModeTitle: 'Change spheres',
+    editModeDesc: 'You can choose other spheres and generate a new report. Current spheres are prefilled.',
   },
 
   // Questionnaire Report
@@ -789,6 +791,7 @@ export const en: TranslationType = {
     pdfGenerated: 'PDF generated successfully',
     pdfGenerationError: 'Error generating PDF',
     downloadPdfError: 'Error downloading PDF',
+    chooseOtherSpheres: 'Choose other spheres',
     regenerate: 'Regenerate',
     reportDeletedRedirect: 'Report deleted. Redirecting to sphere selection...',
     errorDeletingReport: 'Error deleting report',

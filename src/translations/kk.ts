@@ -631,6 +631,8 @@ export const kk: TranslationType = {
     aiCommentDesc: 'Оқушының ерекшеліктерін, күшті және әлсіз жақтарын, қызығушылықтарын сипаттаңыз. Бұл ЖИ-ға дәлірек ұсыныс беруге көмектеседі.',
     aiCommentPlaceholder: 'Мысалы: Оқушы нақты ғылымдарға қызығушылық танытады, командада жақсы жұмыс істейді, күрделі есептерді шешуді ұнатады...',
     getRecommendation: 'Ұсыныс алу',
+    editModeTitle: 'Салаларды өзгерту',
+    editModeDesc: 'Сіз басқа салаларды таңдап, жаңа есеп жасай аласыз. Ағымдағы салалар алдын ала толтырылған.',
   },
 
   // Сауалнама есебі
@@ -790,6 +792,7 @@ export const kk: TranslationType = {
     pdfGenerated: 'PDF сәтті құрылды',
     pdfGenerationError: 'PDF құру қатесі',
     downloadPdfError: 'PDF жүктеу қатесі',
+    chooseOtherSpheres: 'Басқа салаларды таңдау',
     regenerate: 'Қайта құру',
     reportDeletedRedirect: 'Есеп жойылды. Салаларды таңдауға бағыттаймыз...',
     errorDeletingReport: 'Есепті жою қатесі',
