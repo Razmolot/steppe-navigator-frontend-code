@@ -473,6 +473,9 @@ export const ru = {
     testsPage: {
       title: 'Тесты',
       loadingError: 'Не удалось загрузить статистику тестов',
+      bulkGenerateAiReports: 'Bulk AI отчёты (школа)',
+      bulkStartError: 'Ошибка запуска bulk-генерации',
+      selectSchoolFirst: 'Сначала выберите школу',
       tests: {
         riasec: {
           title: 'RIASEC (Holland)',

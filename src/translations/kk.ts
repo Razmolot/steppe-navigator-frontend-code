@@ -476,6 +476,9 @@ export const kk: TranslationType = {
     testsPage: {
       title: 'Тесттер',
       loadingError: 'Тест статистикасын жүктеу мүмкін болмады',
+      bulkGenerateAiReports: 'Bulk AI есептері (мектеп)',
+      bulkStartError: 'Bulk-генерацияны іске қосу қатесі',
+      selectSchoolFirst: 'Алдымен мектепті таңдаңыз',
       tests: {
         riasec: {
           title: 'RIASEC (Holland)',

@@ -475,6 +475,9 @@ export const en: TranslationType = {
     testsPage: {
       title: 'Tests',
       loadingError: 'Failed to load test statistics',
+      bulkGenerateAiReports: 'Bulk AI reports (school)',
+      bulkStartError: 'Failed to start bulk generation',
+      selectSchoolFirst: 'Select a school first',
       tests: {
         riasec: {
           title: 'RIASEC (Holland)',
