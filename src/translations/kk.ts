@@ -833,6 +833,25 @@ export const kk: TranslationType = {
     errorLoading: 'RIASEC деректерін жүктеу кезінде қате',
   },
 
+  careerBulkJobPage: {
+    title: 'Bulk AI есептері (мектеп)',
+    loadError: 'Тапсырма күйін жүктеу қатесі',
+    refresh: 'Жаңарту',
+    cancel: 'Болдырмау',
+    canceled: 'Тапсырма болдырылмады',
+    cancelError: 'Тапсырманы болдырмау қатесі',
+    school: 'Мектеп',
+    status: 'Күйі',
+    progress: 'Барысы',
+    counters: 'Санауыштар',
+    success: 'Сәтті',
+    skipped: 'Өткізілді',
+    failed: 'Қателер',
+    latestItems: 'Соңғы элементтер',
+    noItems: 'Әзірге деректер жоқ',
+    error: 'Қате',
+  },
+
   // Мектеп есебі
   schoolReportPage: {
     title: 'Кәсіби бағдар жұмысы туралы есеп',
@@ -848,6 +867,9 @@ export const kk: TranslationType = {
     startDate: 'Басталу күні',
     endDate: 'Аяқталу күні',
     generateReport: 'Есеп жасау',
+    bulkGenerateAiReports: 'Bulk AI есептері (мектеп)',
+    selectSchoolFirst: 'Алдымен мектепті таңдаңыз',
+    bulkStartError: 'Bulk-генерацияны іске қосу қатесі',
     downloadPdf: 'PDF жүктеу',
     selectReportParams: 'Есеп параметрлерін таңдаңыз',
     generateReportFirst: 'Алдымен есеп жасаңыз',
