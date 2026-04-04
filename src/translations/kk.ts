@@ -631,6 +631,8 @@ export const kk: TranslationType = {
     aiCommentDesc: 'Оқушының ерекшеліктерін, күшті және әлсіз жақтарын, қызығушылықтарын сипаттаңыз. Бұл ЖИ-ға дәлірек ұсыныс беруге көмектеседі.',
     aiCommentPlaceholder: 'Мысалы: Оқушы нақты ғылымдарға қызығушылық танытады, командада жақсы жұмыс істейді, күрделі есептерді шешуді ұнатады...',
     getRecommendation: 'Ұсыныс алу',
+    editModeTitle: 'Салаларды өзгерту',
+    editModeDesc: 'Сіз басқа салаларды таңдап, жаңа есеп жасай аласыз. Ағымдағы салалар алдын ала толтырылған.',
   },
 
   // Сауалнама есебі
@@ -790,6 +792,7 @@ export const kk: TranslationType = {
     pdfGenerated: 'PDF сәтті құрылды',
     pdfGenerationError: 'PDF құру қатесі',
     downloadPdfError: 'PDF жүктеу қатесі',
+    chooseOtherSpheres: 'Басқа салаларды таңдау',
     regenerate: 'Қайта құру',
     reportDeletedRedirect: 'Есеп жойылды. Салаларды таңдауға бағыттаймыз...',
     errorDeletingReport: 'Есепті жою қатесі',
@@ -846,6 +849,39 @@ export const kk: TranslationType = {
     errorLoading: 'RIASEC деректерін жүктеу кезінде қате',
   },
 
+  careerBulkJobPage: {
+    title: 'Bulk AI есептері (мектеп)',
+    loadError: 'Тапсырма күйін жүктеу қатесі',
+    refresh: 'Жаңарту',
+    cancel: 'Болдырмау',
+    canceled: 'Тапсырма болдырылды',
+    cancelError: 'Тапсырманы болдырмау қатесі',
+    school: 'Мектеп',
+    status: 'Күйі',
+    progress: 'Барысы',
+    counters: 'Санауыштар',
+    success: 'Сәтті',
+    skipped: 'Өткізілді',
+    failed: 'Қателер',
+    latestItems: 'Соңғы элементтер',
+    noItems: 'Әзірге деректер жоқ',
+    error: 'Қате',
+    jobStatuses: {
+      queued: 'Кезекте',
+      running: 'Орындалып жатыр',
+      completed: 'Аяқталды',
+      failed: 'Қате',
+      canceled: 'Болдырылды',
+    },
+    itemStatuses: {
+      queued: 'Кезекте',
+      processing: 'Өңдеу',
+      done: 'Дайын',
+      skipped: 'Өткізілді',
+      failed: 'Қате',
+    },
+  },
+
   // Мектеп есебі
   schoolReportPage: {
     title: 'Кәсіби бағдар жұмысы туралы есеп',
@@ -861,6 +897,9 @@ export const kk: TranslationType = {
     startDate: 'Басталу күні',
     endDate: 'Аяқталу күні',
     generateReport: 'Есеп жасау',
+    bulkGenerateAiReports: 'Bulk AI есептері (мектеп)',
+    selectSchoolFirst: 'Алдымен мектепті таңдаңыз',
+    bulkStartError: 'Bulk-генерацияны іске қосу қатесі',
     downloadPdf: 'PDF жүктеу',
     selectReportParams: 'Есеп параметрлерін таңдаңыз',
     generateReportFirst: 'Алдымен есеп жасаңыз',

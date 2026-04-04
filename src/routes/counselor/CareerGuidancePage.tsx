@@ -50,6 +50,7 @@ export const CareerGuidancePage = () => {
   const [counselorComment, setCounselorComment] = useState("");
   const [commentModalVisible, setCommentModalVisible] = useState(false);
   const [generating, setGenerating] = useState(false);
+  const [fromAi, setFromAi] = useState(false);
   
   const { message } = App.useApp();
   const navigate = useNavigate();
@@ -67,14 +68,19 @@ export const CareerGuidancePage = () => {
   const fetchData = async () => {
     try {
       setLoading(true);
+
+      const search = new URLSearchParams(window.location.search);
+      const forceEdit = search.get('edit') === '1';
       
       const [studentRes, readinessRes, spheresRes] = await Promise.all([
         axiosClient.get(`/counselor/students/${studentId}/results`),
         axiosClient.get(`/counselor/career/students/${studentId}/readiness`),
         axiosClient.get('/counselor/career/spheres'),
       ]);
-      
-      if (readinessRes.data.has_report && readinessRes.data.report_status === 'generated') {
+
+      // Default behavior: if report is already generated, redirect to it.
+      // Edit mode: allow opening this page from the report to choose other spheres.
+      if (!forceEdit && readinessRes.data.has_report && readinessRes.data.report_status === 'generated') {
         navigate({ to: `/counselor/career/reports/${readinessRes.data.report_id}` });
         return;
       }
@@ -82,8 +88,9 @@ export const CareerGuidancePage = () => {
       setStudent(studentRes.data.student);
       setReadiness(readinessRes.data);
       setAvailableSpheres(spheresRes.data);
-      
-      if (readinessRes.data.report_id && readinessRes.data.report_status === 'draft') {
+
+      // Prefill selected spheres from the latest report (draft or generated)
+      if (readinessRes.data.report_id) {
         const reportRes = await axiosClient.get(`/counselor/career/reports/${readinessRes.data.report_id}`);
         if (reportRes.data.spheres) {
           setSelectedSpheres(reportRes.data.spheres);
@@ -108,6 +115,9 @@ export const CareerGuidancePage = () => {
   };
 
   const handleSelectSphere = (sphere: Sphere) => {
+    // manual interaction => not purely from AI
+    if (fromAi) setFromAi(false);
+
     if (selectedSpheres.length >= 3) {
       message.warning(t.careerGuidance.maxSpheresWarning);
       return;
@@ -122,6 +132,7 @@ export const CareerGuidancePage = () => {
   };
 
   const handleRemoveSphere = (sphereId: string) => {
+    if (fromAi) setFromAi(false);
     setSelectedSpheres(selectedSpheres.filter(s => s.id !== sphereId));
   };
 
@@ -140,6 +151,7 @@ export const CareerGuidancePage = () => {
       
       if (data.top_fields) {
         setSelectedSpheres(data.top_fields);
+        setFromAi(true);
         message.success(t.careerGuidance.aiRecommendationReceived);
       }
     } catch (error: any) {
@@ -158,7 +170,7 @@ export const CareerGuidancePage = () => {
     try {
       await axiosClient.post(`/counselor/career/students/${studentId}/spheres`, {
         spheres: selectedSpheres,
-        from_ai: false,
+        from_ai: fromAi,
       });
       
       message.success(t.careerGuidance.spheresSaved);
@@ -368,6 +380,15 @@ export const CareerGuidancePage = () => {
                 {t.careerGuidance.viewReport}
               </Button>
             }
+            className="mt-4"
+          />
+        )}
+
+        {readiness.has_report && readiness.report_status === 'generated' && new URLSearchParams(window.location.search).get('edit') === '1' && (
+          <Alert
+            type="info"
+            message={t.careerGuidance.editModeTitle || 'Изменение сфер'}
+            description={t.careerGuidance.editModeDesc || 'Вы можете выбрать другие сферы и сгенерировать новый отчёт. Текущие сферы уже предзаполнены.'}
             className="mt-4"
           />
         )}

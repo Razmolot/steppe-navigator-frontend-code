@@ -630,6 +630,8 @@ export const en: TranslationType = {
     aiCommentDesc: 'Describe the student\'s characteristics, strengths and weaknesses, interests. This will help AI give a more accurate recommendation.',
     aiCommentPlaceholder: 'For example: The student shows interest in exact sciences, works well in a team, likes to solve complex problems...',
     getRecommendation: 'Get Recommendation',
+    editModeTitle: 'Change spheres',
+    editModeDesc: 'You can choose other spheres and generate a new report. Current spheres are prefilled.',
   },
 
   // Questionnaire Report
@@ -789,6 +791,7 @@ export const en: TranslationType = {
     pdfGenerated: 'PDF generated successfully',
     pdfGenerationError: 'Error generating PDF',
     downloadPdfError: 'Error downloading PDF',
+    chooseOtherSpheres: 'Choose other spheres',
     regenerate: 'Regenerate',
     reportDeletedRedirect: 'Report deleted. Redirecting to sphere selection...',
     errorDeletingReport: 'Error deleting report',
@@ -845,6 +848,39 @@ export const en: TranslationType = {
     errorLoading: 'Error loading RIASEC data',
   },
 
+  careerBulkJobPage: {
+    title: 'Bulk AI reports (school)',
+    loadError: 'Failed to load job status',
+    refresh: 'Refresh',
+    cancel: 'Cancel',
+    canceled: 'Job canceled',
+    cancelError: 'Failed to cancel job',
+    school: 'School',
+    status: 'Status',
+    progress: 'Progress',
+    counters: 'Counters',
+    success: 'Success',
+    skipped: 'Skipped',
+    failed: 'Failed',
+    latestItems: 'Latest items',
+    noItems: 'No data yet',
+    error: 'Error',
+    jobStatuses: {
+      queued: 'Queued',
+      running: 'Running',
+      completed: 'Completed',
+      failed: 'Failed',
+      canceled: 'Canceled',
+    },
+    itemStatuses: {
+      queued: 'Queued',
+      processing: 'Processing',
+      done: 'Done',
+      skipped: 'Skipped',
+      failed: 'Failed',
+    },
+  },
+
   // School report
   schoolReportPage: {
     title: 'Career Guidance Work Report',
@@ -860,6 +896,9 @@ export const en: TranslationType = {
     startDate: 'Start date',
     endDate: 'End date',
     generateReport: 'Generate report',
+    bulkGenerateAiReports: 'Bulk AI reports (school)',
+    selectSchoolFirst: 'Select a school first',
+    bulkStartError: 'Failed to start bulk generation',
     downloadPdf: 'Download PDF',
     selectReportParams: 'Select report parameters',
     generateReportFirst: 'Generate report first',

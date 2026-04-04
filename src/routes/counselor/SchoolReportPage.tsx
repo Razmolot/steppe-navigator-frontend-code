@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card, Spin, App, Button, Select, DatePicker, Table, Empty, Collapse } from "antd";
 import { useNavigate } from "@tanstack/react-router";
-import { ArrowLeftOutlined, FileTextOutlined, DownloadOutlined } from "@ant-design/icons";
+import { ArrowLeftOutlined, FileTextOutlined, DownloadOutlined, RobotOutlined } from "@ant-design/icons";
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import axiosClient from "../../api/axiosClient";
 import Breadcrumb from "../../components/Breadcrumb";
@@ -77,6 +77,7 @@ export const SchoolReportPage = () => {
   const [loading, setLoading] = useState(true);
   const [generating, setGenerating] = useState(false);
   const [downloadingPdf, setDownloadingPdf] = useState(false);
+  const [startingBulk, setStartingBulk] = useState(false);
   const [schools, setSchools] = useState<School[]>([]);
   const [report, setReport] = useState<ReportData | null>(null);
   
@@ -149,6 +150,33 @@ export const SchoolReportPage = () => {
       message.error(error.response?.data?.message || t.schoolReportPage.generateError);
     } finally {
       setGenerating(false);
+    }
+  };
+
+  const startBulkAiReports = async () => {
+    if (!selectedSchool) {
+      message.warning(t.schoolReportPage.selectSchoolFirst);
+      return;
+    }
+
+    setStartingBulk(true);
+    try {
+      const { data } = await axiosClient.post(`/counselor/career/schools/${selectedSchool}/bulk-generate`);
+      const jobId = data.job_id;
+      if (jobId) {
+        navigate({ to: `/counselor/career/bulk-jobs/${jobId}` });
+      }
+    } catch (error: unknown) {
+      const e = error as { response?: { data?: { job_id?: string; message?: string } } };
+      const jobId = e.response?.data?.job_id;
+      if (jobId) {
+        // active job already exists
+        navigate({ to: `/counselor/career/bulk-jobs/${jobId}` });
+        return;
+      }
+      message.error(e.response?.data?.message || t.schoolReportPage.bulkStartError);
+    } finally {
+      setStartingBulk(false);
     }
   };
 
@@ -350,6 +378,8 @@ export const SchoolReportPage = () => {
   return (
     <div className="school-report-page p-6 max-w-6xl mx-auto">
       <Card className="mb-4">
+        <Breadcrumb routes={[{ name: t.nav.schoolReports }]} />
+
         <Button
           icon={<ArrowLeftOutlined />}
           onClick={() => window.history.back()}
@@ -435,14 +465,25 @@ export const SchoolReportPage = () => {
           </div>
           
           <div className="filter-item filter-actions">
-            <Button
-              type="primary"
-              icon={<FileTextOutlined />}
-              onClick={generateReport}
-              loading={generating}
-            >
-              {t.schoolReportPage.generateReport}
-            </Button>
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+              <Button
+                icon={<RobotOutlined />}
+                onClick={startBulkAiReports}
+                loading={startingBulk}
+                disabled={!selectedSchool}
+              >
+                {t.schoolReportPage.bulkGenerateAiReports}
+              </Button>
+
+              <Button
+                type="primary"
+                icon={<FileTextOutlined />}
+                onClick={generateReport}
+                loading={generating}
+              >
+                {t.schoolReportPage.generateReport}
+              </Button>
+            </div>
           </div>
         </div>
       </Card>

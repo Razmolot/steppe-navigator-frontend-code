@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card, Spin, App, Button, Tabs, Tag, Collapse, Switch } from "antd";
 import { useNavigate, useParams } from "@tanstack/react-router";
-import { ArrowLeftOutlined, DownloadOutlined, FilePdfOutlined, ReloadOutlined } from "@ant-design/icons";
+import { ArrowLeftOutlined, DownloadOutlined, FilePdfOutlined, SwapOutlined } from "@ant-design/icons";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import axiosClient from "../../api/axiosClient";
 import Breadcrumb from "../../components/Breadcrumb";
@@ -188,16 +188,9 @@ export const CareerReportPage = () => {
     }
   };
 
-  const regenerateReport = async () => {
-    try {
-      setLoading(true);
-      await axiosClient.delete(`/counselor/career/reports/${reportId}`);
-      message.success(t.careerReportPage.reportDeletedRedirect);
-      navigate({ to: `/counselor/career/students/${data?.student?.id}` });
-    } catch (error: any) {
-      message.error(t.careerReportPage.errorDeletingReport);
-      setLoading(false);
-    }
+  const chooseOtherSpheres = async () => {
+    // Navigate to sphere selection in edit mode (prefilled)
+    navigate({ to: `/counselor/career/students/${data?.student?.id}?edit=1` });
   };
 
   const getLocalizedText = (obj: Record<string, string> | undefined, fallback = "") => {
@@ -327,12 +320,11 @@ export const CareerReportPage = () => {
               </>
             )}
             <Button 
-              icon={<ReloadOutlined />}
-              onClick={regenerateReport}
+              icon={<SwapOutlined />}
+              onClick={chooseOtherSpheres}
               className="ml-2"
-              danger
             >
-              {t.careerReportPage.regenerate}
+              {t.careerReportPage.chooseOtherSpheres || 'Выбрать другие сферы'}
             </Button>
           </div>
         </div>

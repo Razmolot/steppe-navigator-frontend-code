@@ -628,6 +628,8 @@ export const ru = {
     aiCommentDesc: 'Опишите особенности ученика, его сильные и слабые стороны, интересы. Это поможет ИИ дать более точную рекомендацию.',
     aiCommentPlaceholder: 'Например: Ученик проявляет интерес к точным наукам, хорошо работает в команде, любит решать сложные задачи...',
     getRecommendation: 'Получить рекомендацию',
+    editModeTitle: 'Изменение сфер',
+    editModeDesc: 'Вы можете выбрать другие сферы и сгенерировать новый отчёт. Текущие сферы уже предзаполнены.',
   },
 
   // Отчет Опросника
@@ -787,6 +789,7 @@ export const ru = {
     pdfGenerated: 'PDF успешно сгенерирован',
     pdfGenerationError: 'Ошибка генерации PDF',
     downloadPdfError: 'Ошибка скачивания PDF',
+    chooseOtherSpheres: 'Выбрать другие сферы',
     regenerate: 'Сгенерировать заново',
     reportDeletedRedirect: 'Отчёт удалён. Перенаправляем на выбор сфер...',
     errorDeletingReport: 'Ошибка удаления отчёта',
@@ -843,6 +846,39 @@ export const ru = {
     errorLoading: 'Ошибка при загрузке данных RIASEC',
   },
 
+  careerBulkJobPage: {
+    title: 'Bulk AI отчёты по школе',
+    loadError: 'Ошибка загрузки статуса задачи',
+    refresh: 'Обновить',
+    cancel: 'Отменить',
+    canceled: 'Задача отменена',
+    cancelError: 'Ошибка отмены задачи',
+    school: 'Школа',
+    status: 'Статус',
+    progress: 'Прогресс',
+    counters: 'Счётчики',
+    success: 'Успешно',
+    skipped: 'Пропущено',
+    failed: 'Ошибок',
+    latestItems: 'Последние элементы',
+    noItems: 'Пока нет данных',
+    error: 'Ошибка',
+    jobStatuses: {
+      queued: 'В очереди',
+      running: 'В работе',
+      completed: 'Завершено',
+      failed: 'Ошибка',
+      canceled: 'Отменено',
+    },
+    itemStatuses: {
+      queued: 'В очереди',
+      processing: 'Обработка',
+      done: 'Готово',
+      skipped: 'Пропущено',
+      failed: 'Ошибка',
+    },
+  },
+
   // Отчёт школы
   schoolReportPage: {
     title: 'Отчёт о профориентационной работе',
@@ -858,6 +894,9 @@ export const ru = {
     startDate: 'Дата начала',
     endDate: 'Дата окончания',
     generateReport: 'Сгенерировать отчёт',
+    bulkGenerateAiReports: 'Bulk AI отчёты (школа)',
+    selectSchoolFirst: 'Сначала выберите школу',
+    bulkStartError: 'Ошибка запуска bulk-генерации',
     downloadPdf: 'Скачать PDF',
     selectReportParams: 'Выберите параметры отчёта',
     generateReportFirst: 'Сначала сгенерируйте отчёт',
