@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { App, Button, Card, Descriptions, List, Spin, Tag } from 'antd';
+import { App, Button, Card, Descriptions, List, Spin, Tag, Progress, Collapse } from 'antd';
 import axiosClient from '../../api/axiosClient';
 import Breadcrumb from '../../components/Breadcrumb';
 import { useTranslation } from '../../hooks/useTranslation';
@@ -119,7 +119,7 @@ export const CareerBulkJobPage = () => {
     if (shouldPoll) {
       pollTimer.current = window.setInterval(() => {
         fetchStatus({ silent: true });
-      }, 2500);
+      }, 10_000);
     }
 
     return () => {
@@ -184,7 +184,16 @@ export const CareerBulkJobPage = () => {
               </Tag>
             </Descriptions.Item>
             <Descriptions.Item label={t.careerBulkJobPage.progress}>
-              {job.processed} / {job.total}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                <div>
+                  {job.processed} / {job.total}
+                  {job.total > 0 ? ` (${Math.round((job.processed / job.total) * 100)}%)` : ''}
+                </div>
+                <Progress
+                  percent={job.total > 0 ? Math.round((job.processed / job.total) * 100) : 0}
+                  status={job.status === 'failed' ? 'exception' : job.status === 'completed' ? 'success' : 'active'}
+                />
+              </div>
             </Descriptions.Item>
             <Descriptions.Item label={t.careerBulkJobPage.counters}>
               {t.careerBulkJobPage.success}: {job.success} · {t.careerBulkJobPage.skipped}: {job.skipped} · {t.careerBulkJobPage.failed}: {job.failed}
@@ -194,28 +203,35 @@ export const CareerBulkJobPage = () => {
       )}
 
       <Card>
-        <h3 className="text-lg font-semibold" style={{ marginBottom: 12 }}>
-          {t.careerBulkJobPage.latestItems}
-        </h3>
-
-        <List
-          dataSource={data?.items || []}
-          locale={{ emptyText: t.careerBulkJobPage.noItems }}
-          renderItem={(it) => (
-            <List.Item>
-              <List.Item.Meta
-                title={
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-                    <span>
-                      #{it.student_id} {it.student_name ? `— ${it.student_name}` : ''}
-                    </span>
-                    <Tag>{t.careerBulkJobPage.itemStatuses[it.status] || it.status}</Tag>
-                  </div>
-                }
-                description={it.error ? `${t.careerBulkJobPage.error}: ${it.error}` : undefined}
-              />
-            </List.Item>
-          )}
+        <Collapse
+          defaultActiveKey={[]}
+          items={[
+            {
+              key: 'items',
+              label: t.careerBulkJobPage.latestItems,
+              children: (
+                <List
+                  dataSource={data?.items || []}
+                  locale={{ emptyText: t.careerBulkJobPage.noItems }}
+                  renderItem={(it) => (
+                    <List.Item>
+                      <List.Item.Meta
+                        title={
+                          <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+                            <span>
+                              #{it.student_id} {it.student_name ? `— ${it.student_name}` : ''}
+                            </span>
+                            <Tag>{t.careerBulkJobPage.itemStatuses[it.status] || it.status}</Tag>
+                          </div>
+                        }
+                        description={it.error ? `${t.careerBulkJobPage.error}: ${it.error}` : undefined}
+                      />
+                    </List.Item>
+                  )}
+                />
+              ),
+            },
+          ]}
         />
       </Card>
     </div>
