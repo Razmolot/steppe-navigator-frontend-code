@@ -166,14 +166,15 @@ export const SchoolReportPage = () => {
       if (jobId) {
         navigate({ to: `/counselor/career/bulk-jobs/${jobId}` });
       }
-    } catch (error: any) {
-      const jobId = error.response?.data?.job_id;
+    } catch (error: unknown) {
+      const e = error as { response?: { data?: { job_id?: string; message?: string } } };
+      const jobId = e.response?.data?.job_id;
       if (jobId) {
         // active job already exists
         navigate({ to: `/counselor/career/bulk-jobs/${jobId}` });
         return;
       }
-      message.error(error.response?.data?.message || t.schoolReportPage.bulkStartError);
+      message.error(e.response?.data?.message || t.schoolReportPage.bulkStartError);
     } finally {
       setStartingBulk(false);
     }
@@ -377,6 +378,8 @@ export const SchoolReportPage = () => {
   return (
     <div className="school-report-page p-6 max-w-6xl mx-auto">
       <Card className="mb-4">
+        <Breadcrumb routes={[{ name: t.nav.schoolReports }]} />
+
         <Button
           icon={<ArrowLeftOutlined />}
           onClick={() => window.history.back()}
