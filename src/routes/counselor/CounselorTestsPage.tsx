@@ -137,6 +137,12 @@ export const CounselorTestsPage = () => {
         </div>
       </div>
 
+      <div style={{ maxWidth: 1184, margin: '0 auto', padding: '0 24px 16px', display: 'flex', justifyContent: 'flex-end' }}>
+        <Button type="primary" onClick={startBulkAiReports} loading={startingBulk}>
+          {t.counselor.testsPage.bulkGenerateAiReports}
+        </Button>
+      </div>
+
       <div className="tests-grid">
         {testsData.map((test) => {
           const translation = getTestTranslation(test.type);
