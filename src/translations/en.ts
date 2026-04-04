@@ -849,6 +849,20 @@ export const en: TranslationType = {
     latestItems: 'Latest items',
     noItems: 'No data yet',
     error: 'Error',
+    jobStatuses: {
+      queued: 'Queued',
+      running: 'Running',
+      completed: 'Completed',
+      failed: 'Failed',
+      canceled: 'Canceled',
+    },
+    itemStatuses: {
+      queued: 'Queued',
+      processing: 'Processing',
+      done: 'Done',
+      skipped: 'Skipped',
+      failed: 'Failed',
+    },
   },
 
   // School report
