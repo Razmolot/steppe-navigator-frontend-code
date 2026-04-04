@@ -848,6 +848,25 @@ export const en: TranslationType = {
     errorLoading: 'Error loading RIASEC data',
   },
 
+  careerBulkJobPage: {
+    title: 'Bulk AI reports (school)',
+    loadError: 'Failed to load job status',
+    refresh: 'Refresh',
+    cancel: 'Cancel',
+    canceled: 'Job canceled',
+    cancelError: 'Failed to cancel job',
+    school: 'School',
+    status: 'Status',
+    progress: 'Progress',
+    counters: 'Counters',
+    success: 'Success',
+    skipped: 'Skipped',
+    failed: 'Failed',
+    latestItems: 'Latest items',
+    noItems: 'No data yet',
+    error: 'Error',
+  },
+
   // School report
   schoolReportPage: {
     title: 'Career Guidance Work Report',
@@ -863,6 +882,9 @@ export const en: TranslationType = {
     startDate: 'Start date',
     endDate: 'End date',
     generateReport: 'Generate report',
+    bulkGenerateAiReports: 'Bulk AI reports (school)',
+    selectSchoolFirst: 'Select a school first',
+    bulkStartError: 'Failed to start bulk generation',
     downloadPdf: 'Download PDF',
     selectReportParams: 'Select report parameters',
     generateReportFirst: 'Generate report first',
