@@ -177,7 +177,9 @@ export const CareerBulkJobPage = () => {
           <Descriptions bordered size="small" column={1}>
             <Descriptions.Item label={t.careerBulkJobPage.school}>{job.school.name}</Descriptions.Item>
             <Descriptions.Item label={t.careerBulkJobPage.status}>
-              <Tag color={statusColor(job.status)}>{job.status}</Tag>
+              <Tag color={statusColor(job.status)}>
+                {t.careerBulkJobPage.jobStatuses[job.status] || job.status}
+              </Tag>
             </Descriptions.Item>
             <Descriptions.Item label={t.careerBulkJobPage.progress}>
               {job.processed} / {job.total}
@@ -205,7 +207,7 @@ export const CareerBulkJobPage = () => {
                     <span>
                       #{it.student_id} {it.student_name ? `— ${it.student_name}` : ''}
                     </span>
-                    <Tag>{it.status}</Tag>
+                    <Tag>{t.careerBulkJobPage.itemStatuses[it.status] || it.status}</Tag>
                   </div>
                 }
                 description={it.error ? `${t.careerBulkJobPage.error}: ${it.error}` : undefined}

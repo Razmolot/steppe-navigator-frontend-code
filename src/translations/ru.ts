@@ -863,6 +863,20 @@ export const ru = {
     latestItems: 'Последние элементы',
     noItems: 'Пока нет данных',
     error: 'Ошибка',
+    jobStatuses: {
+      queued: 'В очереди',
+      running: 'В работе',
+      completed: 'Завершено',
+      failed: 'Ошибка',
+      canceled: 'Отменено',
+    },
+    itemStatuses: {
+      queued: 'В очереди',
+      processing: 'Обработка',
+      done: 'Готово',
+      skipped: 'Пропущено',
+      failed: 'Ошибка',
+    },
   },
 
   // Отчёт школы

@@ -854,7 +854,7 @@ export const kk: TranslationType = {
     loadError: 'Тапсырма күйін жүктеу қатесі',
     refresh: 'Жаңарту',
     cancel: 'Болдырмау',
-    canceled: 'Тапсырма болдырылмады',
+    canceled: 'Тапсырма болдырылды',
     cancelError: 'Тапсырманы болдырмау қатесі',
     school: 'Мектеп',
     status: 'Күйі',
@@ -866,6 +866,20 @@ export const kk: TranslationType = {
     latestItems: 'Соңғы элементтер',
     noItems: 'Әзірге деректер жоқ',
     error: 'Қате',
+    jobStatuses: {
+      queued: 'Кезекте',
+      running: 'Орындалып жатыр',
+      completed: 'Аяқталды',
+      failed: 'Қате',
+      canceled: 'Болдырылды',
+    },
+    itemStatuses: {
+      queued: 'Кезекте',
+      processing: 'Өңдеу',
+      done: 'Дайын',
+      skipped: 'Өткізілді',
+      failed: 'Қате',
+    },
   },
 
   // Мектеп есебі
