@@ -54,8 +54,8 @@ const statusColor = (status: JobStatus) => {
 export const CareerBulkJobPage = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const params = useParams({ strict: false });
-  const jobId = (params as any).jobId as string;
+  const params = useParams({ strict: false }) as unknown as { jobId: string };
+  const jobId = params.jobId;
 
   const { message } = App.useApp();
 
@@ -81,8 +81,9 @@ export const CareerBulkJobPage = () => {
     try {
       const res = await axiosClient.get(`/counselor/career/bulk-jobs/${jobId}`);
       setData(res.data);
-    } catch (err: any) {
-      message.error(err.response?.data?.message || t.careerBulkJobPage.loadError);
+    } catch (err: unknown) {
+      const e = err as { response?: { data?: { message?: string } } };
+      message.error(e.response?.data?.message || t.careerBulkJobPage.loadError);
     } finally {
       if (!opts?.silent) setRefreshing(false);
       setLoading(false);
@@ -95,8 +96,9 @@ export const CareerBulkJobPage = () => {
       await axiosClient.post(`/counselor/career/bulk-jobs/${jobId}/cancel`);
       message.success(t.careerBulkJobPage.canceled);
       await fetchStatus({ silent: true });
-    } catch (err: any) {
-      message.error(err.response?.data?.message || t.careerBulkJobPage.cancelError);
+    } catch (err: unknown) {
+      const e = err as { response?: { data?: { message?: string } } };
+      message.error(e.response?.data?.message || t.careerBulkJobPage.cancelError);
     } finally {
       setCanceling(false);
     }
