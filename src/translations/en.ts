@@ -851,6 +851,14 @@ export const en: TranslationType = {
     errorLoading: 'Error loading RIASEC data',
   },
 
+  careerBulkJobsLanding: {
+    title: 'Bulk AI reports',
+    starting: 'Starting (or finding an active job) and opening progress…',
+    retry: 'Retry',
+    startError: 'Failed to start bulk generation',
+    selectSchoolFirst: 'No counselor school found',
+  },
+
   careerBulkJobPage: {
     title: 'Bulk AI reports (school)',
     loadError: 'Failed to load job status',

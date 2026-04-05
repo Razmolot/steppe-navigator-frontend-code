@@ -852,6 +852,14 @@ export const kk: TranslationType = {
     errorLoading: 'RIASEC деректерін жүктеу кезінде қате',
   },
 
+  careerBulkJobsLanding: {
+    title: 'Bulk AI есептері',
+    starting: 'Іске қосамыз (немесе белсенді тапсырманы табамыз) және прогресті ашамыз…',
+    retry: 'Қайта көру',
+    startError: 'Bulk-генерацияны іске қосу мүмкін болмады',
+    selectSchoolFirst: 'Бағдаршыға мектеп табылмады',
+  },
+
   careerBulkJobPage: {
     title: 'Bulk AI есептері (мектеп)',
     loadError: 'Тапсырма күйін жүктеу қатесі',

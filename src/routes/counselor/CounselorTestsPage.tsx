@@ -2,7 +2,7 @@ import { TestCard } from '../../components/TestCard';
 import './CounselorTestsPage.css';
 import { useEffect, useState } from 'react';
 import axiosClient from '../../api/axiosClient';
-import { Button, Spin, App } from 'antd';
+import { Button, Spin } from 'antd';
 import { useNavigate } from '@tanstack/react-router';
 import { useTranslation } from '../../hooks/useTranslation';
 
@@ -20,11 +20,9 @@ interface TestData {
 export const CounselorTestsPage = () => {
   const [testsData, setTestsData] = useState<TestData[]>([]);
   const [loading, setLoading] = useState(true);
-  const [startingBulk, setStartingBulk] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { message } = App.useApp();
 
   // Получить переведённое название и описание теста по типу
   const getTestTranslation = (testType: string) => {
@@ -54,36 +52,8 @@ export const CounselorTestsPage = () => {
     navigate({ to: '/tests/assign/classrooms' });
   };
 
-  const startBulkAiReports = async () => {
-    setStartingBulk(true);
-    try {
-      // We reuse existing endpoint that returns counselor schools (used in SchoolReportPage)
-      const { data: available } = await axiosClient.get('/counselor/reports/available');
-      const schools = (available?.schools || []) as Array<{ id: number; name: string }>;
-
-      const schoolId = schools?.[0]?.id;
-      if (!schoolId) {
-        message.warning(t.counselor.testsPage.selectSchoolFirst);
-        return;
-      }
-
-      const { data } = await axiosClient.post(`/counselor/career/schools/${schoolId}/bulk-generate`);
-      const jobId = data.job_id as string | undefined;
-      if (jobId) {
-        navigate({ to: `/counselor/career/bulk-jobs/${jobId}` });
-      }
-    } catch (error: unknown) {
-      const e = error as { response?: { data?: { job_id?: string; message?: string } } };
-      const jobId = e.response?.data?.job_id;
-      if (jobId) {
-        navigate({ to: `/counselor/career/bulk-jobs/${jobId}` });
-        return;
-      }
-
-      message.error(e.response?.data?.message || t.counselor.testsPage.bulkStartError);
-    } finally {
-      setStartingBulk(false);
-    }
+  const openBulkAiReports = () => {
+    navigate({ to: '/counselor/career/bulk-jobs' });
   };
 
   if (loading) {
@@ -115,9 +85,7 @@ export const CounselorTestsPage = () => {
             <h1 className="page-title">{t.counselor.testsPage.title}</h1>
           </div>
         </div>
-        <div style={{ padding: '24px', textAlign: 'center', color: '#ff4d4f' }}>
-          {error}
-        </div>
+        <div style={{ padding: '24px', textAlign: 'center', color: '#ff4d4f' }}>{error}</div>
       </div>
     );
   }
@@ -128,19 +96,16 @@ export const CounselorTestsPage = () => {
         <div className="breadcrumb">
           <span className="breadcrumb-item current">{t.counselor.testsPage.title}</span>
         </div>
-        <div className="page-title-wrapper" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
+        <div
+          className="page-title-wrapper"
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}
+        >
           <h1 className="page-title">{t.counselor.testsPage.title}</h1>
 
-          <Button onClick={startBulkAiReports} loading={startingBulk}>
+          <Button type="primary" onClick={openBulkAiReports}>
             {t.counselor.testsPage.bulkGenerateAiReports}
           </Button>
         </div>
-      </div>
-
-      <div style={{ maxWidth: 1184, margin: '0 auto', padding: '0 24px 16px', display: 'flex', justifyContent: 'flex-end' }}>
-        <Button type="primary" onClick={startBulkAiReports} loading={startingBulk}>
-          {t.counselor.testsPage.bulkGenerateAiReports}
-        </Button>
       </div>
 
       <div className="tests-grid">
@@ -163,4 +128,3 @@ export const CounselorTestsPage = () => {
     </div>
   );
 };
-

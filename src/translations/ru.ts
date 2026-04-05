@@ -849,6 +849,14 @@ export const ru = {
     errorLoading: 'Ошибка при загрузке данных RIASEC',
   },
 
+  careerBulkJobsLanding: {
+    title: 'Bulk AI отчёты',
+    starting: 'Запускаем (или находим активную задачу) и открываем прогресс…',
+    retry: 'Повторить',
+    startError: 'Не удалось запустить bulk-генерацию',
+    selectSchoolFirst: 'Не нашёл школу для профориентатора',
+  },
+
   careerBulkJobPage: {
     title: 'Bulk AI отчёты по школе',
     loadError: 'Ошибка загрузки статуса задачи',

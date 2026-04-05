@@ -47,6 +47,7 @@ import {CareerReportPage} from "./counselor/CareerReportPage.tsx";
 import {StudentCareerReportPage} from "./student/CareerReportPage.tsx";
 import {SchoolReportPage} from "./counselor/SchoolReportPage.tsx";
 import {CareerBulkJobPage} from "./counselor/CareerBulkJobPage.tsx";
+import {CareerBulkJobsLandingPage} from "./counselor/CareerBulkJobsLandingPage.tsx";
 import {LibraryPage} from "./LibraryPage.tsx";
 
 const rootRoute = new RootRoute({
@@ -252,6 +253,12 @@ const schoolReportRoute = new Route({
     component: SchoolReportPage,
 });
 
+const counselorCareerBulkJobsLandingRoute = new Route({
+    getParentRoute: () => protectedRoute,
+    path: "/counselor/career/bulk-jobs",
+    component: CareerBulkJobsLandingPage,
+});
+
 const counselorCareerBulkJobRoute = new Route({
     getParentRoute: () => protectedRoute,
     path: "/counselor/career/bulk-jobs/$jobId",
@@ -296,6 +303,7 @@ const routeTree = rootRoute.addChildren([
         counselorCareerReportRoute,
         studentCareerReportRoute,
         schoolReportRoute,
+        counselorCareerBulkJobsLandingRoute,
         counselorCareerBulkJobRoute,
         libraryRoute
     ]),
