@@ -462,6 +462,7 @@ export const kk: TranslationType = {
   counselor: {
     testsPage: {
       title: 'Тесттер',
+      bulkGenerateReports: 'Есептерді жаппай генерациялау',
       loadingError: 'Тест статистикасын жүктеу мүмкін болмады',
       tests: {
         riasec: {
@@ -778,6 +779,7 @@ export const kk: TranslationType = {
     pdfGenerationError: 'PDF құру қатесі',
     downloadPdfError: 'PDF жүктеу қатесі',
     regenerate: 'Қайта құру',
+    editSpheres: 'Сфераларды өзгерту',
     reportDeletedRedirect: 'Есеп жойылды. Салаларды таңдауға бағыттаймыз...',
     errorDeletingReport: 'Есепті жою қатесі',
     noProfessionsHigher: 'Жоғары білім деңгейіне мамандықтар жоқ',

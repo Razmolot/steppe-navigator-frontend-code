@@ -130,7 +130,7 @@ export const CounselorTestsPage = () => {
           <h1 className="page-title">{t.counselor.testsPage.title}</h1>
           <div style={{ marginTop: 12 }}>
             <Button icon={<RobotOutlined />} onClick={startBulkAiReports} loading={startingBulk}>
-              Массовая генерация отчётов
+              {t.counselor.testsPage.bulkGenerateReports}
             </Button>
           </div>
         </div>

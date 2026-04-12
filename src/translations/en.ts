@@ -461,6 +461,7 @@ export const en: TranslationType = {
   counselor: {
     testsPage: {
       title: 'Tests',
+      bulkGenerateReports: 'Bulk report generation',
       loadingError: 'Failed to load test statistics',
       tests: {
         riasec: {
@@ -777,6 +778,7 @@ export const en: TranslationType = {
     pdfGenerationError: 'Error generating PDF',
     downloadPdfError: 'Error downloading PDF',
     regenerate: 'Regenerate',
+    editSpheres: 'Edit spheres',
     reportDeletedRedirect: 'Report deleted. Redirecting to sphere selection...',
     errorDeletingReport: 'Error deleting report',
     noProfessionsHigher: 'No professions for higher education level',

@@ -58,6 +58,10 @@ export const CareerGuidancePage = () => {
   const params = useParams({ strict: false });
   const studentId = params.studentId;
 
+  const search = (params as any).search || {};
+  const editMode = search?.editSpheres === '1' || search?.editSpheres === 1;
+  const fromReportId = search?.fromReportId as string | undefined;
+
   useEffect(() => {
     if (studentId) {
       fetchData();
@@ -74,7 +78,7 @@ export const CareerGuidancePage = () => {
         axiosClient.get('/counselor/career/spheres'),
       ]);
       
-      if (readinessRes.data.has_report && readinessRes.data.report_status === 'generated') {
+      if (readinessRes.data.has_report && readinessRes.data.report_status === 'generated' && !editMode) {
         navigate({ to: `/counselor/career/reports/${readinessRes.data.report_id}` });
         return;
       }
@@ -83,6 +87,14 @@ export const CareerGuidancePage = () => {
       setReadiness(readinessRes.data);
       setAvailableSpheres(spheresRes.data);
       
+      if (editMode && readinessRes.data.report_id) {
+        const reportId = fromReportId || readinessRes.data.report_id;
+        const reportRes = await axiosClient.get(`/counselor/career/reports/${reportId}`);
+        if (reportRes.data.spheres) {
+          setSelectedSpheres(reportRes.data.spheres);
+        }
+      }
+
       if (readinessRes.data.report_id && readinessRes.data.report_status === 'draft') {
         const reportRes = await axiosClient.get(`/counselor/career/reports/${readinessRes.data.report_id}`);
         if (reportRes.data.spheres) {

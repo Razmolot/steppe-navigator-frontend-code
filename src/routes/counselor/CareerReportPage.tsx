@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card, Spin, App, Button, Tabs, Tag, Collapse, Switch } from "antd";
 import { useNavigate, useParams } from "@tanstack/react-router";
-import { ArrowLeftOutlined, DownloadOutlined, FilePdfOutlined, ReloadOutlined } from "@ant-design/icons";
+import { ArrowLeftOutlined, DownloadOutlined, EditOutlined, FilePdfOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import axiosClient from "../../api/axiosClient";
 import Breadcrumb from "../../components/Breadcrumb";
@@ -200,6 +200,20 @@ export const CareerReportPage = () => {
     }
   };
 
+  const editSpheres = () => {
+    const studentId = data?.student?.id;
+    if (!studentId) {
+      message.error(t.careerReportPage.errorLoading);
+      return;
+    }
+    // Allow editing spheres even if current report is generated
+    navigate({
+      to: `/counselor/career/students/${studentId}` ,
+      search: { editSpheres: '1', fromReportId: reportId },
+    });
+  };
+
+
   const getLocalizedText = (obj: Record<string, string> | undefined, fallback = "") => {
     if (!obj) return fallback;
     return obj[locale] || obj.ru || obj.en || fallback;
@@ -326,6 +340,14 @@ export const CareerReportPage = () => {
                 </Button>
               </>
             )}
+            <Button
+              icon={<EditOutlined />}
+              onClick={editSpheres}
+              className="ml-2"
+            >
+              {t.careerReportPage.editSpheres}
+            </Button>
+
             <Button 
               icon={<ReloadOutlined />}
               onClick={regenerateReport}

@@ -459,6 +459,7 @@ export const ru = {
   counselor: {
     testsPage: {
       title: 'Тесты',
+      bulkGenerateReports: 'Массовая генерация отчётов',
       loadingError: 'Не удалось загрузить статистику тестов',
       tests: {
         riasec: {
@@ -775,6 +776,7 @@ export const ru = {
     pdfGenerationError: 'Ошибка генерации PDF',
     downloadPdfError: 'Ошибка скачивания PDF',
     regenerate: 'Сгенерировать заново',
+    editSpheres: 'Изменить сферы',
     reportDeletedRedirect: 'Отчёт удалён. Перенаправляем на выбор сфер...',
     errorDeletingReport: 'Ошибка удаления отчёта',
     noProfessionsHigher: 'Нет профессий для уровня высшего образования',
