@@ -58,9 +58,10 @@ export const CareerGuidancePage = () => {
   const params = useParams({ strict: false });
   const studentId = params.studentId;
 
-  const search = (params as any).search || {};
-  const editMode = search?.editSpheres === '1' || search?.editSpheres === 1;
-  const fromReportId = search?.fromReportId as string | undefined;
+  const qs = new URLSearchParams(window.location.search);
+  const editMode = qs.get('editSpheres') === '1';
+  const fromReportId = qs.get('fromReportId') || undefined;
+
 
   useEffect(() => {
     if (studentId) {

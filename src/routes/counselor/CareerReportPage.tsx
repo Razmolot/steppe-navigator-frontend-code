@@ -207,10 +207,7 @@ export const CareerReportPage = () => {
       return;
     }
     // Allow editing spheres even if current report is generated
-    navigate({
-      to: `/counselor/career/students/${studentId}` ,
-      search: (prev) => ({ ...(prev as any), editSpheres: '1', fromReportId: reportId }),
-    });
+    navigate({ to: `/counselor/career/students/${studentId}?editSpheres=1&fromReportId=${encodeURIComponent(String(reportId))}` });
   };
 
 
