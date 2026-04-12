@@ -1,61 +1,245 @@
 {
   "common": [
     {
-      "title": { "ru": "Атлас новых профессий РК", "kk": "ҚР жаңа мамандықтар Атласы", "en": "Kazakhstan Atlas of New Professions" },
+      "title": {
+        "ru": "Атлас новых профессий РК",
+        "kk": "ҚР жаңа мамандықтар Атласы",
+        "en": "Kazakhstan Atlas of New Professions"
+      },
       "path_ru": "common/atlas_RK_ru.pdf",
       "path_kk": "common/atlas_RK_kk.pdf"
     },
     {
-      "title": { "ru": "Атлас новых профессий Мангистау", "kk": "Маңғыстау обласы жаңа мамандықтар Атласы", "en": "Mangistau Atlas of New Professions" },
+      "title": {
+        "ru": "Атлас новых профессий Мангистау",
+        "kk": "Маңғыстау обласы жаңа мамандықтар Атласы",
+        "en": "Mangistau Atlas of New Professions"
+      },
       "path_ru": "common/atlas_mangistau.pdf"
     }
-    ],
+  ],
   "8": [
     {
-      "title": { "ru": "Урок 1", "kk": "Сабақ 1", "en": "Lesson 1" },
+      "title": {
+        "ru": "Урок 1",
+        "kk": "Сабақ 1",
+        "en": "Lesson 1"
+      },
       "path_ru": "8/lesson1.pdf",
       "path_kk": "8/sabaq1.pdf"
     },
     {
-      "title": { "ru": "Урок 2", "kk": "Сабақ 2", "en": "Lesson 2" },
+      "title": {
+        "ru": "Урок 2",
+        "kk": "Сабақ 2",
+        "en": "Lesson 2"
+      },
       "path_ru": "8/lesson2.pdf",
       "path_kk": "8/sabaq2.pdf"
+    },
+    {
+      "title": {
+        "ru": "Урок 3",
+        "kk": "Сабақ 3",
+        "en": "Lesson 3"
+      },
+      "path_ru": "8/lesson3.pdf",
+      "path_kk": "8/sabaq3.pdf"
+    },
+    {
+      "title": {
+        "ru": "Урок 4",
+        "kk": "Сабақ 4",
+        "en": "Lesson 4"
+      },
+      "path_ru": "8/lesson4.pdf",
+      "path_kk": "8/sabaq4.pdf"
+    },
+    {
+      "title": {
+        "ru": "Урок 5",
+        "kk": "Сабақ 5",
+        "en": "Lesson 5"
+      },
+      "path_ru": "8/lesson5.pdf",
+      "path_kk": "8/sabaq5.pdf"
+    },
+    {
+      "title": {
+        "ru": "Урок 6",
+        "kk": "Сабақ 6",
+        "en": "Lesson 6"
+      },
+      "path_ru": "8/lesson6.pdf",
+      "path_kk": "8/sabaq6.pdf"
     }
-    ],
+  ],
   "9": [
     {
-      "title": { "ru": "Урок 1", "kk": "Сабақ 1", "en": "Lesson 1" },
+      "title": {
+        "ru": "Урок 1",
+        "kk": "Сабақ 1",
+        "en": "Lesson 1"
+      },
       "path_ru": "8/lesson1.pdf",
       "path_kk": "8/sabaq1.pdf"
     },
     {
-      "title": { "ru": "Урок 2", "kk": "Сабақ 2", "en": "Lesson 2" },
+      "title": {
+        "ru": "Урок 2",
+        "kk": "Сабақ 2",
+        "en": "Lesson 2"
+      },
       "path_ru": "8/lesson2.pdf",
       "path_kk": "8/sabaq2.pdf"
+    },
+    {
+      "title": {
+        "ru": "Урок 3",
+        "kk": "Сабақ 3",
+        "en": "Lesson 3"
+      },
+      "path_ru": "8/lesson3.pdf",
+      "path_kk": "8/sabaq3.pdf"
+    },
+    {
+      "title": {
+        "ru": "Урок 4",
+        "kk": "Сабақ 4",
+        "en": "Lesson 4"
+      },
+      "path_ru": "8/lesson4.pdf",
+      "path_kk": "8/sabaq4.pdf"
+    },
+    {
+      "title": {
+        "ru": "Урок 5",
+        "kk": "Сабақ 5",
+        "en": "Lesson 5"
+      },
+      "path_ru": "8/lesson5.pdf",
+      "path_kk": "8/sabaq5.pdf"
+    },
+    {
+      "title": {
+        "ru": "Урок 6",
+        "kk": "Сабақ 6",
+        "en": "Lesson 6"
+      },
+      "path_ru": "8/lesson6.pdf",
+      "path_kk": "8/sabaq6.pdf"
     }
-    ],
+  ],
   "10": [
     {
-      "title": { "ru": "Урок 1", "kk": "Сабақ 1", "en": "Lesson 1" },
+      "title": {
+        "ru": "Урок 1",
+        "kk": "Сабақ 1",
+        "en": "Lesson 1"
+      },
       "path_ru": "8/lesson1.pdf",
       "path_kk": "8/sabaq1.pdf"
     },
     {
-      "title": { "ru": "Урок 2", "kk": "Сабақ 2", "en": "Lesson 2" },
+      "title": {
+        "ru": "Урок 2",
+        "kk": "Сабақ 2",
+        "en": "Lesson 2"
+      },
       "path_ru": "8/lesson2.pdf",
       "path_kk": "8/sabaq2.pdf"
+    },
+    {
+      "title": {
+        "ru": "Урок 3",
+        "kk": "Сабақ 3",
+        "en": "Lesson 3"
+      },
+      "path_ru": "8/lesson3.pdf",
+      "path_kk": "8/sabaq3.pdf"
+    },
+    {
+      "title": {
+        "ru": "Урок 4",
+        "kk": "Сабақ 4",
+        "en": "Lesson 4"
+      },
+      "path_ru": "8/lesson4.pdf",
+      "path_kk": "8/sabaq4.pdf"
+    },
+    {
+      "title": {
+        "ru": "Урок 5",
+        "kk": "Сабақ 5",
+        "en": "Lesson 5"
+      },
+      "path_ru": "8/lesson5.pdf",
+      "path_kk": "8/sabaq5.pdf"
+    },
+    {
+      "title": {
+        "ru": "Урок 6",
+        "kk": "Сабақ 6",
+        "en": "Lesson 6"
+      },
+      "path_ru": "8/lesson6.pdf",
+      "path_kk": "8/sabaq6.pdf"
     }
-    ],
+  ],
   "11": [
     {
-      "title": { "ru": "Урок 1", "kk": "Сабақ 1", "en": "Lesson 1" },
+      "title": {
+        "ru": "Урок 1",
+        "kk": "Сабақ 1",
+        "en": "Lesson 1"
+      },
       "path_ru": "8/lesson1.pdf",
       "path_kk": "8/sabaq1.pdf"
     },
     {
-      "title": { "ru": "Урок 2", "kk": "Сабақ 2", "en": "Lesson 2" },
+      "title": {
+        "ru": "Урок 2",
+        "kk": "Сабақ 2",
+        "en": "Lesson 2"
+      },
       "path_ru": "8/lesson2.pdf",
       "path_kk": "8/sabaq2.pdf"
+    },
+    {
+      "title": {
+        "ru": "Урок 3",
+        "kk": "Сабақ 3",
+        "en": "Lesson 3"
+      },
+      "path_ru": "8/lesson3.pdf",
+      "path_kk": "8/sabaq3.pdf"
+    },
+    {
+      "title": {
+        "ru": "Урок 4",
+        "kk": "Сабақ 4",
+        "en": "Lesson 4"
+      },
+      "path_ru": "8/lesson4.pdf",
+      "path_kk": "8/sabaq4.pdf"
+    },
+    {
+      "title": {
+        "ru": "Урок 5",
+        "kk": "Сабақ 5",
+        "en": "Lesson 5"
+      },
+      "path_ru": "8/lesson5.pdf",
+      "path_kk": "8/sabaq5.pdf"
+    },
+    {
+      "title": {
+        "ru": "Урок 6",
+        "kk": "Сабақ 6",
+        "en": "Lesson 6"
+      },
+      "path_ru": "8/lesson6.pdf",
+      "path_kk": "8/sabaq6.pdf"
     }
-    ]
+  ]
 }
