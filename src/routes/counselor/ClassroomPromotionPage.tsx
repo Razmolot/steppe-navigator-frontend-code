@@ -37,7 +37,11 @@ type Classroom = {
   id: number;
   name: string;
   school_id: number;
+  is_graduation_class?: boolean;
+  graduation_year?: number | null;
 };
+
+type LocalizedNames = Partial<Record<Locale, string>>;
 
 type PromotionItem = {
   student_id: number;
@@ -60,6 +64,7 @@ type PromotionPreview = {
   to_academic_year: string;
   graduation_year: number;
   graduation_classroom_name: string;
+  graduation_classroom_names?: LocalizedNames;
   summary: {
     total_students: number;
     promote: number;
@@ -261,6 +266,35 @@ const actionColor = (action: PromotionItem["action"]) => {
   return "green";
 };
 
+const graduationName = (graduationYear: number | null | undefined, locale: Locale, names?: LocalizedNames) => {
+  if (!graduationYear) return null;
+
+  return names?.[locale] ?? names?.ru ?? `Graduates ${graduationYear}`;
+};
+
+const replaceGraduationNames = (
+  value: string | null | undefined,
+  graduationYear: number | null | undefined,
+  locale: Locale,
+  names?: LocalizedNames,
+) => {
+  if (!value || !graduationYear) return value;
+
+  const localizedName = graduationName(graduationYear, locale, names);
+  if (!localizedName) return value;
+
+  const knownNames = new Set([
+    names?.ru,
+    names?.kk,
+    names?.en,
+    `Выпускники ${graduationYear}`,
+    `${graduationYear} түлектері`,
+    `Graduates ${graduationYear}`,
+  ].filter(Boolean) as string[]);
+
+  return Array.from(knownNames).reduce((text, knownName) => text.replaceAll(knownName, localizedName), value);
+};
+
 const promotionStorageKey = (values: PromotionFormValues) => {
   if (!values.school_id || !values.from_academic_year || !values.to_academic_year || !values.graduation_year) {
     return null;
@@ -291,7 +325,8 @@ const readStoredBatch = (key: string): StoredPromotionBatch | null => {
 export const ClassroomPromotionPage = () => {
   const { message } = App.useApp();
   const { t, locale } = useTranslation();
-  const pageText = copy[locale as Locale] ?? copy.ru;
+  const activeLocale = (locale as Locale) ?? "ru";
+  const pageText = copy[activeLocale] ?? copy.ru;
   const { user } = useAuthStore();
   const defaults = useMemo(() => currentAcademicYears(), []);
   const [form] = Form.useForm();
@@ -311,6 +346,24 @@ export const ClassroomPromotionPage = () => {
   const restoreSequenceRef = useRef(0);
 
   const canUseAdminEndpoints = user?.role === "admin";
+  const localizedGraduationName = graduationName(
+    preview?.graduation_year,
+    activeLocale,
+    preview?.graduation_classroom_names,
+  );
+  const localizeGraduationText = (value: string | null | undefined) => replaceGraduationNames(
+    value,
+    preview?.graduation_year,
+    activeLocale,
+    preview?.graduation_classroom_names,
+  );
+  const classroomLabel = (classroom: Classroom) => {
+    if (classroom.is_graduation_class) {
+      return graduationName(classroom.graduation_year, activeLocale) ?? classroom.name;
+    }
+
+    return classroom.name;
+  };
 
   const loadSchools = async () => {
     setLoadingSchools(true);
@@ -511,7 +564,11 @@ export const ClassroomPromotionPage = () => {
     {
       title: pageText.to,
       key: "to",
-      render: (_, record) => record.to_classroom_name || record.note || pageText.none,
+      render: (_, record) => {
+        if (record.action === "graduate" && localizedGraduationName) return localizedGraduationName;
+
+        return localizeGraduationText(record.to_classroom_name || record.note) || pageText.none;
+      },
     },
     {
       title: pageText.action,
@@ -551,7 +608,7 @@ export const ClassroomPromotionPage = () => {
           onChange={(value) => updateOverride(record.student_id, value)}
           options={classrooms.map((classroom) => ({
             value: classroom.id,
-            label: classroom.name,
+            label: classroomLabel(classroom),
           }))}
         />
       ),
@@ -669,7 +726,7 @@ export const ClassroomPromotionPage = () => {
             <Col xs={12} md={4}><Card><Statistic title={pageText.graduate} value={summary?.graduate ?? 0} /></Card></Col>
             <Col xs={12} md={4}><Card><Statistic title={pageText.manual} value={summary?.manual ?? 0} /></Card></Col>
             <Col xs={12} md={4}><Card><Statistic title={pageText.skipped} value={summary?.skipped ?? 0} valueStyle={{ color: skippedCount > 0 ? "#cf1322" : undefined }} /></Card></Col>
-            <Col xs={12} md={4}><Card><Statistic title={pageText.graduationClassroom} value={preview.graduation_classroom_name} /></Card></Col>
+            <Col xs={12} md={4}><Card><Statistic title={pageText.graduationClassroom} value={localizedGraduationName ?? preview.graduation_classroom_name} /></Card></Col>
           </Row>
 
           {skippedCount > 0 && <Alert type="warning" showIcon message={pageText.blockedBySkipped} className="mb-4!" />}
@@ -702,7 +759,7 @@ export const ClassroomPromotionPage = () => {
           >
             <Space wrap>
               {Object.entries(summary?.by_route || {}).map(([route, count]) => (
-                <Tag key={route}>{route}: {count}</Tag>
+                <Tag key={route}>{localizeGraduationText(route)}: {count}</Tag>
               ))}
             </Space>
           </Card>
