@@ -447,6 +447,7 @@ export const ClassroomPromotionPage = () => {
   };
 
   const applyPromotion = async () => {
+    restoreSequenceRef.current += 1;
     const values = await form.validateFields();
     setApplyLoading(true);
     try {
@@ -466,6 +467,7 @@ export const ClassroomPromotionPage = () => {
 
   const rollbackBatch = async () => {
     if (!batch?.id) return;
+    restoreSequenceRef.current += 1;
     setRollbackLoading(true);
     try {
       const values = currentFormValues();
