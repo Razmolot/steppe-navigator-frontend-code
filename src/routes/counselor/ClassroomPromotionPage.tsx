@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Alert,
   App,
@@ -308,6 +308,7 @@ export const ClassroomPromotionPage = () => {
   const [previewLoading, setPreviewLoading] = useState(false);
   const [applyLoading, setApplyLoading] = useState(false);
   const [rollbackLoading, setRollbackLoading] = useState(false);
+  const restoreSequenceRef = useRef(0);
 
   const canUseAdminEndpoints = user?.role === "admin";
 
@@ -375,13 +376,19 @@ export const ClassroomPromotionPage = () => {
   };
 
   const restoreActiveBatch = async (values = currentFormValues()) => {
-    const key = promotionStorageKey(values);
-    if (!key) {
+    const requestKey = promotionStorageKey(values);
+    const requestSequence = ++restoreSequenceRef.current;
+
+    const isCurrentRequest = () => {
+      return requestSequence === restoreSequenceRef.current && requestKey === promotionStorageKey(currentFormValues());
+    };
+
+    if (!requestKey) {
       setBatch(null);
       return;
     }
 
-    const stored = readStoredBatch(key);
+    const stored = readStoredBatch(requestKey);
     if (!stored) {
       setBatch(null);
       return;
@@ -389,14 +396,18 @@ export const ClassroomPromotionPage = () => {
 
     try {
       const { data } = await axiosClient.get(`/counselor/classroom-promotions/batches/${stored.batchId}`);
+      if (!isCurrentRequest()) return;
+
       if (data.status === "applied") {
         setBatch(data);
       } else {
-        localStorage.removeItem(key);
-        setBatch(data);
+        localStorage.removeItem(requestKey);
+        setBatch(null);
       }
     } catch {
-      localStorage.removeItem(key);
+      if (!isCurrentRequest()) return;
+
+      localStorage.removeItem(requestKey);
       setBatch(null);
     }
   };
