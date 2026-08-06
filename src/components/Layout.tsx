@@ -2,7 +2,7 @@ import {Layout as AntLayout, Menu, message, Drawer} from "antd";
 import { Outlet, Link } from "@tanstack/react-router";
 import { useAuthStore } from "../store/useAuthStore";
 import { useEffect, useState } from "react";
-import {ApiOutlined, CalendarOutlined, MailOutlined, UsergroupAddOutlined, MenuOutlined, CloseOutlined, BookOutlined} from "@ant-design/icons";
+import {ApiOutlined, UsergroupAddOutlined, MenuOutlined, CloseOutlined, BookOutlined} from "@ant-design/icons";
 import { useTranslation } from "../hooks/useTranslation";
 
 const { Header, Content, Sider } = AntLayout;
@@ -57,6 +57,11 @@ export const Layout = () => {
             key: "add-user",
             label: <Link to="/students">{t.nav.students}</Link>,
             icon: <UsergroupAddOutlined  />,
+        },
+        (user?.role === "admin" || user?.role === "career_counselor") && {
+            key: "classroom-promotions",
+            label: <Link to="/counselor/classroom-promotions">{t.nav.classroomPromotions}</Link>,
+            icon: <UsergroupAddOutlined />,
         },
         user?.role === "career_counselor" && {
             key: "school-reports",

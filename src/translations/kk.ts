@@ -61,6 +61,7 @@ export const kk: TranslationType = {
     assignTests: 'Сыныптар мен қолжетімділік',
     schoolReports: 'Есептер',
     careerReport: 'Менің кәсіби бағдар есебім',
+    classroomPromotions: 'Сыныптарды көшіру',
     library: 'Кітапхана',
   },
 

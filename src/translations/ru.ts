@@ -59,6 +59,7 @@ export const ru = {
     assignTests: 'Классы и доступ',
     schoolReports: 'Отчёты',
     careerReport: 'Мой профориентационный отчёт',
+    classroomPromotions: 'Переход классов',
     library: 'Библиотека',
   },
 

@@ -61,6 +61,7 @@ export const en: TranslationType = {
     assignTests: 'Classrooms and Access',
     schoolReports: 'Reports',
     careerReport: 'My Career Report',
+    classroomPromotions: 'Classroom promotion',
     library: 'Library',
   },
 
