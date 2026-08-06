@@ -73,10 +73,22 @@ type PromotionPreview = {
 
 type AppliedBatch = {
   id: number;
+  school_id?: number;
   status: "applied" | "rolled_back";
   applied_at?: string;
   rolled_back_at?: string | null;
   summary?: PromotionPreview["summary"];
+};
+
+type PromotionFormValues = {
+  school_id?: number;
+  from_academic_year?: string;
+  to_academic_year?: string;
+  graduation_year?: number | string;
+};
+
+type StoredPromotionBatch = {
+  batchId: number;
 };
 
 type ApiValidationError = {
@@ -249,6 +261,33 @@ const actionColor = (action: PromotionItem["action"]) => {
   return "green";
 };
 
+const promotionStorageKey = (values: PromotionFormValues) => {
+  if (!values.school_id || !values.from_academic_year || !values.to_academic_year || !values.graduation_year) {
+    return null;
+  }
+
+  return [
+    "classroom-promotion-active-batch",
+    values.school_id,
+    values.from_academic_year,
+    values.to_academic_year,
+    values.graduation_year,
+  ].join(":");
+};
+
+const readStoredBatch = (key: string): StoredPromotionBatch | null => {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return null;
+
+    const parsed = JSON.parse(raw) as StoredPromotionBatch;
+    return parsed.batchId ? parsed : null;
+  } catch {
+    localStorage.removeItem(key);
+    return null;
+  }
+};
+
 export const ClassroomPromotionPage = () => {
   const { message } = App.useApp();
   const { t, locale } = useTranslation();
@@ -314,13 +353,56 @@ export const ClassroomPromotionPage = () => {
       setClassrooms([]);
     }
     setPreview(null);
-    setBatch(null);
+    restoreActiveBatch({ ...currentFormValues(), school_id: selectedSchoolId });
     setOverrides({});
     setDirtyOverrides(false);
   }, [selectedSchoolId]);
 
+  const currentFormValues = (): PromotionFormValues => form.getFieldsValue();
+
+  const saveActiveBatch = (values: PromotionFormValues, appliedBatch: AppliedBatch) => {
+    const key = promotionStorageKey(values);
+    if (!key) return;
+
+    localStorage.setItem(key, JSON.stringify({ batchId: appliedBatch.id }));
+  };
+
+  const clearActiveBatch = (values: PromotionFormValues) => {
+    const key = promotionStorageKey(values);
+    if (!key) return;
+
+    localStorage.removeItem(key);
+  };
+
+  const restoreActiveBatch = async (values = currentFormValues()) => {
+    const key = promotionStorageKey(values);
+    if (!key) {
+      setBatch(null);
+      return;
+    }
+
+    const stored = readStoredBatch(key);
+    if (!stored) {
+      setBatch(null);
+      return;
+    }
+
+    try {
+      const { data } = await axiosClient.get(`/counselor/classroom-promotions/batches/${stored.batchId}`);
+      if (data.status === "applied") {
+        setBatch(data);
+      } else {
+        localStorage.removeItem(key);
+        setBatch(data);
+      }
+    } catch {
+      localStorage.removeItem(key);
+      setBatch(null);
+    }
+  };
+
   const buildPayload = () => {
-    const values = form.getFieldsValue();
+    const values = currentFormValues();
     return {
       from_academic_year: values.from_academic_year,
       to_academic_year: values.to_academic_year,
@@ -333,7 +415,7 @@ export const ClassroomPromotionPage = () => {
     };
   };
 
-  const generatePreview = async () => {
+  const generatePreview = async (skipBatchRestore = false) => {
     const values = await form.validateFields();
     setPreviewLoading(true);
     try {
@@ -342,7 +424,9 @@ export const ClassroomPromotionPage = () => {
         buildPayload(),
       );
       setPreview(data);
-      setBatch(null);
+      if (!skipBatchRestore) {
+        await restoreActiveBatch(values);
+      }
       setDirtyOverrides(false);
     } catch (error: unknown) {
       message.error(getApiErrorMessage(error, pageText.previewError));
@@ -360,6 +444,7 @@ export const ClassroomPromotionPage = () => {
         buildPayload(),
       );
       setBatch(data);
+      saveActiveBatch(values, data);
       message.success(`${pageText.batchApplied} #${data.id}`);
     } catch (error: unknown) {
       message.error(getApiErrorMessage(error, pageText.duplicateOrError));
@@ -372,10 +457,12 @@ export const ClassroomPromotionPage = () => {
     if (!batch?.id) return;
     setRollbackLoading(true);
     try {
+      const values = currentFormValues();
       const { data } = await axiosClient.post(`/counselor/classroom-promotions/batches/${batch.id}/rollback`);
+      clearActiveBatch(values);
+      await generatePreview(true);
       setBatch(data);
       message.success(`${pageText.batchRolledBack} #${data.id}`);
-      await generatePreview();
     } catch (error: unknown) {
       message.error(getApiErrorMessage(error, pageText.rollbackError));
     } finally {
@@ -474,6 +561,22 @@ export const ClassroomPromotionPage = () => {
         <Form
           form={form}
           layout="vertical"
+          onValuesChange={(changedValues) => {
+            if (changedValues.school_id) {
+              setSelectedSchoolId(changedValues.school_id);
+            }
+
+            if (
+              changedValues.school_id ||
+              changedValues.from_academic_year ||
+              changedValues.to_academic_year ||
+              changedValues.graduation_year
+            ) {
+              setPreview(null);
+              setDirtyOverrides(false);
+              restoreActiveBatch({ ...currentFormValues(), ...changedValues });
+            }
+          }}
           initialValues={{
             from_academic_year: defaults.from,
             to_academic_year: defaults.to,
@@ -486,7 +589,6 @@ export const ClassroomPromotionPage = () => {
                 <Select
                   loading={loadingSchools}
                   placeholder={pageText.selectSchool}
-                  onChange={(value) => setSelectedSchoolId(value)}
                   options={schools.map((school) => ({ value: school.id, label: school.name }))}
                 />
               </Form.Item>
@@ -508,7 +610,7 @@ export const ClassroomPromotionPage = () => {
             </Col>
             <Col xs={24} md={3}>
               <Form.Item label=" ">
-                <Button type="primary" icon={<ReloadOutlined />} loading={previewLoading} onClick={generatePreview} block>
+                <Button type="primary" icon={<ReloadOutlined />} loading={previewLoading} onClick={() => generatePreview()} block>
                   {preview ? pageText.refreshPreview : pageText.preview}
                 </Button>
               </Form.Item>
@@ -518,6 +620,33 @@ export const ClassroomPromotionPage = () => {
       </Card>
 
       {!preview && <Alert type="info" showIcon message={pageText.noPreview} className="mb-4!" />}
+
+      {batch && (
+        <Alert
+          type={batch.status === "applied" ? "success" : "info"}
+          showIcon
+          className="mb-4!"
+          message={`${batch.status === "applied" ? pageText.batchApplied : pageText.batchRolledBack} #${batch.id}`}
+          action={batch.status === "applied" ? (
+            <Button
+              danger
+              size="small"
+              icon={<RollbackOutlined />}
+              loading={rollbackLoading}
+              onClick={() => Modal.confirm({
+                title: pageText.confirmRollbackTitle,
+                content: pageText.confirmRollbackText,
+                okText: pageText.rollback,
+                okButtonProps: { danger: true },
+                cancelText: t.common.cancel,
+                onOk: rollbackBatch,
+              })}
+            >
+              {pageText.rollback}
+            </Button>
+          ) : undefined}
+        />
+      )}
 
       {preview && (
         <>
@@ -532,39 +661,12 @@ export const ClassroomPromotionPage = () => {
 
           {skippedCount > 0 && <Alert type="warning" showIcon message={pageText.blockedBySkipped} className="mb-4!" />}
           {dirtyOverrides && <Alert type="warning" showIcon message={pageText.changedOverrides} className="mb-4!" />}
-          {batch && (
-            <Alert
-              type={batch.status === "applied" ? "success" : "info"}
-              showIcon
-              className="mb-4!"
-              message={`${batch.status === "applied" ? pageText.batchApplied : pageText.batchRolledBack} #${batch.id}`}
-              action={batch.status === "applied" ? (
-                <Button
-                  danger
-                  size="small"
-                  icon={<RollbackOutlined />}
-                  loading={rollbackLoading}
-                  onClick={() => Modal.confirm({
-                    title: pageText.confirmRollbackTitle,
-                    content: pageText.confirmRollbackText,
-                    okText: pageText.rollback,
-                    okButtonProps: { danger: true },
-                    cancelText: t.common.cancel,
-                    onOk: rollbackBatch,
-                  })}
-                >
-                  {pageText.rollback}
-                </Button>
-              ) : undefined}
-            />
-          )}
-
           <Card
             title={pageText.routeSummary}
             className="mb-4!"
             extra={
               <Space>
-                <Button icon={<ReloadOutlined />} loading={previewLoading} onClick={generatePreview}>
+                <Button icon={<ReloadOutlined />} loading={previewLoading} onClick={() => generatePreview()}>
                   {pageText.refreshPreview}
                 </Button>
                 <Button
