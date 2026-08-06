@@ -49,6 +49,7 @@ import {SchoolReportPage} from "./counselor/SchoolReportPage.tsx";
 import {CareerBulkJobPage} from "./counselor/CareerBulkJobPage.tsx";
 import {CareerBulkJobsLandingPage} from "./counselor/CareerBulkJobsLandingPage.tsx";
 import {LibraryPage} from "./LibraryPage.tsx";
+import { ClassroomPromotionPage } from "./counselor/ClassroomPromotionPage.tsx";
 
 const rootRoute = new RootRoute({
     component: () => (
@@ -228,6 +229,12 @@ const counselorTestsRoute = new Route({
     component: CounselorTestsPage,
 });
 
+const classroomPromotionRoute = new Route({
+    getParentRoute: () => protectedRoute,
+    path: "/counselor/classroom-promotions",
+    component: ClassroomPromotionPage,
+});
+
 // Career Guidance Routes
 const counselorCareerGuidanceRoute = new Route({
     getParentRoute: () => protectedRoute,
@@ -299,6 +306,7 @@ const routeTree = rootRoute.addChildren([
         counselorStudentResultsRoute,
         counselorClassroomResultsRoute,
         counselorTestsRoute,
+        classroomPromotionRoute,
         counselorCareerGuidanceRoute,
         counselorCareerReportRoute,
         studentCareerReportRoute,
