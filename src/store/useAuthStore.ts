@@ -18,6 +18,7 @@ interface User {
     access_restriction?: {
         restricted: boolean;
         message: string | null;
+        role: "admin" | "career_counselor" | "student" | null;
         schools: AccessRestrictionSchool[];
     };
 }

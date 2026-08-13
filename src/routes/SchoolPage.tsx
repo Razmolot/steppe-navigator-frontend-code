@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {Table, Button, Modal, Form, Input, Select, Card, Space, Popconfirm, Upload, App} from "antd";
+import {Table, Button, Modal, Form, Input, Select, Card, Space, Popconfirm, Upload, App, Tag} from "antd";
 import {UploadOutlined} from "@ant-design/icons";
 import axiosClient from "../api/axiosClient";
 import Breadcrumb from "../components/Breadcrumb.tsx";
@@ -24,6 +24,20 @@ export const SchoolsPage = () => {
     const [page, setPage] = useState(1);
     const [pageSize, setPageSize] = useState(10);
     const [total, setTotal] = useState(0);
+
+    const accessStatusLabels: Record<string, string> = {
+        active: t.schools.accessActive,
+        payment_pending: t.schools.accessPaymentPending,
+        restricted: t.schools.accessRestricted,
+        blocked: t.schools.accessBlocked,
+    };
+
+    const accessStatusColors: Record<string, string> = {
+        active: "green",
+        payment_pending: "orange",
+        restricted: "red",
+        blocked: "volcano",
+    };
 
     const fetchSchools = async () => {
         setLoading(true);
@@ -90,6 +104,23 @@ export const SchoolsPage = () => {
         }
     };
 
+    const handleUpdateSchoolAccess = async (record: any, access_status: string) => {
+        try {
+            await axiosClient.put(`/schools/${record.id}`, {
+                name: record.name,
+                description: record.description || null,
+                access_status,
+                access_restriction_reason: access_status === "active" ? null : (record.access_restriction_reason || "Ожидается оплата"),
+                access_restricted_until: null,
+            });
+            message.success(t.schools.accessUpdated);
+            fetchSchools();
+        } catch (error: any) {
+            const errorMessage = error.response?.data?.message || t.schools.errorUpdatingAccess;
+            message.error(errorMessage);
+        }
+    };
+
     const handleDeleteSchool = async (id: number) => {
         try {
             await axiosClient.delete(`/schools/${id}`);
@@ -107,6 +138,8 @@ export const SchoolsPage = () => {
         form.setFieldsValue({
             name: record.name,
             description: record.description || "",
+            access_status: record.access_status || "active",
+            access_restriction_reason: record.access_restriction_reason || "",
         });
         setIsModalVisible(true);
     };
@@ -149,6 +182,21 @@ export const SchoolsPage = () => {
         {title: t.schools.schoolName, dataIndex: "name", key: "name"},
         {title: t.schools.description, dataIndex: "description", key: "description"},
         {
+            title: t.schools.accessStatus,
+            dataIndex: "access_status",
+            key: "access_status",
+            render: (status: string, record: any) => (
+                <div>
+                    <Tag color={accessStatusColors[status || "active"] || "default"}>
+                        {accessStatusLabels[status || "active"] || status || t.schools.accessActive}
+                    </Tag>
+                    {record.access_restriction_reason ? (
+                        <div className="text-xs text-gray-500 mt-1">{record.access_restriction_reason}</div>
+                    ) : null}
+                </div>
+            ),
+        },
+        {
             title: t.schools.classroomsCount,
             key: "classrooms",
             render: (record: any) => record.classrooms?.length || 0,
@@ -189,6 +237,26 @@ export const SchoolsPage = () => {
                     >
                         {t.schools.assignCounselor}
                     </Button>
+
+                    {(record.access_status || "active") === "active" ? (
+                        <Popconfirm
+                            title={t.schools.restrictConfirm}
+                            onConfirm={() => handleUpdateSchoolAccess(record, "payment_pending")}
+                        >
+                            <Button type="link" danger>
+                                {t.schools.restrictAccess}
+                            </Button>
+                        </Popconfirm>
+                    ) : (
+                        <Popconfirm
+                            title={t.schools.restoreConfirm}
+                            onConfirm={() => handleUpdateSchoolAccess(record, "active")}
+                        >
+                            <Button type="link">
+                                {t.schools.restoreAccess}
+                            </Button>
+                        </Popconfirm>
+                    )}
                 </Space>
             ),
         },
@@ -285,6 +353,19 @@ export const SchoolsPage = () => {
 
                     <Form.Item label={t.schools.description} name="description">
                         <Input.TextArea placeholder={t.schools.descriptionPlaceholder} rows={3}/>
+                    </Form.Item>
+
+                    <Form.Item label={t.schools.accessStatus} name="access_status" initialValue="active">
+                        <Select>
+                            <Select.Option value="active">{t.schools.accessActive}</Select.Option>
+                            <Select.Option value="payment_pending">{t.schools.accessPaymentPending}</Select.Option>
+                            <Select.Option value="restricted">{t.schools.accessRestricted}</Select.Option>
+                            <Select.Option value="blocked">{t.schools.accessBlocked}</Select.Option>
+                        </Select>
+                    </Form.Item>
+
+                    <Form.Item label={t.schools.restrictionReason} name="access_restriction_reason">
+                        <Input placeholder={t.schools.restrictionReasonPlaceholder}/>
                     </Form.Item>
 
                     <Form.Item>
