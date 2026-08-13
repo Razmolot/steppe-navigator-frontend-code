@@ -22,6 +22,11 @@ axiosClient.interceptors.response.use(
         if (error.response?.status === 401) {
             useAuthStore.getState().logout();
         }
+
+        const data = error.response?.data as { code?: string } | undefined;
+        if (error.response?.status === 403 && data?.code === "SCHOOL_ACCESS_RESTRICTED") {
+            window.location.assign("/app/access-restricted");
+        }
         return Promise.reject(error);
     }
 );
