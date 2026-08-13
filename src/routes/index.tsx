@@ -50,6 +50,7 @@ import {CareerBulkJobPage} from "./counselor/CareerBulkJobPage.tsx";
 import {CareerBulkJobsLandingPage} from "./counselor/CareerBulkJobsLandingPage.tsx";
 import {LibraryPage} from "./LibraryPage.tsx";
 import { ClassroomPromotionPage } from "./counselor/ClassroomPromotionPage.tsx";
+import { AccessRestrictedPage } from "./AccessRestrictedPage.tsx";
 
 const rootRoute = new RootRoute({
     component: () => (
@@ -89,6 +90,12 @@ const profileRoute = new Route({
     getParentRoute: () => protectedRoute,
     path: "/profile",
     component: Profile, // 👈 страница профиля
+});
+
+const accessRestrictedRoute = new Route({
+    getParentRoute: () => protectedRoute,
+    path: "/access-restricted",
+    component: AccessRestrictedPage,
 });
 
 const schoolsRoute = new Route({
@@ -285,6 +292,7 @@ const routeTree = rootRoute.addChildren([
     protectedRoute.addChildren([
         dashboardRoute,
         profileRoute,
+        accessRestrictedRoute,
         schoolsRoute,
         classroomsRoute,
         careerCounselorsRoute,
