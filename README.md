@@ -71,3 +71,7 @@ export default defineConfig([
   },
 ])
 ```
+
+## Deploy notes
+
+- [Library static content](docs/deploy/library-static-content.md): `public/library/manifest.json` is tracked in git; PDF files under `public/library/files/` are static content and must be preserved/restored outside git during deploy.
