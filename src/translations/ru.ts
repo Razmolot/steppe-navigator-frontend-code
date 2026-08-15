@@ -257,6 +257,31 @@ export const ru = {
     bulkUploadError: 'Ошибка при массовом создании школ',
     selectCounselor: 'Выберите профориентатора',
     assign: 'Назначить',
+    accessStatus: 'Статус доступа',
+    accessActive: 'Активен',
+    accessPaymentPending: 'Ожидает оплаты',
+    accessRestricted: 'Ограничен',
+    accessBlocked: 'Заблокирован',
+    restrictionReason: 'Причина ограничения',
+    restrictionReasonPlaceholder: 'Например: Ожидается оплата',
+    restrictAccess: 'Ограничить доступ',
+    restoreAccess: 'Включить доступ',
+    accessUpdated: 'Статус доступа обновлён',
+    errorUpdatingAccess: 'Ошибка при обновлении статуса доступа',
+    restrictConfirm: 'Ограничить доступ к этой школе?',
+    restoreConfirm: 'Включить доступ к этой школе?',
+    restrictedUntil: 'Ограничить до',
+  },
+
+
+  accessRestriction: {
+    title: 'Доступ временно ограничен',
+    fallback: 'Доступ к платформе временно ограничен.',
+    studentMessage: 'Доступ к платформе временно ограничен. Обратитесь к администрации школы.',
+    counselorMessage: 'Доступ школы временно ограничен. Для возобновления обратитесь к администратору платформы, info@steppe-navigator.kz',
+    school: 'Школа',
+    reason: 'Причина',
+    dataSaved: 'Ваши данные и результаты сохранены. После возобновления доступа можно будет продолжить работу в платформе.',
   },
 
   // Классы

@@ -1,12 +1,26 @@
 import { create } from "zustand";
 import axiosClient from "../api/axiosClient";
 
+interface AccessRestrictionSchool {
+    id: number;
+    name: string;
+    access_status: string;
+    reason: string | null;
+    restricted_until: string | null;
+}
+
 interface User {
     id: number;
     name: string;
     email: string;
     phone: string | null | undefined;
     role: "admin" | "career_counselor" | "student";
+    access_restriction?: {
+        restricted: boolean;
+        message: string | null;
+        role: "admin" | "career_counselor" | "student" | null;
+        schools: AccessRestrictionSchool[];
+    };
 }
 
 interface AuthState {

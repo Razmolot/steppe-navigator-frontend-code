@@ -259,6 +259,31 @@ export const en: TranslationType = {
     bulkUploadError: 'Error bulk creating schools',
     selectCounselor: 'Select counselor',
     assign: 'Assign',
+    accessStatus: 'Access status',
+    accessActive: 'Active',
+    accessPaymentPending: 'Payment pending',
+    accessRestricted: 'Restricted',
+    accessBlocked: 'Blocked',
+    restrictionReason: 'Restriction reason',
+    restrictionReasonPlaceholder: 'For example: payment pending',
+    restrictAccess: 'Restrict access',
+    restoreAccess: 'Restore access',
+    accessUpdated: 'Access status updated',
+    errorUpdatingAccess: 'Error updating access status',
+    restrictConfirm: 'Restrict access to this school?',
+    restoreConfirm: 'Restore access to this school?',
+    restrictedUntil: 'Restricted until',
+  },
+
+
+  accessRestriction: {
+    title: 'Access temporarily restricted',
+    fallback: 'Platform access is temporarily restricted.',
+    studentMessage: 'Platform access is temporarily restricted. Please contact your school administration.',
+    counselorMessage: 'School access is temporarily restricted. To restore access, please contact the platform administrator at info@steppe-navigator.kz',
+    school: 'School',
+    reason: 'Reason',
+    dataSaved: 'Your data and results are saved. Once access is restored, you will be able to continue using the platform.',
   },
 
   // Classrooms

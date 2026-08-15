@@ -259,6 +259,31 @@ export const kk: TranslationType = {
     bulkUploadError: 'Мектептерді жаппай құру кезінде қате',
     selectCounselor: 'Бағдаршаны таңдаңыз',
     assign: 'Тағайындау',
+    accessStatus: 'Қолжетімділік мәртебесі',
+    accessActive: 'Белсенді',
+    accessPaymentPending: 'Төлем күтілуде',
+    accessRestricted: 'Шектеулі',
+    accessBlocked: 'Бұғатталған',
+    restrictionReason: 'Шектеу себебі',
+    restrictionReasonPlaceholder: 'Мысалы: төлем күтілуде',
+    restrictAccess: 'Қолжетімділікті шектеу',
+    restoreAccess: 'Қолжетімділікті қосу',
+    accessUpdated: 'Қолжетімділік мәртебесі жаңартылды',
+    errorUpdatingAccess: 'Қолжетімділік мәртебесін жаңарту кезінде қате',
+    restrictConfirm: 'Бұл мектепке қолжетімділікті шектеу керек пе?',
+    restoreConfirm: 'Бұл мектепке қолжетімділікті қосу керек пе?',
+    restrictedUntil: 'Шектеу мерзімі',
+  },
+
+
+  accessRestriction: {
+    title: 'Қолжетімділік уақытша шектелген',
+    fallback: 'Платформаға қолжетімділік уақытша шектелген.',
+    studentMessage: 'Платформаға қолжетімділік уақытша шектелген. Мектеп әкімшілігіне хабарласыңыз.',
+    counselorMessage: 'Мектептің қолжетімділігі уақытша шектелген. Қолжетімділікті қалпына келтіру үшін платформа әкімшісіне хабарласыңыз: info@steppe-navigator.kz',
+    school: 'Мектеп',
+    reason: 'Себебі',
+    dataSaved: 'Деректеріңіз бен нәтижелеріңіз сақталған. Қолжетімділік қалпына келгеннен кейін платформада жұмысты жалғастыра аласыз.',
   },
 
   // Сыныптар
