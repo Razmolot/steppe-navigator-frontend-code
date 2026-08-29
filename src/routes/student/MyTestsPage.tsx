@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Spin, App } from "antd";
 import axiosClient from "../../api/axiosClient";
 import { TestCard } from "../../components/TestCard";
-import { useNavigate, Link } from "@tanstack/react-router";
+import { useNavigate } from "@tanstack/react-router";
 import { useTranslation } from "../../hooks/useTranslation";
 import '../counselor/CounselorTestsPage.css';
 
@@ -31,15 +31,14 @@ interface Test {
   total_questions?: number;
 }
 
-// Vite base path (на бою фронт может жить не в корне, например /app/)
-const BASE_URL = import.meta.env.BASE_URL;
-
-// Маппинг типов тестов на изображения (из public/test-images)
+// Маппинг типов тестов на изображения (из public/test-images).
+// TestCard сам добавляет Vite base path для абсолютных путей,
+// поэтому здесь держим пути без import.meta.env.BASE_URL, чтобы не получить /app/app/...
 const testImages: Record<string, string> = {
-  'high5': `${BASE_URL}test-images/gallup.png`,
-  'soft-skills': `${BASE_URL}test-images/soft-skills.png`,
-  'riasec': `${BASE_URL}test-images/holland.png`,
-  'questionnaire': `${BASE_URL}test-images/questionnaire.png`,
+  'high5': '/test-images/gallup.png',
+  'soft-skills': '/test-images/soft-skills.png',
+  'riasec': '/test-images/holland.png',
+  'questionnaire': '/test-images/questionnaire.png',
 };
 
 
@@ -141,7 +140,7 @@ export const MyTestsPage = () => {
             key={test.id}
             title={getLocalizedText(test.name)}
             description={getLocalizedText(test.description)}
-            image={testImages[test.id] || `${BASE_URL}test-images/gallup.png`}
+            image={testImages[test.id] || '/test-images/gallup.png'}
             progress={test.progress}
             answeredCount={test.answered_count}
             totalQuestions={test.total_questions}
